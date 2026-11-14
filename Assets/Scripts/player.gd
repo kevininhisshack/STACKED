@@ -62,6 +62,6 @@ func _physics_process(delta):
 
 func death_func():
 	velocity = Vector2.ZERO
-	await get_tree().create_timer(1).timeout
+	#await get_tree().create_timer(0.5).timeout
 	global_position = check_pointPOS
 	

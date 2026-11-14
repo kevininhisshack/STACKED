@@ -145,6 +145,7 @@ limit_top = -100
 limit_right = 7000
 limit_bottom = 900
 position_smoothing_enabled = true
+position_smoothing_speed = 8.0
 
 [node name="Jump Orbs" type="Node" parent="." unique_id=1031297767]
 
