@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://chyphwvpndabr" path="res://Assets/Scenes/Subs/jump_orb.tscn" id="1_s3due"]
 [ext_resource type="PackedScene" uid="uid://cmqwek43kjay0" path="res://Assets/Scenes/Subs/check_point.tscn" id="3_afebg"]
 [ext_resource type="PackedScene" uid="uid://deups0we4l3nm" path="res://Assets/Scenes/Subs/death_border.tscn" id="4_53yni"]
+[ext_resource type="AudioStream" uid="uid://brxt6q106yl7l" path="res://Assets/Audio/Music/Layers.mp3" id="5_xvxrd"]
 
 [node name="Test Scene" type="Node" unique_id=1362970334]
 metadata/_edit_vertical_guides_ = [3712.0, 6998.0]
@@ -181,3 +182,11 @@ polygon = PackedVector2Array(-344, -188, 418, -188, 410, 187, -325, 173)
 
 [node name="Death Border" parent="." unique_id=1881485949 instance=ExtResource("4_53yni")]
 position = Vector2(3745, 2413)
+
+[node name="Audio" type="Node" parent="." unique_id=840622766]
+
+[node name="level music" type="AudioStreamPlayer" parent="Audio" unique_id=42930235]
+stream = ExtResource("5_xvxrd")
+volume_db = 6.0
+autoplay = true
+parameters/looping = true

@@ -13,9 +13,7 @@ var was_on_floor : bool = true
 var check_pointPOS: Vector2 = Vector2.ZERO
 
 func _ready():
-	# just making the collisions line up
-	$"../Ground/CollisionPolygon2D".polygon = $"../Ground/Polygon2D".polygon
-	$"../Ground/CollisionPolygon2D 2".polygon = $"../Ground/Polygon2D 2".polygon
+	pass
 
 func _physics_process(delta):
 	# Gravity
