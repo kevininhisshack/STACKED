@@ -3,8 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://2g4b8h0uij5a" path="res://Assets/Scenes/Subs/player.tscn" id="1_q32xp"]
 [ext_resource type="PackedScene" uid="uid://chyphwvpndabr" path="res://Assets/Scenes/Subs/jump_orb.tscn" id="1_s3due"]
 [ext_resource type="PackedScene" uid="uid://cmqwek43kjay0" path="res://Assets/Scenes/Subs/check_point.tscn" id="3_afebg"]
+[ext_resource type="PackedScene" uid="uid://deups0we4l3nm" path="res://Assets/Scenes/Subs/death_border.tscn" id="4_53yni"]
 
 [node name="Test Scene" type="Node" unique_id=1362970334]
+metadata/_edit_vertical_guides_ = [3712.0, 6998.0]
+metadata/_edit_horizontal_guides_ = [912.0]
 
 [node name="Yapping" type="Control" parent="." unique_id=272174066]
 layout_mode = 3
@@ -58,18 +61,33 @@ text = "was not that fun?"
 
 [node name="Label5" type="Label" parent="Yapping" unique_id=793379109]
 layout_mode = 0
-offset_left = 5916.0
-offset_top = 256.0
-offset_right = 6747.0
-offset_bottom = 568.0
+offset_left = 5863.0
+offset_top = 85.0
+offset_right = 6914.0
+offset_bottom = 577.0
 theme_override_font_sizes/font_size = 30
 text = "uhhhhhhh ok get to work chop chop , 
-i iiiuhhhhhh made a quick node for checkpoints ,
-code it's logic ,
+i think i already got a nice idea about how the switch will work,
+there is a 2d node for layer 1 and for layer two,
+the switch action checks which is true and makes it false
+and makes the false one true,
+what happens whe you are false? you are hidden and all objects in group
+\"world(X) collisions\" get disabled
 and give the player the drawings you made , once i get on
 this project again i'll take those photos
 and make some nice animations
 love you but no homo"
+
+[node name="Label6" type="Label" parent="Yapping" unique_id=168498689]
+layout_mode = 0
+offset_left = 5871.0
+offset_top = 731.0
+offset_right = 6527.0
+offset_bottom = 818.0
+theme_override_font_sizes/font_size = 30
+text = "also i made a checkpoint subscene ,
+just put it in the lvl and give it a collision child ,
+try and fall right now"
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=84149425]
 
@@ -122,6 +140,10 @@ polygon = PackedVector2Array(5389, 276, 5387, 749, 6327, 762, 6327, 672, 5505, 6
 position = Vector2(564, 211)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1084379342]
+limit_left = -1048
+limit_top = -100
+limit_right = 7000
+limit_bottom = 900
 position_smoothing_enabled = true
 
 [node name="Jump Orbs" type="Node" parent="." unique_id=1031297767]
@@ -144,7 +166,17 @@ position = Vector2(5505, 299)
 [node name="Check Points" type="Node" parent="." unique_id=53422005]
 
 [node name="Check Point" parent="Check Points" unique_id=174571432 instance=ExtResource("3_afebg")]
+position = Vector2(565, 215)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Check Points/Check Point" unique_id=1188171655]
+polygon = PackedVector2Array(-246, -168, -246, 99, 273, 102, 273, -175)
+
+[node name="Check Point2" parent="Check Points" unique_id=1055194683 instance=ExtResource("3_afebg")]
 position = Vector2(6210, 425)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Check Points/Check Point" unique_id=1198111465]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Check Points/Check Point2" unique_id=1198111465]
+position = Vector2(-3, 3)
 polygon = PackedVector2Array(-344, -188, 418, -188, 410, 187, -325, 173)
+
+[node name="Death Border" parent="." unique_id=1881485949 instance=ExtResource("4_53yni")]
+position = Vector2(3745, 2413)

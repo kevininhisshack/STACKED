@@ -4,3 +4,5 @@
 
 [node name="Check Point" type="Area2D" unique_id=174571432]
 script = ExtResource("1_mk4jm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

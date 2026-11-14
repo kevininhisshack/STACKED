@@ -10,6 +10,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var jumps : int = 1
 var was_on_floor : bool = true
+var check_pointPOS: Vector2 = Vector2.ZERO
 
 func _ready():
 	# just making the collisions line up
@@ -58,3 +59,9 @@ func _physics_process(delta):
 		jumps = max(jumps , 0)
 		was_on_floor = is_on_floor()
 	# was on floor is a bool variable , just made to fix a bug 
+
+func death_func():
+	velocity = Vector2.ZERO
+	await get_tree().create_timer(1).timeout
+	global_position = check_pointPOS
+	
