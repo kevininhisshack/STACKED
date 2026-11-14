@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cmqwek43kjay0"]
+
+[ext_resource type="Script" uid="uid://o75ok3ekg7v7" path="res://Assets/Scripts/check_point.gd" id="1_mk4jm"]
+
+[node name="Check Point" type="Area2D" unique_id=174571432]
+script = ExtResource("1_mk4jm")

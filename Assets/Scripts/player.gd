@@ -1,0 +1,60 @@
+extends CharacterBody2D
+
+@export var speed: float = 540.0
+@export var jump_velocity: float = -450.0
+@export var jump_cut : float = 0.3
+
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+@onready var animated_sprite = $AnimatedSprite2D
+
+var jumps : int = 1
+var was_on_floor : bool = true
+
+func _ready():
+	# just making the collisions line up
+	$"../Ground/CollisionPolygon2D".polygon = $"../Ground/Polygon2D".polygon
+	$"../Ground/CollisionPolygon2D 2".polygon = $"../Ground/Polygon2D 2".polygon
+
+func _physics_process(delta):
+	# Gravity
+	if not is_on_floor():
+		velocity.y += gravity * delta
+	elif velocity.y >= 0:
+		jumps = max(jumps , 1)
+
+	# Jump
+	if Input.is_action_just_pressed("jump") and jumps > 0:
+		velocity.y = jump_velocity
+		jumps -= 1
+	# this makes you cut your jump if you let go of the button early
+	# the jump cut var is currently 0.2 and it is an export so you can edit it
+	if Input.is_action_just_released("jump") and velocity.y < 0:
+		velocity.y *= jump_cut
+
+	# Horizontal movement
+	var direction = Input.get_axis("left", "right")
+
+	if direction != 0:
+		velocity.x = direction * speed
+		animated_sprite.flip_h = direction < 0
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed)
+
+	# Animations
+	if not is_on_floor():
+		if velocity.y < 0:
+			animated_sprite.play("jump")
+		else:
+			animated_sprite.play("fall")
+	elif direction != 0:
+		animated_sprite.play("walk")
+	else:
+		animated_sprite.play("idle")
+		
+	move_and_slide()
+	
+	if is_on_floor() and not was_on_floor:
+		jumps = max(jumps , 0)
+		was_on_floor = is_on_floor()
+	# was on floor is a bool variable , just made to fix a bug 

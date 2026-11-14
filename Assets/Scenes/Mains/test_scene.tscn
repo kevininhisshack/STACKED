@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://g5r7jxwbc205"]
+
+[ext_resource type="PackedScene" uid="uid://2g4b8h0uij5a" path="res://Assets/Scenes/Subs/player.tscn" id="1_q32xp"]
+[ext_resource type="PackedScene" uid="uid://chyphwvpndabr" path="res://Assets/Scenes/Subs/jump_orb.tscn" id="1_s3due"]
+[ext_resource type="PackedScene" uid="uid://cmqwek43kjay0" path="res://Assets/Scenes/Subs/check_point.tscn" id="3_afebg"]
+
+[node name="Test Scene" type="Node" unique_id=1362970334]
+
+[node name="Yapping" type="Control" parent="." unique_id=272174066]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Label" type="Label" parent="Yapping" unique_id=853748329]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 108.0
+offset_top = 33.0
+offset_right = 1340.0
+offset_bottom = 201.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "hello sir nate ,
+ if you are reading this that means that my plan was perfectly executed"
+
+[node name="Label2" type="Label" parent="Yapping" unique_id=642407825]
+layout_mode = 0
+offset_left = 1484.0
+offset_top = 62.0
+offset_right = 1890.0
+offset_bottom = 104.0
+theme_override_font_sizes/font_size = 30
+text = "this , is a jump orb
+                   just out of reach"
+
+[node name="Label3" type="Label" parent="Yapping" unique_id=2076990235]
+layout_mode = 0
+offset_left = 1970.0
+offset_top = 186.0
+offset_right = 2482.0
+offset_bottom = 273.0
+theme_override_font_sizes/font_size = 30
+text = "once you touch it , 
+you can jump another jump mid air"
+
+[node name="Label4" type="Label" parent="Yapping" unique_id=2074305495]
+layout_mode = 0
+offset_left = 3815.0
+offset_top = 209.0
+offset_right = 4327.0
+offset_bottom = 296.0
+theme_override_font_sizes/font_size = 30
+text = "was not that fun?"
+
+[node name="Label5" type="Label" parent="Yapping" unique_id=793379109]
+layout_mode = 0
+offset_left = 5916.0
+offset_top = 256.0
+offset_right = 6747.0
+offset_bottom = 568.0
+theme_override_font_sizes/font_size = 30
+text = "uhhhhhhh ok get to work chop chop , 
+i iiiuhhhhhh made a quick node for checkpoints ,
+code it's logic ,
+and give the player the drawings you made , once i get on
+this project again i'll take those photos
+and make some nice animations
+love you but no homo"
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=84149425]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground" unique_id=2086070037]
+position = Vector2(-81, -61)
+polygon = PackedVector2Array(376, 379, 955, 385, 838, 513, 537, 629, 310, 547)
+
+[node name="Polygon2D" type="Polygon2D" parent="Ground" unique_id=1602514736]
+position = Vector2(-81, -61)
+color = Color(0.20392157, 0.48235294, 0.8745098, 1)
+polygon = PackedVector2Array(376, 379, 955, 385, 838, 513, 537, 629, 310, 547)
+
+[node name="CollisionPolygon2D 2" type="CollisionPolygon2D" parent="Ground" unique_id=736325026]
+position = Vector2(764, 3)
+polygon = PackedVector2Array(316, 403, 911, 403, 881, 481, 719, 563, 414, 520)
+
+[node name="Polygon2D 2" type="Polygon2D" parent="Ground" unique_id=915277734]
+position = Vector2(764, 3)
+color = Color(0.20392157, 0.48235294, 0.8745098, 1)
+polygon = PackedVector2Array(316, 403, 911, 403, 881, 481, 719, 563, 414, 520)
+
+[node name="CollisionPolygon2D 3" type="CollisionPolygon2D" parent="Ground" unique_id=2112439526]
+position = Vector2(1744, 84)
+polygon = PackedVector2Array(240, 347, 1010, 290, 897, 553, 308, 672, 371, 418)
+
+[node name="Polygon2D 3" type="Polygon2D" parent="Ground" unique_id=605243829]
+position = Vector2(1744, 84)
+color = Color(0.20392157, 0.48235294, 0.8745098, 1)
+polygon = PackedVector2Array(240, 347, 1010, 290, 897, 553, 308, 672, 371, 418)
+
+[node name="CollisionPolygon2D 4" type="CollisionPolygon2D" parent="Ground" unique_id=80621740]
+position = Vector2(139, 28)
+polygon = PackedVector2Array(3326, 365, 3956, 378, 4046, 486, 3854, 551, 3606, 505, 3348, 585, 3278, 479)
+
+[node name="Polygon2D 4" type="Polygon2D" parent="Ground" unique_id=1586835950]
+position = Vector2(137, 30)
+color = Color(0.20392157, 0.48235294, 0.8745098, 1)
+polygon = PackedVector2Array(3326, 365, 3956, 378, 4046, 486, 3854, 551, 3606, 505, 3348, 585, 3278, 479)
+
+[node name="CollisionPolygon2D 5" type="CollisionPolygon2D" parent="Ground" unique_id=1733953596]
+position = Vector2(320, -41)
+polygon = PackedVector2Array(5389, 276, 5387, 749, 6327, 762, 6327, 672, 5505, 654, 5493, 264)
+
+[node name="Polygon2D 5" type="Polygon2D" parent="Ground" unique_id=1291363789]
+position = Vector2(320, -41)
+color = Color(0.20392157, 0.48235294, 0.8745098, 1)
+polygon = PackedVector2Array(5389, 276, 5387, 749, 6327, 762, 6327, 672, 5505, 654, 5493, 264)
+
+[node name="Player" parent="." unique_id=1072838877 instance=ExtResource("1_q32xp")]
+position = Vector2(564, 211)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1084379342]
+position_smoothing_enabled = true
+
+[node name="Jump Orbs" type="Node" parent="." unique_id=1031297767]
+
+[node name="Jump Orb" parent="Jump Orbs" unique_id=125218187 instance=ExtResource("1_s3due")]
+position = Vector2(4514, 308)
+
+[node name="Jump Orb2" parent="Jump Orbs" unique_id=1284014352 instance=ExtResource("1_s3due")]
+position = Vector2(3075, 205)
+
+[node name="Jump Orb3" parent="Jump Orbs" unique_id=1364269448 instance=ExtResource("1_s3due")]
+position = Vector2(5078, 307)
+
+[node name="Jump Orb4" parent="Jump Orbs" unique_id=404922491 instance=ExtResource("1_s3due")]
+position = Vector2(1881, 72)
+
+[node name="Jump Orb5" parent="Jump Orbs" unique_id=2039091097 instance=ExtResource("1_s3due")]
+position = Vector2(5505, 299)
+
+[node name="Check Points" type="Node" parent="." unique_id=53422005]
+
+[node name="Check Point" parent="Check Points" unique_id=174571432 instance=ExtResource("3_afebg")]
+position = Vector2(6210, 425)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Check Points/Check Point" unique_id=1198111465]
+polygon = PackedVector2Array(-344, -188, 418, -188, 410, 187, -325, 173)
