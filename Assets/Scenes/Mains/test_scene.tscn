@@ -7,7 +7,6 @@
 [node name="Test Scene" type="Node" unique_id=1362970334]
 
 [node name="Yapping" type="Control" parent="." unique_id=272174066]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 
