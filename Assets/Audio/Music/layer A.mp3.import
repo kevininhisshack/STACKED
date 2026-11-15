@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/layer A.mp3-231d9c639a8bd48d1f1607202165371f.
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=5.3
+bpm=0.0
 beat_count=0
 bar_beats=4

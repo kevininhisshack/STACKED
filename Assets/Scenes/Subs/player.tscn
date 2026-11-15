@@ -42,7 +42,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q32xp"]
 radius = 50.0
-height = 130.0
+height = 116.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1072838877]
 script = ExtResource("1_n4k3f")
