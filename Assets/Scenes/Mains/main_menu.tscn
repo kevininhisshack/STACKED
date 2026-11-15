@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://lt1d75dotp13"]
+
+[node name="Main Menu" type="Node" unique_id=1213536807]
+
+[node name="Layer A" type="Control" parent="." unique_id=1801121597]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Layer B" type="Control" parent="." unique_id=824174227]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

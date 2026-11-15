@@ -4,7 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://chyphwvpndabr" path="res://Assets/Scenes/Subs/jump_orb.tscn" id="1_s3due"]
 [ext_resource type="PackedScene" uid="uid://cmqwek43kjay0" path="res://Assets/Scenes/Subs/check_point.tscn" id="3_afebg"]
 [ext_resource type="PackedScene" uid="uid://deups0we4l3nm" path="res://Assets/Scenes/Subs/death_border.tscn" id="4_53yni"]
-[ext_resource type="AudioStream" uid="uid://brxt6q106yl7l" path="res://Assets/Audio/Music/Layers.mp3" id="5_xvxrd"]
+[ext_resource type="AudioStream" uid="uid://buk5okvsxslaa" path="res://Assets/Audio/Music/layer A.mp3" id="5_vmadm"]
+[ext_resource type="AudioStream" uid="uid://dryh82uocnxmy" path="res://Assets/Audio/Music/layer B.mp3" id="5_xvxrd"]
 
 [node name="Test Scene" type="Node" unique_id=1362970334]
 metadata/_edit_vertical_guides_ = [3712.0, 6998.0]
@@ -72,11 +73,11 @@ i think i already got a nice idea about how the switch will work,
 there is a 2d node for layer 1 and for layer two,
 the switch action checks which is true and makes it false
 and makes the false one true,
-what happens whe you are false? you are hidden and all objects in group
+what happens when you are false? you are hidden and all objects in group
 \"world(X) collisions\" get disabled
-and give the player the drawings you made , once i get on
-this project again i'll take those photos
-and make some nice animations
+and give the player the art you made , once i get on
+this project again i'll take those em
+and make some smooth animations
 love you but no homo"
 
 [node name="Label6" type="Label" parent="Yapping" unique_id=168498689]
@@ -89,6 +90,15 @@ theme_override_font_sizes/font_size = 30
 text = "also i made a checkpoint subscene ,
 just put it in the lvl and give it a collision child ,
 try and fall right now"
+
+[node name="read me" type="Label" parent="Yapping" unique_id=458325766]
+layout_mode = 0
+offset_left = 6805.0
+offset_top = 1172.0
+offset_right = 7477.0
+offset_bottom = 1641.0
+theme_override_font_sizes/font_size = 30
+text = "yooo uhhh read the stuff in the ideas channel , that is what we go of around these parts"
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=84149425]
 
@@ -178,15 +188,20 @@ position = Vector2(6210, 425)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Check Points/Check Point2" unique_id=1198111465]
 position = Vector2(-3, 3)
-polygon = PackedVector2Array(-344, -188, 418, -188, 410, 187, -325, 173)
+polygon = PackedVector2Array(-479, -341, 427, -228, 425, -29, 410, 187, -419, 156)
 
 [node name="Death Border" parent="." unique_id=1881485949 instance=ExtResource("4_53yni")]
 position = Vector2(3745, 2413)
 
 [node name="Audio" type="Node" parent="." unique_id=840622766]
 
-[node name="level music" type="AudioStreamPlayer" parent="Audio" unique_id=42930235]
-stream = ExtResource("5_xvxrd")
-volume_db = 6.0
+[node name="layer A track" type="AudioStreamPlayer" parent="Audio" unique_id=42930235]
+stream = ExtResource("5_vmadm")
+volume_db = 0.5
 autoplay = true
+parameters/looping = true
+
+[node name="layer B track" type="AudioStreamPlayer" parent="Audio" unique_id=356224548]
+stream = ExtResource("5_xvxrd")
+volume_db = 0.5
 parameters/looping = true

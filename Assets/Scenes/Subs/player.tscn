@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bhnc66nin5m1x" path="res://Assets/Scripts/player.gd" id="1_n4k3f"]
 [ext_resource type="Texture2D" uid="uid://bjypxkmc84yxe" path="res://Assets/Images/Sprites/icon.svg" id="2_j1w7u"]
+[ext_resource type="AudioStream" uid="uid://dnjx6inhpsmqq" path="res://Assets/Audio/SFX/jump.mp3" id="3_0f6be"]
+[ext_resource type="AudioStream" uid="uid://bqdpe1krsb2fm" path="res://Assets/Audio/SFX/walking.mp3" id="4_l711e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -52,3 +54,18 @@ autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1367288436]
 shape = SubResource("CapsuleShape2D_q32xp")
+
+[node name="sfx" type="Node" parent="." unique_id=1322898585]
+
+[node name="jump" type="AudioStreamPlayer" parent="sfx" unique_id=1945789537]
+stream = ExtResource("3_0f6be")
+volume_db = 1.0
+
+[node name="fall" type="AudioStreamPlayer" parent="sfx" unique_id=865715894]
+stream = ExtResource("3_0f6be")
+volume_db = -10.0
+pitch_scale = 0.8
+
+[node name="walk" type="AudioStreamPlayer" parent="sfx" unique_id=1542687928]
+stream = ExtResource("4_l711e")
+volume_db = 1.0

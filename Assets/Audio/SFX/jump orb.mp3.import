@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://w7fbamqua8fh"
+path="res://.godot/imported/jump orb.mp3-22a7bd3babdb8ba061153fdaeaf24195.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/jump orb.mp3"
+dest_files=["res://.godot/imported/jump orb.mp3-22a7bd3babdb8ba061153fdaeaf24195.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
