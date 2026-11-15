@@ -1,13 +1,102 @@
 [gd_scene format=3 uid="uid://lt1d75dotp13"]
 
+[ext_resource type="Script" uid="uid://diitw0bbyi5dl" path="res://Assets/Scripts/audio_options.gd" id="1_ci7te"]
+[ext_resource type="Script" uid="uid://bwn5kuqwmb1qc" path="res://Assets/Scripts/main_menu.gd" id="1_slseb"]
+[ext_resource type="AudioStream" uid="uid://bj6th3503kyaa" path="res://Assets/Audio/Music/main menu layer A.mp3" id="3_3vjrf"]
+[ext_resource type="AudioStream" uid="uid://c0bu52ljga1qq" path="res://Assets/Audio/Music/main menu layer B.mp3" id="4_qm0xw"]
+
 [node name="Main Menu" type="Node" unique_id=1213536807]
+script = ExtResource("1_slseb")
 
 [node name="Layer A" type="Control" parent="." unique_id=1801121597]
+visible = false
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Layer A" unique_id=1000667933]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -217.0
+offset_right = 217.0
+offset_bottom = 137.0
+grow_horizontal = 2
+scale = Vector2(1, 2)
+theme_override_font_sizes/font_size = 100
+text = "STACKED"
 
 [node name="Layer B" type="Control" parent="." unique_id=824174227]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Layer B" unique_id=1405064043]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -25.0
+offset_right = 43.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.48225296, 0.51064885, 0.8511354, 1)
+theme_override_colors/font_focus_color = Color(0.74028444, 0.42506734, 1.92523e-07, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.55547124, 0.50259644, 1)
+theme_override_colors/font_hover_color = Color(0.8543419, 0.23965564, 0.3497475, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.38159138, 0.4049494, 0.42842472, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(0.60227776, 0.3836213, 0.32535475, 1)
+theme_override_colors/icon_pressed_color = Color(0.72842604, 0.03648749, 0.040286496, 1)
+theme_override_colors/icon_hover_color = Color(0.1946224, 0.15680113, 0.14641109, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/icon_max_width = 0
+theme_override_font_sizes/font_size = 30
+text = "play"
+
+[node name="audio options" type="Node" parent="." unique_id=97758106]
+script = ExtResource("1_ci7te")
+
+[node name="Button" type="Button" parent="." unique_id=952606704]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -78.0
+offset_right = 142.0
+offset_bottom = -28.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "switch"
+
+[node name="Audio" type="Node" parent="." unique_id=2107794324]
+
+[node name="layerA" type="AudioStreamPlayer" parent="Audio" unique_id=303614295]
+stream = ExtResource("3_3vjrf")
+autoplay = true
+parameters/looping = true
+
+[node name="layerB" type="AudioStreamPlayer" parent="Audio" unique_id=563093636]
+stream = ExtResource("4_qm0xw")
+autoplay = true
+parameters/looping = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=547171958]
 offset_right = 40.0
 offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="Layer B/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_switch_pressed"]

@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="STACKED"
-run/main_scene="uid://g5r7jxwbc205"
+run/main_scene="uid://lt1d75dotp13"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://Assets/Images/Sprites/icon.svg"
+
+[autoload]
+
+AudioOptions="*uid://diitw0bbyi5dl"
 
 [display]
 
@@ -50,4 +54,4 @@ jump={
 
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
-environment/defaults/default_clear_color=Color(0.10375778, 0.13145363, 0.16688296, 1)
+environment/defaults/default_clear_color=Color(0.16862746, 0.10980392, 0.13333334, 1)
