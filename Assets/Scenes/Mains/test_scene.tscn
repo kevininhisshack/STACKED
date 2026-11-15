@@ -197,9 +197,9 @@ position = Vector2(3745, 2413)
 
 [node name="layer A track" type="AudioStreamPlayer" parent="Audio" unique_id=42930235]
 stream = ExtResource("5_vmadm")
+autoplay = true
 parameters/looping = true
 
 [node name="layer B track" type="AudioStreamPlayer" parent="Audio" unique_id=356224548]
 stream = ExtResource("5_xvxrd")
-autoplay = true
 parameters/looping = true

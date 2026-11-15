@@ -1,7 +1,9 @@
 extends Node
 
-@onready var trackA = $Audio/layerA
-@onready var trackB = $Audio/layerB
+@onready var trackA := $Audio/layerA
+@onready var trackB := $Audio/layerB
+@export var loop_start := 0.0
+@export var end_time := 0.0
 
 # layerA background : 1a222b
 # layerA background : 2b1c22
@@ -27,3 +29,7 @@ func _on_button_pressed() -> void:
 
 func _on_switch_pressed() -> void:
 	in_layerA = not in_layerA
+
+func _process(delta: float) -> void:
+	if $Audio/layerA.get_playback_position() >= end_time:
+		$Audio/layerA.seek(loop_start)

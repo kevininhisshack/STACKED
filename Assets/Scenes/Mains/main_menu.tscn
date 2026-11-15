@@ -7,28 +7,24 @@
 
 [node name="Main Menu" type="Node" unique_id=1213536807]
 script = ExtResource("1_slseb")
+loop_start = 9.4
+end_time = 13.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=547171958]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Layer A" type="Control" parent="." unique_id=1801121597]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Label" type="Label" parent="Layer A" unique_id=1000667933]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -217.0
-offset_right = 217.0
-offset_bottom = 137.0
-grow_horizontal = 2
-scale = Vector2(1, 2)
-theme_override_font_sizes/font_size = 100
-text = "STACKED"
 
 [node name="Layer B" type="Control" parent="." unique_id=824174227]
 layout_mode = 3
@@ -86,17 +82,25 @@ text = "switch"
 [node name="layerA" type="AudioStreamPlayer" parent="Audio" unique_id=303614295]
 stream = ExtResource("3_3vjrf")
 autoplay = true
-parameters/looping = true
+parameters/looping = false
 
 [node name="layerB" type="AudioStreamPlayer" parent="Audio" unique_id=563093636]
 stream = ExtResource("4_qm0xw")
 autoplay = true
 parameters/looping = true
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=547171958]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0, 0, 0, 1)
+[node name="logo" type="Label" parent="." unique_id=1000667933]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -217.0
+offset_top = -60.0
+offset_right = 217.0
+offset_bottom = 77.0
+grow_horizontal = 2
+scale = Vector2(1, 3)
+theme_override_font_sizes/font_size = 100
+text = "STACKED"
 
 [connection signal="pressed" from="Layer B/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_switch_pressed"]
