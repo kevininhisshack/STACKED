@@ -1,19 +1,17 @@
 extends Node
 
-@onready var trackA := $Audio/layerA
-@onready var trackB := $Audio/layerB
-@export var loop_start := 0.0
-@export var end_time := 0.0
+@onready var trackA := $Audio/trackA
+@onready var trackB := $Audio/trackB
 
 # layerA background : 1a222b
-# layerA background : 2b1c22
+# layerB background : 2b1c22
 
 var in_layerA := true :
 	set(value):
 		var layer_col: Color 
 		in_layerA = value
 		layer_col = Color("1a222b") if value else Color("2b1c22")
-		$ColorRect.color = layer_col
+		$background.color = layer_col
 		$"Layer A".visible = value
 		$"Layer B".visible = not value
 		trackA.volume_db = 0 if value else -80
@@ -21,6 +19,14 @@ var in_layerA := true :
 
 func _ready() -> void:
 	in_layerA = in_layerA
+	
+	# intro sequence
+	$Audio/intro.play()
+	await get_tree().create_timer(8.75).timeout
+	$logo.position.y = -60.0
+	$intro.queue_free()  # make it fade out instead of delete
+	trackA.play()
+	trackB.play()
 
 
 func _on_button_pressed() -> void:
@@ -31,5 +37,4 @@ func _on_switch_pressed() -> void:
 	in_layerA = not in_layerA
 
 func _process(delta: float) -> void:
-	if $Audio/layerA.get_playback_position() >= end_time:
-		$Audio/layerA.seek(loop_start)
+	pass

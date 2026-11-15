@@ -12,6 +12,7 @@ metadata/_edit_vertical_guides_ = [3712.0, 6998.0]
 metadata/_edit_horizontal_guides_ = [912.0]
 
 [node name="Yapping" type="Control" parent="." unique_id=272174066]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 

@@ -2,15 +2,14 @@
 
 [ext_resource type="Script" uid="uid://diitw0bbyi5dl" path="res://Assets/Scripts/audio_options.gd" id="1_ci7te"]
 [ext_resource type="Script" uid="uid://bwn5kuqwmb1qc" path="res://Assets/Scripts/main_menu.gd" id="1_slseb"]
-[ext_resource type="AudioStream" uid="uid://bj6th3503kyaa" path="res://Assets/Audio/Music/main menu layer A.mp3" id="3_3vjrf"]
-[ext_resource type="AudioStream" uid="uid://c0bu52ljga1qq" path="res://Assets/Audio/Music/main menu layer B.mp3" id="4_qm0xw"]
+[ext_resource type="AudioStream" uid="uid://bjdws1ihkiqpx" path="res://Assets/Audio/Music/menu intro.WAV" id="3_qm0xw"]
+[ext_resource type="AudioStream" uid="uid://dohd26irypio8" path="res://Assets/Audio/Music/menu trackA.WAV" id="4_fac22"]
+[ext_resource type="AudioStream" uid="uid://cwadoog606mjy" path="res://Assets/Audio/Music/menu trackB.WAV" id="5_i0ct7"]
 
 [node name="Main Menu" type="Node" unique_id=1213536807]
 script = ExtResource("1_slseb")
-loop_start = 9.4
-end_time = 13.0
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=547171958]
+[node name="background" type="ColorRect" parent="." unique_id=547171958]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -79,24 +78,33 @@ text = "switch"
 
 [node name="Audio" type="Node" parent="." unique_id=2107794324]
 
-[node name="layerA" type="AudioStreamPlayer" parent="Audio" unique_id=303614295]
-stream = ExtResource("3_3vjrf")
-autoplay = true
-parameters/looping = false
+[node name="intro" type="AudioStreamPlayer" parent="Audio" unique_id=19686544]
+stream = ExtResource("3_qm0xw")
 
-[node name="layerB" type="AudioStreamPlayer" parent="Audio" unique_id=563093636]
-stream = ExtResource("4_qm0xw")
-autoplay = true
-parameters/looping = true
+[node name="trackA" type="AudioStreamPlayer" parent="Audio" unique_id=1554973600]
+stream = ExtResource("4_fac22")
+
+[node name="trackB" type="AudioStreamPlayer" parent="Audio" unique_id=1429593110]
+stream = ExtResource("5_i0ct7")
+
+[node name="intro" type="ColorRect" parent="." unique_id=542591056]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="logo" type="Label" parent="." unique_id=1000667933]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -217.0
-offset_top = -60.0
+offset_top = 100.0
 offset_right = 217.0
-offset_bottom = 77.0
+offset_bottom = 237.0
 grow_horizontal = 2
 scale = Vector2(1, 3)
 theme_override_font_sizes/font_size = 100
