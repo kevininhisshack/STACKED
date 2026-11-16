@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var speed: float = 550.0
 @export var jump_velocity: float = -550.0
 @export var jump_cut : float = 0.3
+@export var starting_layer : bool 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -18,7 +19,7 @@ var deaths : int = 0
 # if we get enough time we can make a ranking system
 
 func _ready():
-	pass
+	GameData.in_layerA = starting_layer
 
 func _physics_process(delta):
 	# Gravity
@@ -26,6 +27,10 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	elif velocity.y >= 0:
 		jumps = max(jumps , 1)
+		
+	# the switch
+	if Input.is_action_just_pressed("switch"):
+		GameData.in_layerA = not GameData.in_layerA
 
 	# Jump
 	if Input.is_action_just_pressed("jump") and jumps > 0:
@@ -39,7 +44,7 @@ func _physics_process(delta):
 
 	# Horizontal movement
 	var direction = Input.get_axis("left", "right")
-
+	
 	if direction != 0:
 		velocity.x = direction * speed
 		animated_sprite.flip_h = direction < 0

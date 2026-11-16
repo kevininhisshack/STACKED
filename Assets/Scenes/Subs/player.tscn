@@ -52,7 +52,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mubv7"]
-size = Vector2(75.37625, 107.13197)
+size = Vector2(75.37625, 111.34977)
 
 [node name="Player" type="CharacterBody2D" unique_id=1072838877]
 scale = Vector2(0.72929907, 0.7619306)
@@ -65,7 +65,7 @@ autoplay = "idle"
 frame_progress = 0.06755535
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1367288436]
-position = Vector2(4.1135397, -5.9060483)
+position = Vector2(4.1135397, -9.187187)
 scale = Vector2(0.90955687, 1.5558553)
 shape = SubResource("RectangleShape2D_mubv7")
 
