@@ -165,7 +165,6 @@ gate = NodePath("../../Ground/Polygon2D 3/Gate Component")
 layer = "A"
 
 [node name="Yapping" type="Control" parent="layer A" unique_id=272174066]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 
