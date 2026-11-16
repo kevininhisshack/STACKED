@@ -2,8 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://2g4b8h0uij5a" path="res://Assets/Scenes/Subs/player.tscn" id="1_q32xp"]
 [ext_resource type="PackedScene" uid="uid://chyphwvpndabr" path="res://Assets/Scenes/Subs/jump_orb.tscn" id="1_s3due"]
+[ext_resource type="PackedScene" uid="uid://cil0c2532hd11" path="res://Assets/Scenes/Subs/gate_component.tscn" id="2_0px0o"]
 [ext_resource type="PackedScene" uid="uid://cmqwek43kjay0" path="res://Assets/Scenes/Subs/check_point.tscn" id="3_afebg"]
 [ext_resource type="PackedScene" uid="uid://deups0we4l3nm" path="res://Assets/Scenes/Subs/death_border.tscn" id="4_53yni"]
+[ext_resource type="PackedScene" uid="uid://coj876gx51t68" path="res://Assets/Scenes/Subs/key.tscn" id="5_25ocr"]
 [ext_resource type="AudioStream" uid="uid://buk5okvsxslaa" path="res://Assets/Audio/Music/layer A.mp3" id="5_vmadm"]
 [ext_resource type="AudioStream" uid="uid://dryh82uocnxmy" path="res://Assets/Audio/Music/layer B.mp3" id="5_xvxrd"]
 
@@ -15,6 +17,19 @@ metadata/_edit_horizontal_guides_ = [912.0]
 visible = false
 layout_mode = 3
 anchors_preset = 0
+
+[node name="Label4" type="Label" parent="Yapping" unique_id=72633587]
+layout_mode = 0
+offset_left = 6897.0
+offset_top = 209.0
+offset_right = 8492.0
+offset_bottom = 431.0
+theme_override_font_sizes/font_size = 30
+text = "ok so basiclly , in the SUBS file in the SCENES there is a \"gate component\" ,
+make it a child of the block you want as a gate , select how much keys to
+open it , and drag the objects collison to gatecollider , then ,
+you have keys in the SUBS file , take one , and drag the gate component of the gate you want this key to open ,
+i,ll make an actual animation for the keys later"
 
 [node name="Label" type="Label" parent="Yapping" unique_id=853748329]
 layout_mode = 1
@@ -35,148 +50,95 @@ text = "hello sir nate ,
 
 [node name="Label2" type="Label" parent="Yapping" unique_id=642407825]
 layout_mode = 0
-offset_left = 1484.0
-offset_top = 62.0
-offset_right = 1890.0
-offset_bottom = 104.0
+offset_left = 2031.0
+offset_top = 21.0
+offset_right = 2437.0
+offset_bottom = 108.0
 theme_override_font_sizes/font_size = 30
-text = "this , is a jump orb
+text = "this , is a key
                    just out of reach"
 
 [node name="Label3" type="Label" parent="Yapping" unique_id=2076990235]
 layout_mode = 0
-offset_left = 1970.0
-offset_top = 186.0
-offset_right = 2482.0
-offset_bottom = 273.0
+offset_left = 3055.0
+offset_top = 238.0
+offset_right = 3567.0
+offset_bottom = 325.0
 theme_override_font_sizes/font_size = 30
 text = "once you touch it , 
-you can jump another jump mid air"
+it reduces its gates keys by one"
 
-[node name="Label4" type="Label" parent="Yapping" unique_id=2074305495]
-layout_mode = 0
-offset_left = 3815.0
-offset_top = 209.0
-offset_right = 4327.0
-offset_bottom = 296.0
-theme_override_font_sizes/font_size = 30
-text = "was not that fun?"
+[node name="Player" parent="." unique_id=1072838877 instance=ExtResource("1_q32xp")]
+position = Vector2(564, 211)
 
-[node name="Label5" type="Label" parent="Yapping" unique_id=793379109]
-layout_mode = 0
-offset_left = 5863.0
-offset_top = 85.0
-offset_right = 6914.0
-offset_bottom = 577.0
-theme_override_font_sizes/font_size = 30
-text = "uhhhhhhh ok get to work chop chop , 
-i think i already got a nice idea about how the switch will work,
-there is a 2d node for layer 1 and for layer two,
-the switch action checks which is true and makes it false
-and makes the false one true,
-what happens when you are false? you are hidden and all objects in group
-\"world(X) collisions\" get disabled
-and give the player the art you made , once i get on
-this project again i'll take those em
-and make some smooth animations
-love you but no homo"
-
-[node name="Label6" type="Label" parent="Yapping" unique_id=168498689]
-layout_mode = 0
-offset_left = 5871.0
-offset_top = 731.0
-offset_right = 6527.0
-offset_bottom = 818.0
-theme_override_font_sizes/font_size = 30
-text = "also i made a checkpoint subscene ,
-just put it in the lvl and give it a collision child ,
-try and fall right now"
-
-[node name="read me" type="Label" parent="Yapping" unique_id=458325766]
-layout_mode = 0
-offset_left = 6805.0
-offset_top = 1172.0
-offset_right = 7477.0
-offset_bottom = 1641.0
-theme_override_font_sizes/font_size = 30
-text = "yooo uhhh read the stuff in the ideas channel , that is what we go of around these parts"
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1084379342]
+limit_left = -100
+limit_top = -200
+limit_right = 9000
+limit_bottom = 1000
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=84149425]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground" unique_id=2086070037]
-position = Vector2(-81, -61)
-polygon = PackedVector2Array(376, 379, 955, 385, 838, 513, 537, 629, 310, 547)
 
 [node name="Polygon2D" type="Polygon2D" parent="Ground" unique_id=1602514736]
 position = Vector2(-81, -61)
 color = Color(0.20392157, 0.48235294, 0.8745098, 1)
 polygon = PackedVector2Array(376, 379, 955, 385, 838, 513, 537, 629, 310, 547)
 
-[node name="CollisionPolygon2D 2" type="CollisionPolygon2D" parent="Ground" unique_id=736325026]
-position = Vector2(764, 3)
-polygon = PackedVector2Array(316, 403, 911, 403, 881, 481, 719, 563, 414, 520)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground" unique_id=2086070037]
+position = Vector2(-81, -61)
+polygon = PackedVector2Array(376, 379, 955, 385, 838, 513, 537, 629, 310, 547)
 
 [node name="Polygon2D 2" type="Polygon2D" parent="Ground" unique_id=915277734]
-position = Vector2(764, 3)
+position = Vector2(3392, 48)
 color = Color(0.20392157, 0.48235294, 0.8745098, 1)
-polygon = PackedVector2Array(316, 403, 911, 403, 881, 481, 719, 563, 414, 520)
+polygon = PackedVector2Array(316, 403, 1853, 422, 1808, 492, 1152, 523, 441, 484)
 
-[node name="CollisionPolygon2D 3" type="CollisionPolygon2D" parent="Ground" unique_id=2112439526]
-position = Vector2(1744, 84)
-polygon = PackedVector2Array(240, 347, 1010, 290, 897, 553, 308, 672, 371, 418)
+[node name="CollisionPolygon2D 2" type="CollisionPolygon2D" parent="Ground" unique_id=809159732]
+position = Vector2(3392, 48)
+polygon = PackedVector2Array(316, 403, 1617.9641, 419.09473, 1853, 422, 1808, 492, 1152, 523, 441, 484)
 
-[node name="Polygon2D 3" type="Polygon2D" parent="Ground" unique_id=605243829]
-position = Vector2(1744, 84)
+[node name="Polygon2D 3" type="Polygon2D" parent="Ground" unique_id=233114143]
+position = Vector2(5075.9, 576.30005)
 color = Color(0.20392157, 0.48235294, 0.8745098, 1)
-polygon = PackedVector2Array(240, 347, 1010, 290, 897, 553, 308, 672, 371, 418)
+polygon = PackedVector2Array(181, 233, 339, -139, 136, -1876, 639, -1849, 417, -131, 560, 235)
 
-[node name="CollisionPolygon2D 4" type="CollisionPolygon2D" parent="Ground" unique_id=80621740]
-position = Vector2(139, 28)
-polygon = PackedVector2Array(3326, 365, 3956, 378, 4046, 486, 3854, 551, 3606, 505, 3348, 585, 3278, 479)
+[node name="Gate Component" parent="Ground/Polygon2D 3" unique_id=640938381 node_paths=PackedStringArray("gate_collider") instance=ExtResource("2_0px0o")]
+num_of_keys = 3
+gate_collider = NodePath("../../CollisionPolygon2D 3")
 
-[node name="Polygon2D 4" type="Polygon2D" parent="Ground" unique_id=1586835950]
-position = Vector2(137, 30)
+[node name="CollisionPolygon2D 3" type="CollisionPolygon2D" parent="Ground" unique_id=709005454]
+position = Vector2(5075.9, 576.30005)
+polygon = PackedVector2Array(181, 233, 339, -139, 136, -1876, 639, -1849, 417, -131, 560, 235)
+
+[node name="Polygon2D 4" type="Polygon2D" parent="Ground" unique_id=1479904003]
+position = Vector2(6336, 226)
 color = Color(0.20392157, 0.48235294, 0.8745098, 1)
-polygon = PackedVector2Array(3326, 365, 3956, 378, 4046, 486, 3854, 551, 3606, 505, 3348, 585, 3278, 479)
+polygon = PackedVector2Array(48, 329, 1399, 301, 1981, 252, 1646, 580, 1007, 507, 380, 572)
 
-[node name="CollisionPolygon2D 5" type="CollisionPolygon2D" parent="Ground" unique_id=1733953596]
-position = Vector2(320, -41)
-polygon = PackedVector2Array(5389, 276, 5387, 749, 6327, 762, 6327, 672, 5505, 654, 5493, 264)
+[node name="CollisionPolygon2D 4" type="CollisionPolygon2D" parent="Ground" unique_id=1622212719]
+position = Vector2(6336, 226)
+polygon = PackedVector2Array(48, 329, 1399, 301, 1981, 252, 1646, 580, 1007, 507, 380, 572)
 
-[node name="Polygon2D 5" type="Polygon2D" parent="Ground" unique_id=1291363789]
-position = Vector2(320, -41)
+[node name="Polygon2D 5" type="Polygon2D" parent="Ground" unique_id=1637965523]
+position = Vector2(1793, 170)
 color = Color(0.20392157, 0.48235294, 0.8745098, 1)
-polygon = PackedVector2Array(5389, 276, 5387, 749, 6327, 762, 6327, 672, 5505, 654, 5493, 264)
+polygon = PackedVector2Array(48, 329, 1189.251, 305.3474, 1399, 301, 1981, 252, 1646, 580, 1007, 507, 380, 572)
 
-[node name="Player" parent="." unique_id=1072838877 instance=ExtResource("1_q32xp")]
-position = Vector2(564, 211)
+[node name="CollisionPolygon2D 5" type="CollisionPolygon2D" parent="Ground" unique_id=1954851974]
+position = Vector2(1791, 169)
+polygon = PackedVector2Array(48, 329, 1189.251, 305.3474, 1399, 301, 1981, 252, 1646, 580, 1007, 507, 380, 572)
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1084379342]
-limit_left = -1048
-limit_top = -100
-limit_right = 7000
-limit_bottom = 900
-position_smoothing_enabled = true
-position_smoothing_speed = 8.0
+[node name="Jump Orbs" type="Node2D" parent="." unique_id=127670989]
 
-[node name="Jump Orbs" type="Node" parent="." unique_id=1031297767]
+[node name="Jump Orb" parent="Jump Orbs" unique_id=404922491 instance=ExtResource("1_s3due")]
+position = Vector2(1209, 132)
 
-[node name="Jump Orb" parent="Jump Orbs" unique_id=125218187 instance=ExtResource("1_s3due")]
-position = Vector2(4514, 308)
+[node name="Jump Orb2" parent="Jump Orbs" unique_id=397508505 instance=ExtResource("1_s3due")]
+position = Vector2(5915, 385)
 
-[node name="Jump Orb2" parent="Jump Orbs" unique_id=1284014352 instance=ExtResource("1_s3due")]
-position = Vector2(3075, 205)
-
-[node name="Jump Orb3" parent="Jump Orbs" unique_id=1364269448 instance=ExtResource("1_s3due")]
-position = Vector2(5078, 307)
-
-[node name="Jump Orb4" parent="Jump Orbs" unique_id=404922491 instance=ExtResource("1_s3due")]
-position = Vector2(1881, 72)
-
-[node name="Jump Orb5" parent="Jump Orbs" unique_id=2039091097 instance=ExtResource("1_s3due")]
-position = Vector2(5505, 299)
-
-[node name="Check Points" type="Node" parent="." unique_id=53422005]
+[node name="Check Points" type="Node2D" parent="." unique_id=251345041]
 
 [node name="Check Point" parent="Check Points" unique_id=174571432 instance=ExtResource("3_afebg")]
 position = Vector2(565, 215)
@@ -184,12 +146,35 @@ position = Vector2(565, 215)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Check Points/Check Point" unique_id=1188171655]
 polygon = PackedVector2Array(-246, -168, -246, 99, 273, 102, 273, -175)
 
-[node name="Check Point2" parent="Check Points" unique_id=1055194683 instance=ExtResource("3_afebg")]
-position = Vector2(6210, 425)
+[node name="Check Point2" parent="Check Points" unique_id=319160577 instance=ExtResource("3_afebg")]
+position = Vector2(4957, 312)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Check Points/Check Point2" unique_id=1198111465]
-position = Vector2(-3, 3)
-polygon = PackedVector2Array(-479, -341, 427, -228, 425, -29, 410, 187, -419, 156)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Check Points/Check Point2" unique_id=1097898241]
+polygon = PackedVector2Array(275, 144, 266, -202, -210, -287, -242, 134)
+
+[node name="Check Point3" parent="Check Points" unique_id=589676662 instance=ExtResource("3_afebg")]
+position = Vector2(7407, -251)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Check Points/Check Point3" unique_id=99486896]
+position = Vector2(-7886, 776)
+polygon = PackedVector2Array(7623, -347, 7153, -342, 7176, -30, 7613, -30)
+
+[node name="Keys" type="Node2D" parent="." unique_id=942870509]
+
+[node name="Key" parent="Keys" unique_id=723861586 node_paths=PackedStringArray("gate") instance=ExtResource("5_25ocr")]
+position = Vector2(3973, 271)
+gate = NodePath("../../Ground/Polygon2D 3/Gate Component")
+
+[node name="Key2" parent="Keys" unique_id=291257703 instance=ExtResource("5_25ocr")]
+position = Vector2(2529, -108)
+
+[node name="Key3" parent="Keys" unique_id=1937677452 node_paths=PackedStringArray("gate") instance=ExtResource("5_25ocr")]
+position = Vector2(4467, 154)
+gate = NodePath("../../Ground/Polygon2D 3/Gate Component")
+
+[node name="Key4" parent="Keys" unique_id=1831305573 node_paths=PackedStringArray("gate") instance=ExtResource("5_25ocr")]
+position = Vector2(5130, 278)
+gate = NodePath("../../Ground/Polygon2D 3/Gate Component")
 
 [node name="Death Border" parent="." unique_id=1881485949 instance=ExtResource("4_53yni")]
 position = Vector2(3745, 2413)
@@ -198,7 +183,6 @@ position = Vector2(3745, 2413)
 
 [node name="layer A track" type="AudioStreamPlayer" parent="Audio" unique_id=42930235]
 stream = ExtResource("5_vmadm")
-autoplay = true
 parameters/looping = true
 
 [node name="layer B track" type="AudioStreamPlayer" parent="Audio" unique_id=356224548]

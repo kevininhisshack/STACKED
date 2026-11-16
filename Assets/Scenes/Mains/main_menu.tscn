@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://lt1d75dotp13"]
 
-[ext_resource type="Script" uid="uid://diitw0bbyi5dl" path="res://Assets/Scripts/audio_options.gd" id="1_ci7te"]
+[ext_resource type="Script" uid="uid://diitw0bbyi5dl" path="res://Assets/Scripts/game_data.gd" id="1_ci7te"]
 [ext_resource type="Script" uid="uid://bwn5kuqwmb1qc" path="res://Assets/Scripts/main_menu.gd" id="1_slseb"]
 [ext_resource type="AudioStream" uid="uid://bjdws1ihkiqpx" path="res://Assets/Audio/Music/menu intro.WAV" id="3_qm0xw"]
 [ext_resource type="AudioStream" uid="uid://dohd26irypio8" path="res://Assets/Audio/Music/menu trackA.WAV" id="4_fac22"]
@@ -61,7 +61,7 @@ theme_override_constants/icon_max_width = 0
 theme_override_font_sizes/font_size = 30
 text = "play"
 
-[node name="audio options" type="Node" parent="." unique_id=97758106]
+[node name="GameData" type="Node" parent="." unique_id=97758106]
 script = ExtResource("1_ci7te")
 
 [node name="Button" type="Button" parent="." unique_id=952606704]

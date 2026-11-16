@@ -6,13 +6,15 @@
 script/source = "extends Node
 
 @export_range(1 , 100) var num_of_keys : int = 1 
-@export var gate_collider : CollisionObject2D 
+@export var gate_collider : CollisionPolygon2D
 
 func check_keys():
 	if num_of_keys == 0:
-		$GateUnlock.play(0.20)
-		gate_collider.queue_free()
-		get_parent().queue_free()
+		$GateUnlock.play()
+		gate_collider.set_deferred(\"disabled\" , true)
+		get_parent().hide()
+		await $GateUnlock.finished
+		queue_free()
 "
 
 [node name="Gate Component" type="Node" unique_id=640938381]
@@ -21,3 +23,4 @@ num_of_keys = 5
 
 [node name="GateUnlock" type="AudioStreamPlayer" parent="." unique_id=1855269687]
 stream = ExtResource("1_t0416")
+volume_db = 10.0

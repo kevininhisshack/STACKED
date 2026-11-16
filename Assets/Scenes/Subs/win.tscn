@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cjo6h4crmg6vq"]
+
+[ext_resource type="Script" uid="uid://j2fwbnegs2u5" path="res://Assets/Scripts/win.gd" id="1_gaqvn"]
+[ext_resource type="Texture2D" uid="uid://bjypxkmc84yxe" path="res://Assets/Images/Sprites/icon.svg" id="2_o2753"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o2753")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o2753")
+}],
+"loop": 0,
+"name": &"win",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(452, 194)
+
+[node name="Win" type="Area2D" unique_id=1796645974]
+script = ExtResource("1_gaqvn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=241310474]
+position = Vector2(184.5, 52.5)
+scale = Vector2(3.8828125, 1.8203125)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.8494808
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=706363901]
+position = Vector2(186, 51)
+shape = SubResource("RectangleShape2D_yf5fn")
