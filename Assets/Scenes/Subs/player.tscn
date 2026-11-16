@@ -51,9 +51,8 @@ animations = [{
 "speed": 5.5
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q32xp"]
-radius = 50.0
-height = 116.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mubv7"]
+size = Vector2(75.37625, 107.13197)
 
 [node name="Player" type="CharacterBody2D" unique_id=1072838877]
 scale = Vector2(0.72929907, 0.7619306)
@@ -66,9 +65,9 @@ autoplay = "idle"
 frame_progress = 0.06755535
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1367288436]
-position = Vector2(5.4847183, 0)
-scale = Vector2(0.9095568, 1.5558553)
-shape = SubResource("CapsuleShape2D_q32xp")
+position = Vector2(4.1135397, -5.9060483)
+scale = Vector2(0.90955687, 1.5558553)
+shape = SubResource("RectangleShape2D_mubv7")
 
 [node name="sfx" type="Node" parent="." unique_id=1322898585]
 

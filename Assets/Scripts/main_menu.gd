@@ -20,6 +20,9 @@ var in_layerA := true :
 func _ready() -> void:
 	in_layerA = in_layerA
 	
+	# for faster testing , remove later
+	get_tree().change_scene_to_file("res://Assets/Scenes/Mains/test_scene.tscn")
+	
 	# intro sequence
 	$Audio/intro.play()
 	await get_tree().create_timer(8.75).timeout
@@ -27,6 +30,8 @@ func _ready() -> void:
 	$intro.queue_free()  # make it fade out instead of delete
 	trackA.play()
 	trackB.play()
+	
+
 
 
 func _on_button_pressed() -> void:

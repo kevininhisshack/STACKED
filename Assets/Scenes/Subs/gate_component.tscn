@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cil0c2532hd11"]
+
+[ext_resource type="AudioStream" uid="uid://0lpcmhismxlw" path="res://Assets/Audio/SFX/gate unlock.mp3" id="1_t0416"]
+
+[sub_resource type="GDScript" id="GDScript_g4v7s"]
+script/source = "extends Node
+
+@export_range(1 , 100) var num_of_keys : int = 1 
+@export var gate_collider : CollisionObject2D 
+
+func check_keys():
+	if num_of_keys == 0:
+		$GateUnlock.play(0.20)
+		gate_collider.queue_free()
+		get_parent().queue_free()
+"
+
+[node name="Gate Component" type="Node" unique_id=640938381]
+script = SubResource("GDScript_g4v7s")
+num_of_keys = 5
+
+[node name="GateUnlock" type="AudioStreamPlayer" parent="." unique_id=1855269687]
+stream = ExtResource("1_t0416")
