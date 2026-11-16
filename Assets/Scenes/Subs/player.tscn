@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c8dw8l61jl8ic" path="res://Assets/Images/Sprites/jump.svg" id="5_kkj0o"]
 [ext_resource type="Texture2D" uid="uid://cr1y7js85l0al" path="res://Assets/Images/Sprites/walk one.svg" id="6_d7xje"]
 [ext_resource type="Texture2D" uid="uid://da0qxp7048bbd" path="res://Assets/Images/Sprites/walk 2.svg" id="7_2uwn5"]
+[ext_resource type="AudioStream" uid="uid://b8bngr43tu3sr" path="res://Assets/Audio/SFX/switch.mp3" id="10_8obyt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -83,3 +84,7 @@ pitch_scale = 0.8
 [node name="walk" type="AudioStreamPlayer" parent="sfx" unique_id=1542687928]
 stream = ExtResource("4_l711e")
 volume_db = 1.0
+
+[node name="switch" type="AudioStreamPlayer" parent="sfx" unique_id=804715492]
+stream = ExtResource("10_8obyt")
+volume_db = 5.0

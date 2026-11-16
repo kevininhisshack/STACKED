@@ -21,13 +21,20 @@ func _ready() -> void:
 	in_layerA = in_layerA
 	
 	# intro sequence
-	$Audio/intro.play()
-	await get_tree().create_timer(8.75).timeout
-	$logo.position.y = -60.0
-	$intro.queue_free()  # make it fade out instead of delete
-	trackA.play()
-	trackB.play()
-	
+	if GameData.intro_played == false:
+		$Audio/intro.play()
+		await get_tree().create_timer(8.75).timeout
+		GameData.intro_played = true
+		$logo.position.y = -60.0
+		$intro.queue_free()
+		trackA.play()
+		trackB.play()
+	else:
+		$logo.position.y = -60.0
+		$intro.queue_free()
+		trackA.play()
+		trackB.play()
+
 
 
 

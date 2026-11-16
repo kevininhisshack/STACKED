@@ -24,10 +24,10 @@ metadata/_edit_horizontal_guides_ = [912.0]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -9850.0
-offset_top = -4475.0
-offset_right = 22006.0
-offset_bottom = 8572.0
+offset_left = -9786.0
+offset_top = -4390.0
+offset_right = 22070.0
+offset_bottom = 8657.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.16078432, 0.16078432, 0.23529412, 1)
@@ -48,10 +48,12 @@ position = Vector2(3745, 2413)
 
 [node name="layer A track" type="AudioStreamPlayer" parent="Audio" unique_id=42930235]
 stream = ExtResource("5_vmadm")
+autoplay = true
 parameters/looping = true
 
 [node name="layer B track" type="AudioStreamPlayer" parent="Audio" unique_id=356224548]
 stream = ExtResource("5_xvxrd")
+autoplay = true
 parameters/looping = true
 
 [node name="layer A" type="Node2D" parent="." unique_id=678280883]
@@ -166,19 +168,6 @@ layer = "A"
 layout_mode = 3
 anchors_preset = 0
 
-[node name="Label4" type="Label" parent="layer A/Yapping" unique_id=72633587]
-layout_mode = 0
-offset_left = 6897.0
-offset_top = 209.0
-offset_right = 8492.0
-offset_bottom = 431.0
-theme_override_font_sizes/font_size = 30
-text = "ok so basiclly , in the SUBS file in the SCENES there is a \"gate component\" ,
-make it a child of the block you want as a gate , select how much keys to
-open it , and drag the objects collison to gatecollider , then ,
-you have keys in the SUBS file , take one , and drag the gate component of the gate you want this key to open ,
-i,ll make an actual animation for the keys later"
-
 [node name="Label" type="Label" parent="layer A/Yapping" unique_id=853748329]
 layout_mode = 1
 anchors_preset = 8
@@ -216,13 +205,30 @@ theme_override_font_sizes/font_size = 30
 text = "once you touch it , 
 it reduces its gates keys by one"
 
-[node name="Win" parent="layer A" unique_id=1796645974 groups=["Layer A collisions"] instance=ExtResource("9_25ocr")]
+[node name="Label4" type="Label" parent="layer A/Yapping" unique_id=72633587]
+layout_mode = 0
+offset_left = 6897.0
+offset_top = 209.0
+offset_right = 8492.0
+offset_bottom = 431.0
+theme_override_font_sizes/font_size = 30
+text = "ok so basiclly , in the SUBS file in the SCENES there is a \"gate component\" ,
+make it a child of the block you want as a gate , select how much keys to
+open it , and drag the objects collison to gatecollider , then ,
+you have keys in the SUBS file , take one , and drag the gate component of the gate you want this key to open ,
+i,ll make an actual animation for the keys later
+
+also press K"
+
+[node name="Win" parent="layer A" unique_id=1796645974 node_paths=PackedStringArray("lyrA_music", "lyrB_music") groups=["Layer A collisions"] instance=ExtResource("9_25ocr")]
 position = Vector2(8671, 359)
+lyrA_music = NodePath("../../Audio/layer A track")
+lyrB_music = NodePath("../../Audio/layer B track")
 layer = "A"
 
 [node name="Camera Trigger" parent="layer A" unique_id=390977385 instance=ExtResource("11_ye4n6")]
 position = Vector2(2503, -602)
-camPOS = Vector2(2503, -588)
+camPOS = Vector2(2503, -602)
 display_time = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="layer A/Camera Trigger" unique_id=1925657544]
@@ -232,6 +238,15 @@ shape = SubResource("RectangleShape2D_g4v7s")
 [node name="layer B" type="Node2D" parent="." unique_id=1920260554]
 
 [node name="Ground" type="StaticBody2D" parent="layer B" unique_id=400599583]
+
+[node name="Polygon2D" type="Polygon2D" parent="layer B/Ground" unique_id=57370924]
+position = Vector2(6959, 395)
+color = Color(0.85490197, 0.16470589, 0.28235295, 1)
+polygon = PackedVector2Array(-543, 148, 1608, 130, 1201, 394)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer B/Ground" unique_id=1740157514]
+position = Vector2(6959, 395)
+polygon = PackedVector2Array(-543, 148, 1608, 130, 1201, 394)
 
 [node name="Check Points" type="Node2D" parent="layer B" unique_id=732243268]
 
@@ -244,6 +259,36 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="layer B/Yapping" unique_id=212258187]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 7172.0
+offset_top = 298.0
+offset_right = 7502.0
+offset_bottom = 340.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "MWAHAHAHAHAHAHA"
+
+[node name="logo" type="Label" parent="layer B/Yapping" unique_id=919051392]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 7120.0
+offset_top = -13.0
+offset_right = 7554.0
+offset_bottom = 124.0
+grow_horizontal = 2
+scale = Vector2(1, 3)
+theme_override_font_sizes/font_size = 100
+text = "STACKED"
 
 [node name="Layer Manager" type="Node" parent="." unique_id=1552996101 node_paths=PackedStringArray("bg", "layerA", "layerB", "trackA", "trackB")]
 script = ExtResource("10_syiyr")

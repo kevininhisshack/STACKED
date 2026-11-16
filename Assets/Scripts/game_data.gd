@@ -6,6 +6,8 @@ signal layer_change(in_a : bool)
 @export var sfx := 50
 @export var music := 50
 
+var intro_played := false
+
 var in_layerA := true :
 	set(value):
 		in_layerA = value

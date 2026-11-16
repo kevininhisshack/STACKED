@@ -11,7 +11,7 @@ script/source = "extends Node
 func check_keys():
 	if num_of_keys == 0:
 		$GateUnlock.play()
-		gate_collider.set_deferred(\"disabled\" , true)
+		gate_collider.queue_free()
 		get_parent().hide()
 		await $GateUnlock.finished
 		queue_free()

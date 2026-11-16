@@ -30,6 +30,7 @@ func _physics_process(delta):
 		
 	# the switch
 	if Input.is_action_just_pressed("switch"):
+		$sfx/switch.play(0.25)
 		GameData.in_layerA = not GameData.in_layerA
 
 	# Jump
