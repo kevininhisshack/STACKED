@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b6actsfncl1nc"]
+
+[ext_resource type="Script" uid="uid://3rtbirlijw0u" path="res://Assets/Scripts/camera_trigger.gd" id="1_o6bx0"]
+
+[node name="Camera Trigger" type="Area2D" unique_id=390977385]
+script = ExtResource("1_o6bx0")

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://2g4b8h0uij5a" path="res://Assets/Scenes/Subs/player.tscn" id="1_q32xp"]
 [ext_resource type="PackedScene" uid="uid://chyphwvpndabr" path="res://Assets/Scenes/Subs/jump_orb.tscn" id="1_s3due"]
 [ext_resource type="PackedScene" uid="uid://cil0c2532hd11" path="res://Assets/Scenes/Subs/gate_component.tscn" id="2_0px0o"]
+[ext_resource type="PackedScene" uid="uid://bv1tmf4jhere4" path="res://Assets/Scenes/Subs/player_cam.tscn" id="2_2wgf0"]
 [ext_resource type="PackedScene" uid="uid://cmqwek43kjay0" path="res://Assets/Scenes/Subs/check_point.tscn" id="3_afebg"]
 [ext_resource type="PackedScene" uid="uid://deups0we4l3nm" path="res://Assets/Scenes/Subs/death_border.tscn" id="4_53yni"]
 [ext_resource type="PackedScene" uid="uid://coj876gx51t68" path="res://Assets/Scenes/Subs/key.tscn" id="5_25ocr"]
@@ -10,6 +11,10 @@
 [ext_resource type="AudioStream" uid="uid://dryh82uocnxmy" path="res://Assets/Audio/Music/layer B.mp3" id="5_xvxrd"]
 [ext_resource type="PackedScene" uid="uid://cjo6h4crmg6vq" path="res://Assets/Scenes/Subs/win.tscn" id="9_25ocr"]
 [ext_resource type="Script" uid="uid://cbs1jhkgnx2gp" path="res://Assets/Scripts/layer_manager.gd" id="10_syiyr"]
+[ext_resource type="PackedScene" uid="uid://b6actsfncl1nc" path="res://Assets/Scenes/Subs/camera_trigger.tscn" id="11_ye4n6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(541.5, 369)
 
 [node name="Test Scene" type="Node" unique_id=1362970334]
 metadata/_edit_vertical_guides_ = [3712.0, 6998.0]
@@ -19,24 +24,22 @@ metadata/_edit_horizontal_guides_ = [912.0]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -11778.0
-offset_top = -6892.0
-offset_right = 20078.0
-offset_bottom = 6155.0
+offset_left = -9850.0
+offset_top = -4475.0
+offset_right = 22006.0
+offset_bottom = 8572.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.16078432, 0.16078432, 0.23529412, 1)
 
 [node name="Player" parent="." unique_id=1072838877 instance=ExtResource("1_q32xp")]
 position = Vector2(564, 211)
 starting_layer = true
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1084379342]
-limit_left = -100
-limit_top = -200
-limit_right = 9000
-limit_bottom = 1000
+[node name="Player Cam" parent="Player" unique_id=311087094 groups=["camera"] instance=ExtResource("2_2wgf0")]
+process_callback = 0
 position_smoothing_enabled = true
-position_smoothing_speed = 8.0
+position_smoothing_speed = 7.0
 
 [node name="Death Border" parent="." unique_id=1881485949 instance=ExtResource("4_53yni")]
 position = Vector2(3745, 2413)
@@ -141,7 +144,7 @@ layer = "A"
 [node name="Keys" type="Node2D" parent="layer A" unique_id=942870509]
 
 [node name="Key" parent="layer A/Keys" unique_id=291257703 instance=ExtResource("5_25ocr")]
-position = Vector2(2529, -108)
+position = Vector2(2623, -611)
 layer = "A"
 
 [node name="Key2" parent="layer A/Keys" unique_id=723861586 node_paths=PackedStringArray("gate") instance=ExtResource("5_25ocr")]
@@ -195,10 +198,10 @@ text = "hello sir nate ,
 
 [node name="Label2" type="Label" parent="layer A/Yapping" unique_id=642407825]
 layout_mode = 0
-offset_left = 2031.0
-offset_top = 21.0
-offset_right = 2437.0
-offset_bottom = 108.0
+offset_left = 2145.0
+offset_top = -641.0
+offset_right = 2551.0
+offset_bottom = -554.0
 theme_override_font_sizes/font_size = 30
 text = "this , is a key
                    just out of reach"
@@ -215,6 +218,16 @@ it reduces its gates keys by one"
 
 [node name="Win" parent="layer A" unique_id=1796645974 groups=["Layer A collisions"] instance=ExtResource("9_25ocr")]
 position = Vector2(8671, 359)
+layer = "A"
+
+[node name="Camera Trigger" parent="layer A" unique_id=390977385 instance=ExtResource("11_ye4n6")]
+position = Vector2(2503, -602)
+camPOS = Vector2(2503, -588)
+display_time = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="layer A/Camera Trigger" unique_id=1925657544]
+position = Vector2(177, 907)
+shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="layer B" type="Node2D" parent="." unique_id=1920260554]
 
