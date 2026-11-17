@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var jump_velocity: float = -550.0
 @export var jump_cut : float = 0.3
 @export var starting_layer : bool 
+@export var pause_screen : CanvasLayer
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -77,9 +78,10 @@ func _physics_process(delta):
 		was_on_floor = is_on_floor()
 	# was on floor is a bool variable , just made to fix a bug 
 
+
 func death_func():
 	deaths += 1
 	velocity = Vector2.ZERO
-	#await get_tree().create_timer(0.5).timeout
+	$sfx/Death.play()
 	global_position = check_pointPOS
 	

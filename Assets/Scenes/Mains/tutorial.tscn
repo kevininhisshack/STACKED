@@ -13,6 +13,8 @@
 [ext_resource type="Script" uid="uid://cbs1jhkgnx2gp" path="res://Assets/Scripts/layer_manager.gd" id="10_syiyr"]
 [ext_resource type="PackedScene" uid="uid://b6actsfncl1nc" path="res://Assets/Scenes/Subs/camera_trigger.tscn" id="11_ye4n6"]
 [ext_resource type="PackedScene" uid="uid://xv644ngmk1fa" path="res://Assets/Scenes/Subs/obstacle.tscn" id="12_xpkxo"]
+[ext_resource type="PackedScene" uid="uid://d22jhp113ud1n" path="res://Assets/Scenes/Subs/pause_screen.tscn" id="14_5gai6"]
+[ext_resource type="Script" uid="uid://ohn0yjxt7fde" path="res://Assets/Scripts/timer.gd" id="14_rv2rx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(541.5, 369)
@@ -33,9 +35,10 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.16078432, 0.16078432, 0.23529412, 1)
 
-[node name="Player" parent="." unique_id=1072838877 instance=ExtResource("1_q32xp")]
+[node name="Player" parent="." unique_id=1072838877 node_paths=PackedStringArray("pause_screen") instance=ExtResource("1_q32xp")]
 position = Vector2(564, 211)
 starting_layer = true
+pause_screen = NodePath("")
 
 [node name="Player Cam" parent="Player" unique_id=311087094 groups=["camera"] instance=ExtResource("2_2wgf0")]
 process_callback = 0
@@ -229,10 +232,13 @@ i,ll make an actual animation for the keys later
 
 also press K"
 
-[node name="Win" parent="layer A" unique_id=1796645974 node_paths=PackedStringArray("lyrA_music", "lyrB_music") groups=["Layer A collisions"] instance=ExtResource("9_25ocr")]
+[node name="Win" parent="layer A" unique_id=1796645974 node_paths=PackedStringArray("lyrA_music", "lyrB_music", "win_screen", "timer") groups=["Layer A collisions"] instance=ExtResource("9_25ocr")]
 position = Vector2(8671, 359)
+next_level = "level1"
 lyrA_music = NodePath("../../Audio/layer A track")
 lyrB_music = NodePath("../../Audio/layer B track")
+win_screen = NodePath("../../Win Screen")
+timer = NodePath("../../Timer")
 layer = "A"
 
 [node name="Obstacles" type="Node2D" parent="layer A" unique_id=46800712]
@@ -339,6 +345,10 @@ scale = Vector2(1, 3)
 theme_override_font_sizes/font_size = 100
 text = "STACKED"
 
+[node name="cam triggers" type="Node2D" parent="layer B" unique_id=1576521386]
+
+[node name="obstacles" type="Node2D" parent="layer B" unique_id=98072845]
+
 [node name="Layer Manager" type="Node" parent="." unique_id=1552996101 node_paths=PackedStringArray("bg", "layerA", "layerB", "trackA", "trackB")]
 script = ExtResource("10_syiyr")
 bg = NodePath("../BG")
@@ -347,6 +357,9 @@ layerB = NodePath("../layer B")
 trackA = NodePath("../Audio/layer A track")
 trackB = NodePath("../Audio/layer B track")
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=37133500]
+[node name="Pause Screen" parent="." unique_id=615945996 instance=ExtResource("14_5gai6")]
 
 [node name="Win Screen" type="CanvasLayer" parent="." unique_id=94663984]
+
+[node name="Timer" type="Timer" parent="." unique_id=1640210569]
+script = ExtResource("14_rv2rx")

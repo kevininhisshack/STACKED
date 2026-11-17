@@ -1,11 +1,6 @@
 extends Node
 signal layer_change(in_a : bool)
 
- # audio settings 
-@export var master := 100
-@export var sfx := 50
-@export var music := 50
-
 var intro_played := false
 
 var in_layerA := true :
@@ -28,14 +23,6 @@ var level_stats := {
 	"level9" : false ,
 	"level10" : false
 	 }
-
-
-func _ready():
-	sfx = sfx * master
-	music = music * master
-
-# this is global
-
 
 # ignore this
 # { unlocked : true , completed : false , time : 0.0 , deathes : 0}

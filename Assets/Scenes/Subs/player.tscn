@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cgksrs434ifvv" path="res://Assets/Images/Sprite sheets/player idle.png" id="4_8obyt"]
 [ext_resource type="AudioStream" uid="uid://bqdpe1krsb2fm" path="res://Assets/Audio/SFX/walking.mp3" id="4_l711e"]
 [ext_resource type="Texture2D" uid="uid://oruegkk31s20" path="res://Assets/Images/Sprite sheets/player walk.png" id="5_7vkj7"]
+[ext_resource type="AudioStream" uid="uid://ym4h7ypyuc50" path="res://Assets/Audio/SFX/death.mp3" id="9_8hm4h"]
 [ext_resource type="AudioStream" uid="uid://b8bngr43tu3sr" path="res://Assets/Audio/SFX/switch.mp3" id="10_8obyt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kkj0o"]
@@ -109,7 +110,7 @@ scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.41299796
+frame_progress = 0.122386575
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1367288436]
 position = Vector2(4.1135397, -9.187187)
@@ -137,4 +138,8 @@ bus = &"SFX"
 [node name="switch" type="AudioStreamPlayer" parent="sfx" unique_id=804715492]
 stream = ExtResource("10_8obyt")
 volume_db = 5.0
+bus = &"SFX"
+
+[node name="Death" type="AudioStreamPlayer" parent="sfx" unique_id=559263182]
+stream = ExtResource("9_8hm4h")
 bus = &"SFX"
