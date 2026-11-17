@@ -18,17 +18,17 @@
 size = Vector2(541.5, 369)
 
 [node name="Test Scene" type="Node" unique_id=1362970334]
-metadata/_edit_vertical_guides_ = [3712.0, 6998.0]
-metadata/_edit_horizontal_guides_ = [912.0]
+metadata/_edit_vertical_guides_ = [3712.0, 6998.0, 3528.0, -1.0, 9684.0, 9667.0]
+metadata/_edit_horizontal_guides_ = [912.0, 924.0]
 
 [node name="BG" type="ColorRect" parent="." unique_id=872350364]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -9786.0
-offset_top = -4390.0
-offset_right = 22070.0
-offset_bottom = 8657.0
+offset_left = -9813.0
+offset_top = -4392.0
+offset_right = 22043.0
+offset_bottom = 8655.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.16078432, 0.16078432, 0.23529412, 1)
@@ -39,6 +39,10 @@ starting_layer = true
 
 [node name="Player Cam" parent="Player" unique_id=311087094 groups=["camera"] instance=ExtResource("2_2wgf0")]
 process_callback = 0
+limit_left = 64
+limit_top = -10000004
+limit_right = 9600
+limit_bottom = 996
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
@@ -172,6 +176,7 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="Label" type="Label" parent="layer A/Yapping" unique_id=853748329]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -209,6 +214,7 @@ text = "once you touch it ,
 it reduces its gates keys by one"
 
 [node name="Label4" type="Label" parent="layer A/Yapping" unique_id=72633587]
+visible = false
 layout_mode = 0
 offset_left = 6897.0
 offset_top = 209.0
@@ -229,15 +235,6 @@ lyrA_music = NodePath("../../Audio/layer A track")
 lyrB_music = NodePath("../../Audio/layer B track")
 layer = "A"
 
-[node name="Camera Trigger" parent="layer A" unique_id=390977385 instance=ExtResource("11_ye4n6")]
-position = Vector2(2503, -602)
-camPOS = Vector2(2503, -602)
-display_time = 3.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="layer A/Camera Trigger" unique_id=1925657544]
-position = Vector2(177, 907)
-shape = SubResource("RectangleShape2D_g4v7s")
-
 [node name="Obstacles" type="Node2D" parent="layer A" unique_id=46800712]
 
 [node name="Obstacle" parent="layer A/Obstacles" unique_id=1931312273 instance=ExtResource("12_xpkxo")]
@@ -250,6 +247,41 @@ position = Vector2(4435, 411)
 rotation = 0.67718774
 scale = Vector2(0.99999994, 0.99999994)
 layer = "A"
+
+[node name="cam triggers" type="Node2D" parent="layer A" unique_id=1880644376]
+
+[node name="Camera Trigger" parent="layer A/cam triggers" unique_id=390977385 instance=ExtResource("11_ye4n6")]
+position = Vector2(2503, -602)
+camPOS = Vector2(2503, -602)
+display_time = 3.0
+layer = "A"
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="layer A/cam triggers/Camera Trigger" unique_id=1925657544]
+position = Vector2(177, 907)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Camera Trigger2" parent="layer A/cam triggers" unique_id=917879953 instance=ExtResource("11_ye4n6")]
+position = Vector2(8859, 422)
+camPOS = Vector2(8860, 422)
+layer = "A"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer A/cam triggers/Camera Trigger2" unique_id=1703663230]
+polygon = PackedVector2Array(463, -329, -698, -343, -701, 170, 458, 148)
+
+[node name="Camera Trigger3" parent="layer A/cam triggers" unique_id=272158821 instance=ExtResource("11_ye4n6")]
+position = Vector2(5302, 334)
+camPOS = Vector2(5300, 335)
+layer = "A"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer A/cam triggers/Camera Trigger3" unique_id=171181543]
+polygon = PackedVector2Array(-548, -307, 6, -36, 26, 56, -581, 118)
+
+[node name="Camera Trigger4" parent="layer A/cam triggers" unique_id=971727692 instance=ExtResource("11_ye4n6")]
+position = Vector2(1332, 197)
+layer = "A"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer A/cam triggers/Camera Trigger4" unique_id=1902314195]
+polygon = PackedVector2Array(-705, -225, 13, -477, -2, 441, -705, 112)
 
 [node name="layer B" type="Node2D" parent="." unique_id=1920260554]
 
@@ -277,6 +309,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="layer B/Yapping" unique_id=212258187]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
