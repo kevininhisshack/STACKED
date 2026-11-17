@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://xv644ngmk1fa"]
+
+[ext_resource type="Script" uid="uid://cjg30k8bqxr8e" path="res://Assets/Scripts/obstacle.gd" id="1_dgdt5"]
+[ext_resource type="Texture2D" uid="uid://cdp8gwkbe1x6g" path="res://Assets/Images/Sprite sheets/obstacle.png" id="2_qpnmx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wb73o"]
+atlas = ExtResource("2_qpnmx")
+region = Rect2(0, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hnbs"]
+atlas = ExtResource("2_qpnmx")
+region = Rect2(1080, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0624g"]
+atlas = ExtResource("2_qpnmx")
+region = Rect2(2160, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7s04n"]
+atlas = ExtResource("2_qpnmx")
+region = Rect2(0, 1080, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bddm"]
+atlas = ExtResource("2_qpnmx")
+region = Rect2(1080, 1080, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3g2ot"]
+atlas = ExtResource("2_qpnmx")
+region = Rect2(2160, 1080, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ispon"]
+atlas = ExtResource("2_qpnmx")
+region = Rect2(0, 2160, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f22ui"]
+atlas = ExtResource("2_qpnmx")
+region = Rect2(1080, 2160, 1080, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wb73o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hnbs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0624g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7s04n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bddm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3g2ot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ispon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f22ui")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 24.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(130.5, 134)
+
+[node name="Obstacle" type="Area2D" unique_id=1931312273]
+script = ExtResource("1_dgdt5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1054055478]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.59982693
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1387999821]
+position = Vector2(-4.75, 1)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

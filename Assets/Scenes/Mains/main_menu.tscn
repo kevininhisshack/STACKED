@@ -9,13 +9,16 @@
 [node name="Main Menu" type="Node" unique_id=1213536807]
 script = ExtResource("1_slseb")
 
+[node name="GameData" type="Node" parent="." unique_id=97758106]
+script = ExtResource("1_ci7te")
+
 [node name="background" type="ColorRect" parent="." unique_id=547171958]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.2551888, 0.2657848, 0.332061, 1)
 
 [node name="Layer A" type="Control" parent="." unique_id=1801121597]
 layout_mode = 3
@@ -25,7 +28,205 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="options" type="VBoxContainer" parent="Layer A" unique_id=1427180185]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = 26.0
+offset_right = 75.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Button" type="Button" parent="Layer A/options" unique_id=847505698]
+custom_minimum_size = Vector2(150, 55)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "settings"
+
+[node name="Button2" type="Button" parent="Layer A/options" unique_id=1991830401]
+visible = false
+custom_minimum_size = Vector2(150, 55)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "credits"
+
+[node name="settings" type="Control" parent="Layer A" unique_id=1365807126]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Layer A/settings" unique_id=866076888]
+custom_minimum_size = Vector2(1100, 596)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -550.0
+offset_top = -298.0
+offset_right = 550.0
+offset_bottom = 298.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="audio settings" type="VBoxContainer" parent="Layer A/settings/PanelContainer" unique_id=624225679]
+custom_minimum_size = Vector2(800, 550)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/separation = 0
+
+[node name="Label2" type="Label" parent="Layer A/settings/PanelContainer/audio settings" unique_id=235776360]
+custom_minimum_size = Vector2(700, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "audio"
+
+[node name="Label" type="Label" parent="Layer A/settings/PanelContainer/audio settings" unique_id=2117815649]
+custom_minimum_size = Vector2(600, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Master"
+
+[node name="HSlider" type="HSlider" parent="Layer A/settings/PanelContainer/audio settings" unique_id=1290700657]
+custom_minimum_size = Vector2(500, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+max_value = 1.0
+step = 0.001
+
+[node name="Label3" type="Label" parent="Layer A/settings/PanelContainer/audio settings" unique_id=2061494375]
+custom_minimum_size = Vector2(600, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Music"
+
+[node name="HSlider2" type="HSlider" parent="Layer A/settings/PanelContainer/audio settings" unique_id=736487774]
+custom_minimum_size = Vector2(500, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+max_value = 1.0
+step = 0.001
+
+[node name="Label4" type="Label" parent="Layer A/settings/PanelContainer/audio settings" unique_id=1453998093]
+custom_minimum_size = Vector2(600, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "SFX"
+
+[node name="HSlider3" type="HSlider" parent="Layer A/settings/PanelContainer/audio settings" unique_id=1561426540]
+custom_minimum_size = Vector2(500, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+max_value = 1.0
+step = 0.001
+
+[node name="Button" type="Button" parent="Layer A/settings/PanelContainer" unique_id=54411083]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 30
+text = "back"
+
+[node name="credits" type="Control" parent="Layer A" unique_id=1159423789]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Layer A/credits" unique_id=458295610]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = -68.0
+offset_right = 122.0
+offset_bottom = -18.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 30
+text = "back"
+
+[node name="Label" type="Label" parent="Layer A/credits" unique_id=1688153437]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 281.0
+offset_top = 58.0
+offset_right = 501.0
+offset_bottom = 190.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "everything else
+
+Kevin's shack"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Layer A/credits" unique_id=1058123417]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -106.0
+offset_top = 127.0
+offset_right = 114.0
+offset_bottom = 259.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "music
+
+capcott "
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Layer A/credits" unique_id=1957857505]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -439.0
+offset_top = 66.0
+offset_right = -219.0
+offset_bottom = 198.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "player movment
+and design
+
+NateZcool"
+horizontal_alignment = 1
+
 [node name="Layer B" type="Control" parent="." unique_id=824174227]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,38 +234,119 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="Layer B" unique_id=1405064043]
+[node name="Button" type="Button" parent="Layer B" unique_id=898022668]
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -43.5
-offset_top = -25.0
-offset_right = 43.5
-offset_bottom = 25.0
+offset_left = -526.0
+offset_top = 81.0
+offset_right = -456.0
+offset_bottom = 151.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.48225296, 0.51064885, 0.8511354, 1)
-theme_override_colors/font_focus_color = Color(0.74028444, 0.42506734, 1.92523e-07, 1)
-theme_override_colors/font_pressed_color = Color(0, 0.55547124, 0.50259644, 1)
-theme_override_colors/font_hover_color = Color(0.8543419, 0.23965564, 0.3497475, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.38159138, 0.4049494, 0.42842472, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_colors/icon_normal_color = Color(0.60227776, 0.3836213, 0.32535475, 1)
-theme_override_colors/icon_pressed_color = Color(0.72842604, 0.03648749, 0.040286496, 1)
-theme_override_colors/icon_hover_color = Color(0.1946224, 0.15680113, 0.14641109, 1)
-theme_override_constants/outline_size = 2
-theme_override_constants/h_separation = 0
-theme_override_constants/icon_max_width = 0
 theme_override_font_sizes/font_size = 30
-text = "play"
+text = "0"
 
-[node name="GameData" type="Node" parent="." unique_id=97758106]
-script = ExtResource("1_ci7te")
+[node name="levels" type="GridContainer" parent="Layer B" unique_id=1185080489]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -390.0
+offset_top = 26.0
+offset_right = 390.0
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 120
+theme_override_constants/v_separation = 60
+columns = 5
+
+[node name="Button1" type="Button" parent="Layer B/levels" unique_id=544069636]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "1"
+
+[node name="Button2" type="Button" parent="Layer B/levels" unique_id=246892710]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "2"
+
+[node name="Button3" type="Button" parent="Layer B/levels" unique_id=128114806]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "3"
+
+[node name="Button4" type="Button" parent="Layer B/levels" unique_id=384077229]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "4
+"
+
+[node name="Button5" type="Button" parent="Layer B/levels" unique_id=1391911302]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "5
+"
+
+[node name="Button6" type="Button" parent="Layer B/levels" unique_id=235194435]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "6
+"
+
+[node name="Button7" type="Button" parent="Layer B/levels" unique_id=197249614]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "7"
+
+[node name="Button8" type="Button" parent="Layer B/levels" unique_id=983110260]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "8"
+
+[node name="Button9" type="Button" parent="Layer B/levels" unique_id=1518354597]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "9"
+
+[node name="Button10" type="Button" parent="Layer B/levels" unique_id=692333777]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "10"
+
+[node name="Audio" type="Node" parent="." unique_id=2107794324]
+
+[node name="intro" type="AudioStreamPlayer" parent="Audio" unique_id=19686544]
+stream = ExtResource("3_qm0xw")
+bus = &"Music"
+
+[node name="trackA" type="AudioStreamPlayer" parent="Audio" unique_id=1554973600]
+stream = ExtResource("4_fac22")
+bus = &"Music"
+
+[node name="trackB" type="AudioStreamPlayer" parent="Audio" unique_id=1429593110]
+stream = ExtResource("5_i0ct7")
+bus = &"Music"
 
 [node name="Button" type="Button" parent="." unique_id=952606704]
+visible = false
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -76,18 +358,8 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 30
 text = "switch"
 
-[node name="Audio" type="Node" parent="." unique_id=2107794324]
-
-[node name="intro" type="AudioStreamPlayer" parent="Audio" unique_id=19686544]
-stream = ExtResource("3_qm0xw")
-
-[node name="trackA" type="AudioStreamPlayer" parent="Audio" unique_id=1554973600]
-stream = ExtResource("4_fac22")
-
-[node name="trackB" type="AudioStreamPlayer" parent="Audio" unique_id=1429593110]
-stream = ExtResource("5_i0ct7")
-
 [node name="intro" type="ColorRect" parent="." unique_id=542591056]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -98,6 +370,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="logo" type="Label" parent="." unique_id=1000667933]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -110,5 +383,11 @@ scale = Vector2(1, 3)
 theme_override_font_sizes/font_size = 100
 text = "STACKED"
 
-[connection signal="pressed" from="Layer B/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Layer A/options/Button" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Layer A/options/Button2" to="." method="_on_credits_pressed"]
+[connection signal="value_changed" from="Layer A/settings/PanelContainer/audio settings/HSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="Layer A/settings/PanelContainer/audio settings/HSlider2" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Layer A/settings/PanelContainer/audio settings/HSlider3" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="Layer A/settings/PanelContainer/Button" to="." method="_on_settings_back_pressed"]
+[connection signal="pressed" from="Layer A/credits/Button" to="." method="_on_credits_back_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_switch_pressed"]

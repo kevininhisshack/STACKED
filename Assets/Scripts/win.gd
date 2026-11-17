@@ -3,6 +3,7 @@ extends Area2D
 @export var next_level : String = "level1"
 @export var lyrA_music : AudioStreamPlayer
 @export var lyrB_music : AudioStreamPlayer
+@export var win_screen : CanvasLayer
 @export_enum("A" , "B") var layer : String
 
 func _ready():
@@ -10,10 +11,10 @@ func _ready():
 	$CollisionShape2D.set_deferred("disabled" , (layer == "A") != GameData.in_layerA)
 
 func win():
+	$BigWin.play()
 	lyrA_music.stop()
 	lyrB_music.stop()
 	$AnimatedSprite2D.play("win")
-	# winsfx.play()
 	GameData.level_stats[next_level] = true
 
 

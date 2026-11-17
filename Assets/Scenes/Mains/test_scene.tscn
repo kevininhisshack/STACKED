@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cjo6h4crmg6vq" path="res://Assets/Scenes/Subs/win.tscn" id="9_25ocr"]
 [ext_resource type="Script" uid="uid://cbs1jhkgnx2gp" path="res://Assets/Scripts/layer_manager.gd" id="10_syiyr"]
 [ext_resource type="PackedScene" uid="uid://b6actsfncl1nc" path="res://Assets/Scenes/Subs/camera_trigger.tscn" id="11_ye4n6"]
+[ext_resource type="PackedScene" uid="uid://xv644ngmk1fa" path="res://Assets/Scenes/Subs/obstacle.tscn" id="12_xpkxo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(541.5, 369)
@@ -49,11 +50,13 @@ position = Vector2(3745, 2413)
 [node name="layer A track" type="AudioStreamPlayer" parent="Audio" unique_id=42930235]
 stream = ExtResource("5_vmadm")
 autoplay = true
+bus = &"Music"
 parameters/looping = true
 
 [node name="layer B track" type="AudioStreamPlayer" parent="Audio" unique_id=356224548]
 stream = ExtResource("5_xvxrd")
 autoplay = true
+bus = &"Music"
 parameters/looping = true
 
 [node name="layer A" type="Node2D" parent="." unique_id=678280883]
@@ -235,6 +238,19 @@ display_time = 3.0
 position = Vector2(177, 907)
 shape = SubResource("RectangleShape2D_g4v7s")
 
+[node name="Obstacles" type="Node2D" parent="layer A" unique_id=46800712]
+
+[node name="Obstacle" parent="layer A/Obstacles" unique_id=1931312273 instance=ExtResource("12_xpkxo")]
+position = Vector2(4348, 418)
+rotation = -0.33161256
+layer = "A"
+
+[node name="Obstacle2" parent="layer A/Obstacles" unique_id=1393997514 instance=ExtResource("12_xpkxo")]
+position = Vector2(4435, 411)
+rotation = 0.67718774
+scale = Vector2(0.99999994, 0.99999994)
+layer = "A"
+
 [node name="layer B" type="Node2D" parent="." unique_id=1920260554]
 
 [node name="Ground" type="StaticBody2D" parent="layer B" unique_id=400599583]
@@ -299,3 +315,5 @@ trackA = NodePath("../Audio/layer A track")
 trackB = NodePath("../Audio/layer B track")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=37133500]
+
+[node name="Win Screen" type="CanvasLayer" parent="." unique_id=94663984]

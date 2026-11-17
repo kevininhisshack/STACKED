@@ -10,7 +10,7 @@ func _ready():
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		$KeyCatch.play()
-		$AnimatedSprite2D.hide()
+		$AnimatedSprite2D.play("collected")
 		$CollisionShape2D.set_deferred("disable" , true)
 		gate.num_of_keys -= 1
 		gate.check_keys()

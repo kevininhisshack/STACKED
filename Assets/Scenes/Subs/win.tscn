@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://j2fwbnegs2u5" path="res://Assets/Scripts/win.gd" id="1_gaqvn"]
 [ext_resource type="Texture2D" uid="uid://bjypxkmc84yxe" path="res://Assets/Images/Sprites/icon.svg" id="2_o2753"]
+[ext_resource type="AudioStream" uid="uid://sbt7sjceehqc" path="res://Assets/Audio/SFX/BIG WIN .wav" id="3_o2753"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -23,7 +24,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
-size = Vector2(452, 194)
+size = Vector2(29, 194)
 
 [node name="Win" type="Area2D" unique_id=1796645974]
 script = ExtResource("1_gaqvn")
@@ -37,7 +38,11 @@ autoplay = "idle"
 frame_progress = 0.8494808
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=706363901]
-position = Vector2(186, 51)
+position = Vector2(183.5, 51)
 shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="BigWin" type="AudioStreamPlayer" parent="." unique_id=9335362]
+stream = ExtResource("3_o2753")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

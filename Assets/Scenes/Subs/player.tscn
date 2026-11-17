@@ -1,32 +1,61 @@
 [gd_scene format=3 uid="uid://2g4b8h0uij5a"]
 
 [ext_resource type="Script" uid="uid://bhnc66nin5m1x" path="res://Assets/Scripts/player.gd" id="1_n4k3f"]
-[ext_resource type="Texture2D" uid="uid://2e3gllbqrssi" path="res://Assets/Images/Sprites/fall.svg" id="2_8hm4h"]
+[ext_resource type="Texture2D" uid="uid://djl5vbahuqau2" path="res://Assets/Images/Sprites/0000.png" id="2_5tiap"]
 [ext_resource type="AudioStream" uid="uid://dnjx6inhpsmqq" path="res://Assets/Audio/SFX/jump.mp3" id="3_0f6be"]
-[ext_resource type="Texture2D" uid="uid://ntxa2x2fxocx" path="res://Assets/Images/Sprites/idle.svg" id="3_8obyt"]
-[ext_resource type="Texture2D" uid="uid://caoyni6oddve0" path="res://Assets/Images/Sprites/idle 2.svg" id="4_7vkj7"]
+[ext_resource type="Texture2D" uid="uid://cjl5n861ugm6d" path="res://Assets/Images/Sprites/0001.png" id="3_8hm4h"]
+[ext_resource type="Texture2D" uid="uid://cgksrs434ifvv" path="res://Assets/Images/Sprite sheets/player idle.png" id="4_8obyt"]
 [ext_resource type="AudioStream" uid="uid://bqdpe1krsb2fm" path="res://Assets/Audio/SFX/walking.mp3" id="4_l711e"]
-[ext_resource type="Texture2D" uid="uid://c8dw8l61jl8ic" path="res://Assets/Images/Sprites/jump.svg" id="5_kkj0o"]
-[ext_resource type="Texture2D" uid="uid://cr1y7js85l0al" path="res://Assets/Images/Sprites/walk one.svg" id="6_d7xje"]
-[ext_resource type="Texture2D" uid="uid://da0qxp7048bbd" path="res://Assets/Images/Sprites/walk 2.svg" id="7_2uwn5"]
+[ext_resource type="Texture2D" uid="uid://oruegkk31s20" path="res://Assets/Images/Sprite sheets/player walk.png" id="5_7vkj7"]
 [ext_resource type="AudioStream" uid="uid://b8bngr43tu3sr" path="res://Assets/Audio/SFX/switch.mp3" id="10_8obyt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkj0o"]
+atlas = ExtResource("4_8obyt")
+region = Rect2(0, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7xje"]
+atlas = ExtResource("4_8obyt")
+region = Rect2(1080, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uwn5"]
+atlas = ExtResource("5_7vkj7")
+region = Rect2(1080, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_el5pt"]
+atlas = ExtResource("5_7vkj7")
+region = Rect2(0, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hy7ga"]
+atlas = ExtResource("5_7vkj7")
+region = Rect2(2160, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d568a"]
+atlas = ExtResource("5_7vkj7")
+region = Rect2(0, 1080, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8a1cp"]
+atlas = ExtResource("5_7vkj7")
+region = Rect2(0, 0, 1080, 1080)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8hm4h")
+"texture": ExtResource("2_5tiap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8hm4h")
 }],
 "loop": 1,
 "name": &"fall",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_8obyt")
+"texture": SubResource("AtlasTexture_kkj0o")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_7vkj7")
+"texture": SubResource("AtlasTexture_d7xje")
 }],
 "loop": 1,
 "name": &"idle",
@@ -34,7 +63,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_kkj0o")
+"texture": ExtResource("2_5tiap")
 }],
 "loop": 1,
 "name": &"jump",
@@ -42,14 +71,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_d7xje")
+"texture": SubResource("AtlasTexture_2uwn5")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_el5pt")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_hy7ga")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_2uwn5")
+"texture": SubResource("AtlasTexture_d568a")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_d568a")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_8a1cp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uwn5")
 }],
 "loop": 1,
 "name": &"walk",
-"speed": 5.5
+"speed": 24.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mubv7"]
@@ -60,10 +104,12 @@ scale = Vector2(0.72929907, 0.7619306)
 script = ExtResource("1_n4k3f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=311584125]
+position = Vector2(2.7423592, -15.749466)
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.06755535
+frame_progress = 0.41299796
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1367288436]
 position = Vector2(4.1135397, -9.187187)
@@ -75,16 +121,20 @@ shape = SubResource("RectangleShape2D_mubv7")
 [node name="jump" type="AudioStreamPlayer" parent="sfx" unique_id=1945789537]
 stream = ExtResource("3_0f6be")
 volume_db = 1.0
+bus = &"SFX"
 
 [node name="fall" type="AudioStreamPlayer" parent="sfx" unique_id=865715894]
 stream = ExtResource("3_0f6be")
 volume_db = -10.0
 pitch_scale = 0.8
+bus = &"SFX"
 
 [node name="walk" type="AudioStreamPlayer" parent="sfx" unique_id=1542687928]
 stream = ExtResource("4_l711e")
 volume_db = 1.0
+bus = &"SFX"
 
 [node name="switch" type="AudioStreamPlayer" parent="sfx" unique_id=804715492]
 stream = ExtResource("10_8obyt")
 volume_db = 5.0
+bus = &"SFX"

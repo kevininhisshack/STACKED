@@ -24,3 +24,4 @@ num_of_keys = 5
 [node name="GateUnlock" type="AudioStreamPlayer" parent="." unique_id=1855269687]
 stream = ExtResource("1_t0416")
 volume_db = 10.0
+bus = &"SFX"

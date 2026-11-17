@@ -15,6 +15,10 @@ run/main_scene="uid://lt1d75dotp13"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://Assets/Images/Sprites/icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://dlap6716hotuy"
+
 [autoload]
 
 GameData="*uid://diitw0bbyi5dl"
