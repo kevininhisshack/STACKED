@@ -29,7 +29,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="options" type="VBoxContainer" parent="Layer A" unique_id=1427180185]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -51,7 +50,6 @@ theme_override_font_sizes/font_size = 30
 text = "settings"
 
 [node name="Button2" type="Button" parent="Layer A/options" unique_id=1991830401]
-visible = false
 custom_minimum_size = Vector2(150, 55)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
@@ -153,6 +151,7 @@ theme_override_font_sizes/font_size = 30
 text = "back"
 
 [node name="credits" type="Control" parent="Layer A" unique_id=1159423789]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -346,7 +345,6 @@ stream = ExtResource("5_i0ct7")
 bus = &"Music"
 
 [node name="Button" type="Button" parent="." unique_id=952606704]
-visible = false
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -359,7 +357,6 @@ theme_override_font_sizes/font_size = 30
 text = "switch"
 
 [node name="intro" type="ColorRect" parent="." unique_id=542591056]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -370,7 +367,6 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="logo" type="Label" parent="." unique_id=1000667933]
-visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

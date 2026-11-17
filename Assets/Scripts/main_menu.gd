@@ -94,3 +94,5 @@ func _on_credits_back_pressed() -> void:
 	$"Layer A/credits".hide()
 	$logo.show()
 	$Button.show()
+	$"Layer A/options/Button".show()
+	$"Layer A/options/Button2".show()
