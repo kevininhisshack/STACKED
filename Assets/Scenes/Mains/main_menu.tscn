@@ -386,4 +386,5 @@ text = "STACKED"
 [connection signal="value_changed" from="Layer A/settings/PanelContainer/audio settings/HSlider3" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="pressed" from="Layer A/settings/PanelContainer/Button" to="." method="_on_settings_back_pressed"]
 [connection signal="pressed" from="Layer A/credits/Button" to="." method="_on_credits_back_pressed"]
+[connection signal="pressed" from="Layer B/Button" to="." method="_on_lvl_0_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_switch_pressed"]
