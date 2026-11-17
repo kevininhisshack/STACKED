@@ -102,4 +102,4 @@ func _on_credits_back_pressed() -> void:
 	$"Layer A/options/Button2".show()
 
 func _on_lvl_0_pressed() -> void:
-	get_tree().change_scene_to_file("res://Assets/Scenes/Mains/test_scene.tscn")
+	get_tree().change_scene_to_file("res://Assets/Scenes/Mains/tutorial.tscn")

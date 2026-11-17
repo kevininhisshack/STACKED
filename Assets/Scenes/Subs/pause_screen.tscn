@@ -50,19 +50,111 @@ theme_override_font_sizes/font_size = 30
 text = "resume
 "
 
-[node name="Button2" type="Button" parent="Panel/options" unique_id=1909422957]
+[node name="Button2" type="Button" parent="Panel/options" unique_id=1151817981]
+custom_minimum_size = Vector2(150, 55)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "settings
+"
+
+[node name="Button3" type="Button" parent="Panel/options" unique_id=1909422957]
 custom_minimum_size = Vector2(150, 55)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "restart"
 
-[node name="Button3" type="Button" parent="Panel/options" unique_id=1082009027]
+[node name="Button4" type="Button" parent="Panel/options" unique_id=1082009027]
 custom_minimum_size = Vector2(150, 55)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "menu
 "
 
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=561123386]
+visible = false
+custom_minimum_size = Vector2(1100, 596)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="audio settings" type="VBoxContainer" parent="PanelContainer" unique_id=554947521]
+custom_minimum_size = Vector2(800, 550)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/separation = 0
+
+[node name="Label2" type="Label" parent="PanelContainer/audio settings" unique_id=146662579]
+custom_minimum_size = Vector2(700, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "audio"
+
+[node name="Label" type="Label" parent="PanelContainer/audio settings" unique_id=1421289498]
+custom_minimum_size = Vector2(600, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Master"
+
+[node name="HSlider" type="HSlider" parent="PanelContainer/audio settings" unique_id=1118582782]
+custom_minimum_size = Vector2(500, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+max_value = 1.0
+step = 0.001
+
+[node name="Label3" type="Label" parent="PanelContainer/audio settings" unique_id=265865357]
+custom_minimum_size = Vector2(600, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Music"
+
+[node name="HSlider2" type="HSlider" parent="PanelContainer/audio settings" unique_id=325612588]
+custom_minimum_size = Vector2(500, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+max_value = 1.0
+step = 0.001
+
+[node name="Label4" type="Label" parent="PanelContainer/audio settings" unique_id=1391981690]
+custom_minimum_size = Vector2(600, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "SFX"
+
+[node name="HSlider3" type="HSlider" parent="PanelContainer/audio settings" unique_id=1081789614]
+custom_minimum_size = Vector2(500, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+max_value = 1.0
+step = 0.001
+
+[node name="Button" type="Button" parent="PanelContainer" unique_id=360570289]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 30
+text = "back"
+
 [connection signal="pressed" from="Panel/options/Button" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Panel/options/Button2" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="Panel/options/Button3" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Panel/options/Button2" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Panel/options/Button3" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Panel/options/Button4" to="." method="_on_menu_pressed"]
+[connection signal="value_changed" from="PanelContainer/audio settings/HSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="PanelContainer/audio settings/HSlider2" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="PanelContainer/audio settings/HSlider3" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="PanelContainer/Button" to="." method="_on_settings_back_pressed"]
