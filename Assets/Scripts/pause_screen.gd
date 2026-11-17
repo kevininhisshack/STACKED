@@ -27,6 +27,7 @@ func _on_restart_pressed() -> void:
 
 
 func _on_menu_pressed() -> void:
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Assets/Scenes/Mains/main_menu.tscn")
 	
 
