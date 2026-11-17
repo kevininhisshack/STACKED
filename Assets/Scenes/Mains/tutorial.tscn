@@ -1,20 +1,21 @@
 [gd_scene format=3 uid="uid://g5r7jxwbc205"]
 
-[ext_resource type="PackedScene" uid="uid://2g4b8h0uij5a" path="res://Assets/Scenes/Subs/player.tscn" id="1_q32xp"]
-[ext_resource type="PackedScene" uid="uid://chyphwvpndabr" path="res://Assets/Scenes/Subs/jump_orb.tscn" id="1_s3due"]
-[ext_resource type="PackedScene" uid="uid://cil0c2532hd11" path="res://Assets/Scenes/Subs/gate_component.tscn" id="2_0px0o"]
-[ext_resource type="PackedScene" uid="uid://bv1tmf4jhere4" path="res://Assets/Scenes/Subs/player_cam.tscn" id="2_2wgf0"]
-[ext_resource type="PackedScene" uid="uid://cmqwek43kjay0" path="res://Assets/Scenes/Subs/check_point.tscn" id="3_afebg"]
-[ext_resource type="PackedScene" uid="uid://deups0we4l3nm" path="res://Assets/Scenes/Subs/death_border.tscn" id="4_53yni"]
-[ext_resource type="PackedScene" uid="uid://coj876gx51t68" path="res://Assets/Scenes/Subs/key.tscn" id="5_25ocr"]
-[ext_resource type="AudioStream" uid="uid://buk5okvsxslaa" path="res://Assets/Audio/Music/layer A.mp3" id="5_vmadm"]
-[ext_resource type="AudioStream" uid="uid://dryh82uocnxmy" path="res://Assets/Audio/Music/layer B.mp3" id="5_xvxrd"]
-[ext_resource type="PackedScene" uid="uid://cjo6h4crmg6vq" path="res://Assets/Scenes/Subs/win.tscn" id="9_25ocr"]
-[ext_resource type="Script" uid="uid://cbs1jhkgnx2gp" path="res://Assets/Scripts/layer_manager.gd" id="10_syiyr"]
-[ext_resource type="PackedScene" uid="uid://b6actsfncl1nc" path="res://Assets/Scenes/Subs/camera_trigger.tscn" id="11_ye4n6"]
-[ext_resource type="PackedScene" uid="uid://xv644ngmk1fa" path="res://Assets/Scenes/Subs/obstacle.tscn" id="12_xpkxo"]
-[ext_resource type="PackedScene" uid="uid://d22jhp113ud1n" path="res://Assets/Scenes/Subs/pause_screen.tscn" id="14_5gai6"]
-[ext_resource type="Script" uid="uid://ohn0yjxt7fde" path="res://Assets/Scripts/timer.gd" id="14_rv2rx"]
+[ext_resource type="PackedScene" uid="uid://2g4b8h0uij5a" path="res://Assets/Scenes/Subs/player.tscn" id="1_ldtwy"]
+[ext_resource type="PackedScene" uid="uid://bv1tmf4jhere4" path="res://Assets/Scenes/Subs/player_cam.tscn" id="2_5mp4u"]
+[ext_resource type="PackedScene" uid="uid://deups0we4l3nm" path="res://Assets/Scenes/Subs/death_border.tscn" id="3_kverb"]
+[ext_resource type="AudioStream" uid="uid://buk5okvsxslaa" path="res://Assets/Audio/Music/layer A.mp3" id="4_atcmn"]
+[ext_resource type="AudioStream" uid="uid://dryh82uocnxmy" path="res://Assets/Audio/Music/layer B.mp3" id="5_j2vm5"]
+[ext_resource type="PackedScene" uid="uid://cil0c2532hd11" path="res://Assets/Scenes/Subs/gate_component.tscn" id="6_kppyc"]
+[ext_resource type="PackedScene" uid="uid://cmqwek43kjay0" path="res://Assets/Scenes/Subs/check_point.tscn" id="7_36kln"]
+[ext_resource type="PackedScene" uid="uid://chyphwvpndabr" path="res://Assets/Scenes/Subs/jump_orb.tscn" id="8_iie53"]
+[ext_resource type="PackedScene" uid="uid://coj876gx51t68" path="res://Assets/Scenes/Subs/key.tscn" id="9_p4scd"]
+[ext_resource type="PackedScene" uid="uid://cjo6h4crmg6vq" path="res://Assets/Scenes/Subs/win.tscn" id="10_cyxyh"]
+[ext_resource type="PackedScene" uid="uid://xv644ngmk1fa" path="res://Assets/Scenes/Subs/obstacle.tscn" id="11_3bptp"]
+[ext_resource type="PackedScene" uid="uid://b6actsfncl1nc" path="res://Assets/Scenes/Subs/camera_trigger.tscn" id="12_oo5dv"]
+[ext_resource type="Script" uid="uid://cbs1jhkgnx2gp" path="res://Assets/Scripts/layer_manager.gd" id="13_aihcj"]
+[ext_resource type="PackedScene" uid="uid://d22jhp113ud1n" path="res://Assets/Scenes/Subs/pause_screen.tscn" id="14_kwekb"]
+[ext_resource type="PackedScene" uid="uid://brpqfpvxddoqh" path="res://Assets/Scenes/Subs/win_screen.tscn" id="15_sdrxm"]
+[ext_resource type="Script" uid="uid://ohn0yjxt7fde" path="res://Assets/Scripts/timer.gd" id="16_wpdbm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(541.5, 369)
@@ -35,12 +36,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.16078432, 0.16078432, 0.23529412, 1)
 
-[node name="Player" parent="." unique_id=1072838877 node_paths=PackedStringArray("pause_screen") instance=ExtResource("1_q32xp")]
+[node name="Player" parent="." unique_id=1072838877 instance=ExtResource("1_ldtwy")]
 position = Vector2(564, 211)
 starting_layer = true
-pause_screen = NodePath("")
 
-[node name="Player Cam" parent="Player" unique_id=311087094 groups=["camera"] instance=ExtResource("2_2wgf0")]
+[node name="Player Cam" parent="Player" unique_id=311087094 groups=["camera"] instance=ExtResource("2_5mp4u")]
 process_callback = 0
 limit_left = 64
 limit_top = -10000004
@@ -49,19 +49,19 @@ limit_bottom = 996
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
-[node name="Death Border" parent="." unique_id=1881485949 instance=ExtResource("4_53yni")]
+[node name="Death Border" parent="." unique_id=1881485949 instance=ExtResource("3_kverb")]
 position = Vector2(3745, 2413)
 
 [node name="Audio" type="Node" parent="." unique_id=840622766]
 
 [node name="layer A track" type="AudioStreamPlayer" parent="Audio" unique_id=42930235]
-stream = ExtResource("5_vmadm")
+stream = ExtResource("4_atcmn")
 autoplay = true
 bus = &"Music"
 parameters/looping = true
 
 [node name="layer B track" type="AudioStreamPlayer" parent="Audio" unique_id=356224548]
-stream = ExtResource("5_xvxrd")
+stream = ExtResource("5_j2vm5")
 autoplay = true
 bus = &"Music"
 parameters/looping = true
@@ -93,7 +93,7 @@ position = Vector2(5075.9, 576.30005)
 color = Color(0.20392157, 0.48235294, 0.8745098, 1)
 polygon = PackedVector2Array(181, 233, 339, -139, 136, -1876, 639, -1849, 417, -131, 560, 235)
 
-[node name="Gate Component" parent="layer A/Ground/Polygon2D 3" unique_id=640938381 node_paths=PackedStringArray("gate_collider") instance=ExtResource("2_0px0o")]
+[node name="Gate Component" parent="layer A/Ground/Polygon2D 3" unique_id=640938381 node_paths=PackedStringArray("gate_collider") instance=ExtResource("6_kppyc")]
 num_of_keys = 3
 gate_collider = NodePath("../../CollisionPolygon2D 3")
 
@@ -121,21 +121,21 @@ polygon = PackedVector2Array(48, 329, 1189.251, 305.3474, 1399, 301, 1981, 252, 
 
 [node name="Check Points" type="Node2D" parent="layer A" unique_id=251345041]
 
-[node name="Check Point" parent="layer A/Check Points" unique_id=174571432 instance=ExtResource("3_afebg")]
+[node name="Check Point" parent="layer A/Check Points" unique_id=174571432 instance=ExtResource("7_36kln")]
 position = Vector2(565, 215)
 layer = "A"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer A/Check Points/Check Point" unique_id=1188171655]
 polygon = PackedVector2Array(-246, -168, -246, 99, 273, 102, 273, -175)
 
-[node name="Check Point2" parent="layer A/Check Points" unique_id=319160577 instance=ExtResource("3_afebg")]
+[node name="Check Point2" parent="layer A/Check Points" unique_id=319160577 instance=ExtResource("7_36kln")]
 position = Vector2(4957, 312)
 layer = "A"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer A/Check Points/Check Point2" unique_id=1097898241]
 polygon = PackedVector2Array(275, 144, 266, -202, -210, -287, -242, 134)
 
-[node name="Check Point3" parent="layer A/Check Points" unique_id=589676662 instance=ExtResource("3_afebg")]
+[node name="Check Point3" parent="layer A/Check Points" unique_id=589676662 instance=ExtResource("7_36kln")]
 position = Vector2(7407, -251)
 layer = "A"
 
@@ -145,31 +145,31 @@ polygon = PackedVector2Array(7623, -347, 7153, -342, 7176, -30, 7613, -30)
 
 [node name="Jump Orbs" type="Node2D" parent="layer A" unique_id=127670989]
 
-[node name="Jump Orb" parent="layer A/Jump Orbs" unique_id=404922491 instance=ExtResource("1_s3due")]
+[node name="Jump Orb" parent="layer A/Jump Orbs" unique_id=404922491 instance=ExtResource("8_iie53")]
 position = Vector2(1209, 132)
 layer = "A"
 
-[node name="Jump Orb2" parent="layer A/Jump Orbs" unique_id=397508505 instance=ExtResource("1_s3due")]
+[node name="Jump Orb2" parent="layer A/Jump Orbs" unique_id=397508505 instance=ExtResource("8_iie53")]
 position = Vector2(5915, 385)
 layer = "A"
 
 [node name="Keys" type="Node2D" parent="layer A" unique_id=942870509]
 
-[node name="Key" parent="layer A/Keys" unique_id=291257703 instance=ExtResource("5_25ocr")]
+[node name="Key" parent="layer A/Keys" unique_id=291257703 instance=ExtResource("9_p4scd")]
 position = Vector2(2623, -611)
 layer = "A"
 
-[node name="Key2" parent="layer A/Keys" unique_id=723861586 node_paths=PackedStringArray("gate") instance=ExtResource("5_25ocr")]
+[node name="Key2" parent="layer A/Keys" unique_id=723861586 node_paths=PackedStringArray("gate") instance=ExtResource("9_p4scd")]
 position = Vector2(3968, 340)
 gate = NodePath("../../Ground/Polygon2D 3/Gate Component")
 layer = "A"
 
-[node name="Key3" parent="layer A/Keys" unique_id=1937677452 node_paths=PackedStringArray("gate") instance=ExtResource("5_25ocr")]
+[node name="Key3" parent="layer A/Keys" unique_id=1937677452 node_paths=PackedStringArray("gate") instance=ExtResource("9_p4scd")]
 position = Vector2(4400, 201)
 gate = NodePath("../../Ground/Polygon2D 3/Gate Component")
 layer = "A"
 
-[node name="Key4" parent="layer A/Keys" unique_id=1831305573 node_paths=PackedStringArray("gate") instance=ExtResource("5_25ocr")]
+[node name="Key4" parent="layer A/Keys" unique_id=1831305573 node_paths=PackedStringArray("gate") instance=ExtResource("9_p4scd")]
 position = Vector2(5126, 337)
 gate = NodePath("../../Ground/Polygon2D 3/Gate Component")
 layer = "A"
@@ -232,23 +232,23 @@ i,ll make an actual animation for the keys later
 
 also press K"
 
-[node name="Win" parent="layer A" unique_id=1796645974 node_paths=PackedStringArray("lyrA_music", "lyrB_music", "win_screen", "timer") groups=["Layer A collisions"] instance=ExtResource("9_25ocr")]
+[node name="Win" parent="layer A" unique_id=1796645974 node_paths=PackedStringArray("lyrA_music", "lyrB_music", "win_screen", "timer") groups=["Layer A collisions"] instance=ExtResource("10_cyxyh")]
 position = Vector2(8671, 359)
 next_level = "level1"
 lyrA_music = NodePath("../../Audio/layer A track")
 lyrB_music = NodePath("../../Audio/layer B track")
-win_screen = NodePath("../../Win Screen")
+win_screen = NodePath("")
 timer = NodePath("../../Timer")
 layer = "A"
 
 [node name="Obstacles" type="Node2D" parent="layer A" unique_id=46800712]
 
-[node name="Obstacle" parent="layer A/Obstacles" unique_id=1931312273 instance=ExtResource("12_xpkxo")]
+[node name="Obstacle" parent="layer A/Obstacles" unique_id=1931312273 instance=ExtResource("11_3bptp")]
 position = Vector2(4348, 418)
 rotation = -0.33161256
 layer = "A"
 
-[node name="Obstacle2" parent="layer A/Obstacles" unique_id=1393997514 instance=ExtResource("12_xpkxo")]
+[node name="Obstacle2" parent="layer A/Obstacles" unique_id=1393997514 instance=ExtResource("11_3bptp")]
 position = Vector2(4435, 411)
 rotation = 0.67718774
 scale = Vector2(0.99999994, 0.99999994)
@@ -256,7 +256,7 @@ layer = "A"
 
 [node name="cam triggers" type="Node2D" parent="layer A" unique_id=1880644376]
 
-[node name="Camera Trigger" parent="layer A/cam triggers" unique_id=390977385 instance=ExtResource("11_ye4n6")]
+[node name="Camera Trigger" parent="layer A/cam triggers" unique_id=390977385 instance=ExtResource("12_oo5dv")]
 position = Vector2(2503, -602)
 camPOS = Vector2(2503, -602)
 display_time = 3.0
@@ -266,7 +266,7 @@ layer = "A"
 position = Vector2(177, 907)
 shape = SubResource("RectangleShape2D_g4v7s")
 
-[node name="Camera Trigger2" parent="layer A/cam triggers" unique_id=917879953 instance=ExtResource("11_ye4n6")]
+[node name="Camera Trigger2" parent="layer A/cam triggers" unique_id=917879953 instance=ExtResource("12_oo5dv")]
 position = Vector2(8859, 422)
 camPOS = Vector2(8860, 422)
 layer = "A"
@@ -274,7 +274,7 @@ layer = "A"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer A/cam triggers/Camera Trigger2" unique_id=1703663230]
 polygon = PackedVector2Array(463, -329, -698, -343, -701, 170, 458, 148)
 
-[node name="Camera Trigger3" parent="layer A/cam triggers" unique_id=272158821 instance=ExtResource("11_ye4n6")]
+[node name="Camera Trigger3" parent="layer A/cam triggers" unique_id=272158821 instance=ExtResource("12_oo5dv")]
 position = Vector2(5302, 334)
 camPOS = Vector2(5300, 335)
 layer = "A"
@@ -282,7 +282,7 @@ layer = "A"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer A/cam triggers/Camera Trigger3" unique_id=171181543]
 polygon = PackedVector2Array(-548, -307, 6, -36, 26, 56, -581, 118)
 
-[node name="Camera Trigger4" parent="layer A/cam triggers" unique_id=971727692 instance=ExtResource("11_ye4n6")]
+[node name="Camera Trigger4" parent="layer A/cam triggers" unique_id=971727692 instance=ExtResource("12_oo5dv")]
 position = Vector2(1332, 197)
 layer = "A"
 
@@ -350,16 +350,16 @@ text = "STACKED"
 [node name="obstacles" type="Node2D" parent="layer B" unique_id=98072845]
 
 [node name="Layer Manager" type="Node" parent="." unique_id=1552996101 node_paths=PackedStringArray("bg", "layerA", "layerB", "trackA", "trackB")]
-script = ExtResource("10_syiyr")
+script = ExtResource("13_aihcj")
 bg = NodePath("../BG")
 layerA = NodePath("../layer A")
 layerB = NodePath("../layer B")
 trackA = NodePath("../Audio/layer A track")
 trackB = NodePath("../Audio/layer B track")
 
-[node name="Pause Screen" parent="." unique_id=615945996 instance=ExtResource("14_5gai6")]
+[node name="Pause Screen" parent="." unique_id=615945996 instance=ExtResource("14_kwekb")]
 
-[node name="Win Screen" type="CanvasLayer" parent="." unique_id=94663984]
+[node name="Win Screen" parent="." unique_id=1452246685 instance=ExtResource("15_sdrxm")]
 
 [node name="Timer" type="Timer" parent="." unique_id=1640210569]
-script = ExtResource("14_rv2rx")
+script = ExtResource("16_wpdbm")

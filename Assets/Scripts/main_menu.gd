@@ -28,10 +28,12 @@ func _ready() -> void:
 	
 	# check levels
 	for button in $"Layer B/levels".get_children():
-		var level_num = button.name.trim_prefix("Button")
+		var level_num = button.name.trim_prefix("level").to_int()
 		var key = "level" + str(level_num)
 		if not GameData.level_stats.get(key , false):
 			button.disabled = true
+		else:
+			button.pressed.connect(_on_level_pressed.bind(button.name))
 	
 	# audio stuff
 	$"Layer A/settings/PanelContainer/audio settings/HSlider".value = db_to_linear((AudioServer.get_bus_volume_db(master_idx)))
@@ -103,3 +105,6 @@ func _on_credits_back_pressed() -> void:
 
 func _on_lvl_0_pressed() -> void:
 	get_tree().change_scene_to_file("res://Assets/Scenes/Mains/tutorial.tscn")
+
+func _on_level_pressed(level_name : String):
+	get_tree().change_scene_to_file("res://Assets/Scenes/Mains/%s.tscn" % level_name)

@@ -267,64 +267,64 @@ theme_override_constants/h_separation = 120
 theme_override_constants/v_separation = 60
 columns = 5
 
-[node name="Button1" type="Button" parent="Layer B/levels" unique_id=544069636]
+[node name="level1" type="Button" parent="Layer B/levels" unique_id=544069636]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "1"
 
-[node name="Button2" type="Button" parent="Layer B/levels" unique_id=246892710]
+[node name="level2" type="Button" parent="Layer B/levels" unique_id=246892710]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "2"
 
-[node name="Button3" type="Button" parent="Layer B/levels" unique_id=128114806]
+[node name="level3" type="Button" parent="Layer B/levels" unique_id=128114806]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "3"
 
-[node name="Button4" type="Button" parent="Layer B/levels" unique_id=384077229]
+[node name="level4" type="Button" parent="Layer B/levels" unique_id=384077229]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "4
 "
 
-[node name="Button5" type="Button" parent="Layer B/levels" unique_id=1391911302]
+[node name="level5" type="Button" parent="Layer B/levels" unique_id=1391911302]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "5
 "
 
-[node name="Button6" type="Button" parent="Layer B/levels" unique_id=235194435]
+[node name="level6" type="Button" parent="Layer B/levels" unique_id=235194435]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "6
 "
 
-[node name="Button7" type="Button" parent="Layer B/levels" unique_id=197249614]
+[node name="level7" type="Button" parent="Layer B/levels" unique_id=197249614]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "7"
 
-[node name="Button8" type="Button" parent="Layer B/levels" unique_id=983110260]
+[node name="level8" type="Button" parent="Layer B/levels" unique_id=983110260]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "8"
 
-[node name="Button9" type="Button" parent="Layer B/levels" unique_id=1518354597]
+[node name="level9" type="Button" parent="Layer B/levels" unique_id=1518354597]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "9"
 
-[node name="Button10" type="Button" parent="Layer B/levels" unique_id=692333777]
+[node name="level10" type="Button" parent="Layer B/levels" unique_id=692333777]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30

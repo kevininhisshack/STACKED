@@ -5,7 +5,6 @@ extends CharacterBody2D
 @export var jump_velocity: float = -550.0
 @export var jump_cut : float = 0.3
 @export var starting_layer : bool 
-@export var pause_screen : CanvasLayer
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 

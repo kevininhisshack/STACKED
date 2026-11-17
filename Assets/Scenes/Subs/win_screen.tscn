@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://brpqfpvxddoqh"]
 
+[ext_resource type="Script" uid="uid://bb436sjj0cglk" path="res://Assets/Scripts/win_screen.gd" id="1_k0nhu"]
+
 [node name="Win Screen" type="CanvasLayer" unique_id=1452246685]
+script = ExtResource("1_k0nhu")
