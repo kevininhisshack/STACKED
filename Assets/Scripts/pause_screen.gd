@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+@export var player : CharacterBody2D
+@export var timer : Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -7,6 +9,11 @@ func _ready() -> void:
 	$"PanelContainer/audio settings/HSlider".value = db_to_linear((AudioServer.get_bus_volume_db(0)))
 	$"PanelContainer/audio settings/HSlider2".value = db_to_linear((AudioServer.get_bus_volume_db(1)))
 	$"PanelContainer/audio settings/HSlider3".value = db_to_linear((AudioServer.get_bus_volume_db(2)))
+
+func _process(delta: float) -> void:
+	$progress/Label.text = "fulfilment : " + str(player.point_counter)
+	$progress/Label2.text = "deaths : " + str(player.deaths)
+	$progress/Label3.text = "time : " + str(timer.elapsed)
 
 
 func _input(event: InputEvent) -> void:
@@ -16,6 +23,7 @@ func _input(event: InputEvent) -> void:
 func pause():
 	visible = not visible
 	get_tree().paused = visible
+	timer.running = not visible
 
 func _on_resume_pressed() -> void:
 	pause()

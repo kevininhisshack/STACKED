@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8dw8l61jl8ic"
-path="res://.godot/imported/jump.svg-91fdfc4ecc3a3883f7f36097c106d543.ctex"
+uid="uid://bi0evtav06ae"
+path="res://.godot/imported/win screen thing.png-d1aac3ef8afb57b27280f381fee032da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Sprites/jump.svg"
-dest_files=["res://.godot/imported/jump.svg-91fdfc4ecc3a3883f7f36097c106d543.ctex"]
+source_file="res://Assets/Images/Sprites/win screen thing.png"
+dest_files=["res://.godot/imported/win screen thing.png-d1aac3ef8afb57b27280f381fee032da.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

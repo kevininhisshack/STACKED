@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2e3gllbqrssi"
-path="res://.godot/imported/fall.svg-08aa333900dfa2ca289877dff3682d42.ctex"
+uid="uid://c27juw4cac2lj"
+path="res://.godot/imported/collectable idle.png-baf0c9826a702bfc0fa38a1a3023a8df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Sprites/fall.svg"
-dest_files=["res://.godot/imported/fall.svg-08aa333900dfa2ca289877dff3682d42.ctex"]
+source_file="res://Assets/Images/Sprite sheets/collectable idle.png"
+dest_files=["res://.godot/imported/collectable idle.png-baf0c9826a702bfc0fa38a1a3023a8df.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

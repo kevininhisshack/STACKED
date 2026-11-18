@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da0qxp7048bbd"
-path="res://.godot/imported/walk 2.svg-345fbe9fcee6d3cf5576e00665fab606.ctex"
+uid="uid://d4kiv26euthrh"
+path="res://.godot/imported/win anim.png-ae7816313726156af7e029b74d041473.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Sprites/walk 2.svg"
-dest_files=["res://.godot/imported/walk 2.svg-345fbe9fcee6d3cf5576e00665fab606.ctex"]
+source_file="res://Assets/Images/Sprite sheets/win anim.png"
+dest_files=["res://.godot/imported/win anim.png-ae7816313726156af7e029b74d041473.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

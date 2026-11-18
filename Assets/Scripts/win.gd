@@ -18,7 +18,8 @@ func win():
 	lyrB_music.stop()
 	$AnimatedSprite2D.play("win")
 	GameData.level_stats[next_level] = true
-	get_tree().change_scene_to_file("res://Assets/Scenes/Mains/main_menu.tscn")
+	await $BigWin.finished
+	win_screen.visible = true
 
 
 func _on_body_entered(body: Node2D) -> void:

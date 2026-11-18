@@ -8,6 +8,7 @@
 
 [node name="Main Menu" type="Node" unique_id=1213536807]
 script = ExtResource("1_slseb")
+metadata/_edit_vertical_guides_ = [678.0]
 
 [node name="GameData" type="Node" parent="." unique_id=97758106]
 script = ExtResource("1_ci7te")
@@ -41,18 +42,18 @@ offset_right = 75.0
 offset_bottom = 156.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 30
 
 [node name="Button" type="Button" parent="Layer A/options" unique_id=847505698]
-custom_minimum_size = Vector2(150, 55)
+custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "settings"
 
 [node name="Button2" type="Button" parent="Layer A/options" unique_id=1991830401]
-custom_minimum_size = Vector2(150, 55)
+custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "credits"
 
 [node name="settings" type="Control" parent="Layer A" unique_id=1365807126]
@@ -234,20 +235,20 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Button" type="Button" parent="Layer B" unique_id=898022668]
-custom_minimum_size = Vector2(70, 70)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -526.0
-offset_top = 81.0
-offset_right = -456.0
-offset_bottom = 151.0
+offset_left = -580.0
+offset_top = 76.0
+offset_right = -500.0
+offset_bottom = 156.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "0"
 
 [node name="levels" type="GridContainer" parent="Layer B" unique_id=1185080489]
@@ -268,66 +269,66 @@ theme_override_constants/v_separation = 60
 columns = 5
 
 [node name="level1" type="Button" parent="Layer B/levels" unique_id=544069636]
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "1"
 
 [node name="level2" type="Button" parent="Layer B/levels" unique_id=246892710]
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "2"
 
 [node name="level3" type="Button" parent="Layer B/levels" unique_id=128114806]
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "3"
 
 [node name="level4" type="Button" parent="Layer B/levels" unique_id=384077229]
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "4
 "
 
 [node name="level5" type="Button" parent="Layer B/levels" unique_id=1391911302]
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "5
 "
 
 [node name="level6" type="Button" parent="Layer B/levels" unique_id=235194435]
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "6
 "
 
 [node name="level7" type="Button" parent="Layer B/levels" unique_id=197249614]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "7"
 
 [node name="level8" type="Button" parent="Layer B/levels" unique_id=983110260]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "8"
 
 [node name="level9" type="Button" parent="Layer B/levels" unique_id=1518354597]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "9"
 
 [node name="level10" type="Button" parent="Layer B/levels" unique_id=692333777]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "10"
 
 [node name="Audio" type="Node" parent="." unique_id=2107794324]
@@ -370,12 +371,12 @@ color = Color(0, 0, 0, 1)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -217.0
-offset_top = 100.0
-offset_right = 217.0
-offset_bottom = 237.0
+offset_left = -282.0
+offset_top = 242.0
+offset_right = 152.0
+offset_bottom = 379.0
 grow_horizontal = 2
-scale = Vector2(1, 3)
+scale = Vector2(1.4, 4.2)
 theme_override_font_sizes/font_size = 100
 text = "STACKED"
 

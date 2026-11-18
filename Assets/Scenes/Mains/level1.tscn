@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://buk5okvsxslaa" path="res://Assets/Audio/Music/layer A.mp3" id="4_jobxg"]
 [ext_resource type="AudioStream" uid="uid://dryh82uocnxmy" path="res://Assets/Audio/Music/layer B.mp3" id="5_nefka"]
 [ext_resource type="Script" uid="uid://cbs1jhkgnx2gp" path="res://Assets/Scripts/layer_manager.gd" id="6_b4a8w"]
+[ext_resource type="PackedScene" uid="uid://cjo6h4crmg6vq" path="res://Assets/Scenes/Subs/win.tscn" id="6_wk37u"]
 [ext_resource type="PackedScene" uid="uid://d22jhp113ud1n" path="res://Assets/Scenes/Subs/pause_screen.tscn" id="7_serph"]
 [ext_resource type="PackedScene" uid="uid://brpqfpvxddoqh" path="res://Assets/Scenes/Subs/win_screen.tscn" id="8_u1efq"]
 [ext_resource type="Script" uid="uid://ohn0yjxt7fde" path="res://Assets/Scripts/timer.gd" id="9_bdlbj"]
@@ -81,6 +82,17 @@ polygon = PackedVector2Array(376, 379, 955, 385, 838, 513, 537, 629, 310, 547)
 
 [node name="cam triggers" type="Node2D" parent="layer A" unique_id=1254414997]
 
+[node name="Win" parent="layer A" unique_id=1796645974 node_paths=PackedStringArray("lyrA_music", "lyrB_music", "win_screen", "timer") instance=ExtResource("6_wk37u")]
+position = Vector2(951, 141)
+next_level = "level2"
+lyrA_music = NodePath("../../Audio/layer A track")
+lyrB_music = NodePath("../../Audio/layer B track")
+win_screen = NodePath("../../Win Screen")
+timer = NodePath("../../Timer")
+layer = "A"
+
+[node name="collectables" type="Node2D" parent="layer A" unique_id=1717696961]
+
 [node name="layer B" type="Node2D" parent="." unique_id=281587097]
 
 [node name="Yapping" type="Control" parent="layer B" unique_id=850871017]
@@ -108,6 +120,8 @@ polygon = PackedVector2Array(-543, 148, 1608, 130, 1201, 394)
 
 [node name="cam triggers" type="Node2D" parent="layer B" unique_id=214138640]
 
+[node name="collectables" type="Node2D" parent="layer B" unique_id=1725667599]
+
 [node name="Layer Manager" type="Node" parent="." unique_id=1233233988 node_paths=PackedStringArray("bg", "layerA", "layerB", "trackA", "trackB")]
 script = ExtResource("6_b4a8w")
 bg = NodePath("../BG")
@@ -116,11 +130,15 @@ layerB = NodePath("../layer B")
 trackA = NodePath("../Audio/layer A track")
 trackB = NodePath("../Audio/layer B track")
 
-[node name="Pause Screen" parent="." unique_id=615945996 instance=ExtResource("7_serph")]
+[node name="Pause Screen" parent="." unique_id=615945996 node_paths=PackedStringArray("player", "timer") instance=ExtResource("7_serph")]
 visible = false
+player = NodePath("../Player")
+timer = NodePath("../Timer")
 
-[node name="Win Screen" parent="." unique_id=1452246685 instance=ExtResource("8_u1efq")]
+[node name="Win Screen" parent="." unique_id=1452246685 node_paths=PackedStringArray("player", "timer") instance=ExtResource("8_u1efq")]
 visible = false
+player = NodePath("../Player")
+timer = NodePath("../Timer")
 
 [node name="Timer" type="Timer" parent="." unique_id=1148073915]
 script = ExtResource("9_bdlbj")

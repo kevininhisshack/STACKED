@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cjo6h4crmg6vq" path="res://Assets/Scenes/Subs/win.tscn" id="10_cyxyh"]
 [ext_resource type="PackedScene" uid="uid://xv644ngmk1fa" path="res://Assets/Scenes/Subs/obstacle.tscn" id="11_3bptp"]
 [ext_resource type="PackedScene" uid="uid://b6actsfncl1nc" path="res://Assets/Scenes/Subs/camera_trigger.tscn" id="12_oo5dv"]
+[ext_resource type="PackedScene" uid="uid://61symr6hyjmv" path="res://Assets/Scenes/Subs/collectable.tscn" id="13_5mp4u"]
 [ext_resource type="Script" uid="uid://cbs1jhkgnx2gp" path="res://Assets/Scripts/layer_manager.gd" id="13_aihcj"]
 [ext_resource type="PackedScene" uid="uid://d22jhp113ud1n" path="res://Assets/Scenes/Subs/pause_screen.tscn" id="14_kwekb"]
 [ext_resource type="PackedScene" uid="uid://brpqfpvxddoqh" path="res://Assets/Scenes/Subs/win_screen.tscn" id="15_sdrxm"]
@@ -233,11 +234,11 @@ i,ll make an actual animation for the keys later
 also press K"
 
 [node name="Win" parent="layer A" unique_id=1796645974 node_paths=PackedStringArray("lyrA_music", "lyrB_music", "win_screen", "timer") groups=["Layer A collisions"] instance=ExtResource("10_cyxyh")]
-position = Vector2(8671, 359)
+position = Vector2(8671, 380)
 next_level = "level1"
 lyrA_music = NodePath("../../Audio/layer A track")
 lyrB_music = NodePath("../../Audio/layer B track")
-win_screen = NodePath("")
+win_screen = NodePath("../../Win Screen")
 timer = NodePath("../../Timer")
 layer = "A"
 
@@ -288,6 +289,13 @@ layer = "A"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer A/cam triggers/Camera Trigger4" unique_id=1902314195]
 polygon = PackedVector2Array(-705, -225, 13, -477, -2, 441, -705, 112)
+
+[node name="collectables" type="Node2D" parent="layer A" unique_id=1348946830]
+position = Vector2(-9813, -4392)
+
+[node name="collectable" parent="layer A/collectables" unique_id=988664260 instance=ExtResource("13_5mp4u")]
+position = Vector2(9989, 4643)
+layer = "A"
 
 [node name="layer B" type="Node2D" parent="." unique_id=1920260554]
 
@@ -349,6 +357,13 @@ text = "STACKED"
 
 [node name="obstacles" type="Node2D" parent="layer B" unique_id=98072845]
 
+[node name="collectables" type="Node2D" parent="layer B" unique_id=753779971]
+position = Vector2(-9813, -4392)
+
+[node name="collectable" parent="layer B/collectables" unique_id=1281429402 instance=ExtResource("13_5mp4u")]
+position = Vector2(17395, 4793)
+layer = "B"
+
 [node name="Layer Manager" type="Node" parent="." unique_id=1552996101 node_paths=PackedStringArray("bg", "layerA", "layerB", "trackA", "trackB")]
 script = ExtResource("13_aihcj")
 bg = NodePath("../BG")
@@ -357,9 +372,15 @@ layerB = NodePath("../layer B")
 trackA = NodePath("../Audio/layer A track")
 trackB = NodePath("../Audio/layer B track")
 
-[node name="Pause Screen" parent="." unique_id=615945996 instance=ExtResource("14_kwekb")]
+[node name="Pause Screen" parent="." unique_id=615945996 node_paths=PackedStringArray("player", "timer") instance=ExtResource("14_kwekb")]
+player = NodePath("../Player")
+timer = NodePath("../Timer")
 
-[node name="Win Screen" parent="." unique_id=1452246685 instance=ExtResource("15_sdrxm")]
+[node name="Win Screen" parent="." unique_id=1452246685 node_paths=PackedStringArray("player", "timer", "win") instance=ExtResource("15_sdrxm")]
+visible = false
+player = NodePath("../Player")
+timer = NodePath("../Timer")
+win = NodePath("../layer A/Win")
 
 [node name="Timer" type="Timer" parent="." unique_id=1640210569]
 script = ExtResource("16_wpdbm")
