@@ -20,6 +20,7 @@ var deaths : int = 0
 # if we get enough time we can make a ranking system
 
 func _ready():
+	check_pointPOS = position
 	GameData.in_layerA = starting_layer
 
 func _physics_process(delta):

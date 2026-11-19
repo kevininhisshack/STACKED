@@ -3,6 +3,7 @@ extends CanvasLayer
 @export var player : CharacterBody2D
 @export var timer : Timer
 @export var win : Area2D
+@export var first_lvl : bool
 @export var final_lvl : bool
 
 var win_quote := ["good job , keep going." , "I knew you could do it." , "you are doing great , do not stop."]
@@ -11,6 +12,9 @@ func _ready() -> void:
 	var choose_quote := randi_range(0 , 2)
 	
 	$"Control/win quote".text = win_quote[choose_quote]
+	
+	if first_lvl:
+		$Control/Label.hide()
 	
 	if final_lvl:
 		$Control/Button.hide()

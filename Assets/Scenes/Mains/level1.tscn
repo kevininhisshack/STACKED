@@ -135,10 +135,11 @@ visible = false
 player = NodePath("../Player")
 timer = NodePath("../Timer")
 
-[node name="Win Screen" parent="." unique_id=1452246685 node_paths=PackedStringArray("player", "timer") instance=ExtResource("8_u1efq")]
+[node name="Win Screen" parent="." unique_id=1452246685 node_paths=PackedStringArray("player", "timer", "win") instance=ExtResource("8_u1efq")]
 visible = false
 player = NodePath("../Player")
 timer = NodePath("../Timer")
+win = NodePath("../layer A/Win")
 
 [node name="Timer" type="Timer" parent="." unique_id=1148073915]
 script = ExtResource("9_bdlbj")
