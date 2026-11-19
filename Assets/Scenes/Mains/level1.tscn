@@ -83,7 +83,7 @@ polygon = PackedVector2Array(376, 379, 955, 385, 838, 513, 537, 629, 310, 547)
 [node name="cam triggers" type="Node2D" parent="layer A" unique_id=1254414997]
 
 [node name="Win" parent="layer A" unique_id=1796645974 node_paths=PackedStringArray("lyrA_music", "lyrB_music", "win_screen", "timer") instance=ExtResource("6_wk37u")]
-position = Vector2(951, 141)
+position = Vector2(931, 153)
 next_level = "level2"
 lyrA_music = NodePath("../../Audio/layer A track")
 lyrB_music = NodePath("../../Audio/layer B track")
