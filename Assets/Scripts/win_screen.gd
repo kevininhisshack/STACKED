@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	if visible == true:
 		timer.running = false
 	
-	$Control/Label.text = "fulfilment : " + str(player.point_counter) + " / 3"
+	$Control/Label.text = "fulfilments : " + str(player.point_counter) + " / 3"
 	$Control/Label2.text = "deaths : " + str(player.deaths)
 	$Control/Label3.text = "time : " + str(timer.elapsed)
 
