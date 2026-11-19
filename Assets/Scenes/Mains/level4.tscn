@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://c6pkebr8udyns"]
+
+[ext_resource type="PackedScene" uid="uid://2g4b8h0uij5a" path="res://Assets/Scenes/Subs/player.tscn" id="1_k5ypm"]
+[ext_resource type="PackedScene" uid="uid://bv1tmf4jhere4" path="res://Assets/Scenes/Subs/player_cam.tscn" id="2_7webb"]
+[ext_resource type="PackedScene" uid="uid://deups0we4l3nm" path="res://Assets/Scenes/Subs/death_border.tscn" id="3_017k5"]
+[ext_resource type="AudioStream" uid="uid://buk5okvsxslaa" path="res://Assets/Audio/Music/layer A.mp3" id="4_6ruiw"]
+[ext_resource type="AudioStream" uid="uid://dryh82uocnxmy" path="res://Assets/Audio/Music/layer B.mp3" id="5_4243u"]
+[ext_resource type="PackedScene" uid="uid://cjo6h4crmg6vq" path="res://Assets/Scenes/Subs/win.tscn" id="6_usb41"]
+[ext_resource type="Script" uid="uid://cbs1jhkgnx2gp" path="res://Assets/Scripts/layer_manager.gd" id="7_3tmnx"]
+[ext_resource type="PackedScene" uid="uid://d22jhp113ud1n" path="res://Assets/Scenes/Subs/pause_screen.tscn" id="8_tya6y"]
+[ext_resource type="PackedScene" uid="uid://brpqfpvxddoqh" path="res://Assets/Scenes/Subs/win_screen.tscn" id="9_mtfx6"]
+[ext_resource type="Script" uid="uid://ohn0yjxt7fde" path="res://Assets/Scripts/timer.gd" id="10_y6p3s"]
+
+[node name="level4" type="Node" unique_id=1700016125]
+
+[node name="BG" type="ColorRect" parent="." unique_id=1847292358]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9813.0
+offset_top = -4392.0
+offset_right = 22043.0
+offset_bottom = 8655.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16078432, 0.16078432, 0.23529412, 1)
+
+[node name="Player" parent="." unique_id=1072838877 instance=ExtResource("1_k5ypm")]
+position = Vector2(564, 211)
+starting_layer = true
+
+[node name="Player Cam" parent="Player" unique_id=311087094 groups=["camera"] instance=ExtResource("2_7webb")]
+process_callback = 0
+limit_left = 64
+limit_top = -10000004
+limit_right = 9600
+limit_bottom = 996
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+
+[node name="Death Border" parent="." unique_id=1881485949 instance=ExtResource("3_017k5")]
+position = Vector2(3745, 2413)
+
+[node name="Audio" type="Node" parent="." unique_id=21965379]
+
+[node name="layer A track" type="AudioStreamPlayer" parent="Audio" unique_id=437438697]
+stream = ExtResource("4_6ruiw")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="layer B track" type="AudioStreamPlayer" parent="Audio" unique_id=2099404937]
+stream = ExtResource("5_4243u")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="layer A" type="Node2D" parent="." unique_id=1084112939]
+
+[node name="Yapping" type="Control" parent="layer A" unique_id=1960091848]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Ground" type="StaticBody2D" parent="layer A" unique_id=648018819]
+
+[node name="Polygon2D" type="Polygon2D" parent="layer A/Ground" unique_id=1419994505]
+position = Vector2(-81, -61)
+color = Color(0.20392157, 0.48235294, 0.8745098, 1)
+polygon = PackedVector2Array(376, 379, 955, 385, 838, 513, 537, 629, 310, 547)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer A/Ground" unique_id=389723732 groups=["Layer A collisions"]]
+position = Vector2(-81, -61)
+polygon = PackedVector2Array(376, 379, 955, 385, 838, 513, 537, 629, 310, 547)
+
+[node name="Check Points" type="Node2D" parent="layer A" unique_id=1793501445]
+
+[node name="Jump Orbs" type="Node2D" parent="layer A" unique_id=338842819]
+
+[node name="Keys" type="Node2D" parent="layer A" unique_id=1292416806]
+
+[node name="Obstacles" type="Node2D" parent="layer A" unique_id=1403044076]
+
+[node name="cam triggers" type="Node2D" parent="layer A" unique_id=118606698]
+
+[node name="Win" parent="layer A" unique_id=1796645974 node_paths=PackedStringArray("lyrA_music", "lyrB_music", "win_screen", "timer") instance=ExtResource("6_usb41")]
+position = Vector2(951, 141)
+next_level = "level5"
+lyrA_music = NodePath("../../Audio/layer A track")
+lyrB_music = NodePath("../../Audio/layer B track")
+win_screen = NodePath("../../Win Screen")
+timer = NodePath("../../Timer")
+layer = "A"
+
+[node name="collectables" type="Node2D" parent="layer A" unique_id=1948103699]
+
+[node name="layer B" type="Node2D" parent="." unique_id=1707557189]
+
+[node name="Yapping" type="Control" parent="layer B" unique_id=24234717]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Ground" type="StaticBody2D" parent="layer B" unique_id=1710574227]
+
+[node name="Polygon2D" type="Polygon2D" parent="layer B/Ground" unique_id=899253686]
+position = Vector2(6959, 395)
+color = Color(0.85490197, 0.16470589, 0.28235295, 1)
+polygon = PackedVector2Array(-543, 148, 1608, 130, 1201, 394)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer B/Ground" unique_id=1846784592]
+position = Vector2(6959, 395)
+polygon = PackedVector2Array(-543, 148, 1608, 130, 1201, 394)
+
+[node name="Jump Orbs" type="Node2D" parent="layer B" unique_id=1512252897]
+
+[node name="Keys" type="Node2D" parent="layer B" unique_id=121494441]
+
+[node name="Obstacles" type="Node2D" parent="layer B" unique_id=1591827115]
+
+[node name="Check Points" type="Node2D" parent="layer B" unique_id=794981939]
+
+[node name="cam triggers" type="Node2D" parent="layer B" unique_id=1183621623]
+
+[node name="collectables" type="Node2D" parent="layer B" unique_id=1073133729]
+
+[node name="Layer Manager" type="Node" parent="." unique_id=851887239 node_paths=PackedStringArray("bg", "layerA", "layerB", "trackA", "trackB")]
+script = ExtResource("7_3tmnx")
+bg = NodePath("../BG")
+layerA = NodePath("../layer A")
+layerB = NodePath("../layer B")
+trackA = NodePath("../Audio/layer A track")
+trackB = NodePath("../Audio/layer B track")
+
+[node name="Pause Screen" parent="." unique_id=615945996 node_paths=PackedStringArray("player", "timer") instance=ExtResource("8_tya6y")]
+visible = false
+player = NodePath("../Player")
+timer = NodePath("../Timer")
+
+[node name="Win Screen" parent="." unique_id=1452246685 node_paths=PackedStringArray("player", "timer", "win") instance=ExtResource("9_mtfx6")]
+visible = false
+player = NodePath("../Player")
+timer = NodePath("../Timer")
+win = NodePath("../layer A/Win")
+
+[node name="Timer" type="Timer" parent="." unique_id=1606643672]
+script = ExtResource("10_y6p3s")

@@ -11,6 +11,7 @@ func _on_body_entered(body: Node2D) -> void:
 		collected(body)
 
 func collected(body):
+	body.jump_orb_touched = true
 	var pitch = randf_range(0.8 , 1.5)
 	$AudioStreamPlayer2D.pitch_scale = pitch
 	$AudioStreamPlayer2D.play()

@@ -5,7 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://deups0we4l3nm" path="res://Assets/Scenes/Subs/death_border.tscn" id="3_kverb"]
 [ext_resource type="AudioStream" uid="uid://buk5okvsxslaa" path="res://Assets/Audio/Music/layer A.mp3" id="4_atcmn"]
 [ext_resource type="AudioStream" uid="uid://dryh82uocnxmy" path="res://Assets/Audio/Music/layer B.mp3" id="5_j2vm5"]
+[ext_resource type="PackedScene" uid="uid://cmqwek43kjay0" path="res://Assets/Scenes/Subs/check_point.tscn" id="7_36kln"]
 [ext_resource type="PackedScene" uid="uid://cjo6h4crmg6vq" path="res://Assets/Scenes/Subs/win.tscn" id="10_cyxyh"]
+[ext_resource type="PackedScene" uid="uid://b6actsfncl1nc" path="res://Assets/Scenes/Subs/camera_trigger.tscn" id="12_oo5dv"]
 [ext_resource type="Script" uid="uid://cbs1jhkgnx2gp" path="res://Assets/Scripts/layer_manager.gd" id="13_aihcj"]
 [ext_resource type="PackedScene" uid="uid://d22jhp113ud1n" path="res://Assets/Scenes/Subs/pause_screen.tscn" id="14_kwekb"]
 [ext_resource type="PackedScene" uid="uid://brpqfpvxddoqh" path="res://Assets/Scenes/Subs/win_screen.tscn" id="15_sdrxm"]
@@ -19,10 +21,10 @@ metadata/_edit_horizontal_guides_ = [912.0, 924.0]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -9802.0
-offset_top = -4433.0
-offset_right = 22054.0
-offset_bottom = 8614.0
+offset_left = -11952.0
+offset_top = -4655.0
+offset_right = 19904.0
+offset_bottom = 8392.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.16078432, 0.16078432, 0.23529412, 1)
@@ -35,7 +37,7 @@ starting_layer = true
 process_callback = 0
 limit_left = 64
 limit_top = -10000004
-limit_right = 9600
+limit_right = 11100
 limit_bottom = 996
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
@@ -65,7 +67,7 @@ parameters/looping = true
 position = Vector2(-81, -61)
 polygon = PackedVector2Array(376, 379, 1593, 375, 1393, 479, 619, 481, 310, 547)
 
-[node name="Polygon2D" type="Polygon2D" parent="layer A/Ground" unique_id=2038914027 groups=["Layer A collisions"]]
+[node name="Polygon2D" type="Polygon2D" parent="layer A/Ground" unique_id=2038914027]
 position = Vector2(-81, -61)
 color = Color(0.20392157, 0.48235294, 0.8745098, 1)
 polygon = PackedVector2Array(376, 379, 1593, 375, 1393, 479, 619, 481, 310, 547)
@@ -74,12 +76,64 @@ polygon = PackedVector2Array(376, 379, 1593, 375, 1393, 479, 619, 481, 310, 547)
 position = Vector2(1626, 70)
 polygon = PackedVector2Array(376, 379, 1593, 375, 1412, 485, 518, 438)
 
-[node name="Polygon2D2" type="Polygon2D" parent="layer A/Ground" unique_id=777547372 groups=["Layer A collisions"]]
+[node name="Polygon2D2" type="Polygon2D" parent="layer A/Ground" unique_id=777547372]
 position = Vector2(1626, 70)
 color = Color(0.20392157, 0.48235294, 0.8745098, 1)
 polygon = PackedVector2Array(376, 379, 1593, 375, 1412, 485, 518, 438)
 
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="layer A/Ground" unique_id=997675653 groups=["Layer A collisions"]]
+position = Vector2(3193, 126)
+polygon = PackedVector2Array(306, 213, 1605, 244, 1412, 485, 518, 438)
+
+[node name="Polygon2D3" type="Polygon2D" parent="layer A/Ground" unique_id=2074144467]
+position = Vector2(3193, 126)
+color = Color(0.20392157, 0.48235294, 0.8745098, 1)
+polygon = PackedVector2Array(306, 213, 1605, 244, 1412, 485, 518, 438)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="layer A/Ground" unique_id=346735993 groups=["Layer A collisions"]]
+position = Vector2(5193.6, 409.59998)
+polygon = PackedVector2Array(577, 303, 1303, 350, 1389, 422, 601, 425)
+
+[node name="Polygon2D4" type="Polygon2D" parent="layer A/Ground" unique_id=1015909103]
+position = Vector2(5193.6, 409.59998)
+color = Color(0.20392157, 0.48235294, 0.8745098, 1)
+polygon = PackedVector2Array(577, 303, 1303, 350, 1389, 422, 601, 425)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="layer A/Ground" unique_id=1963688919 groups=["Layer A collisions"]]
+position = Vector2(5244, 298)
+polygon = PackedVector2Array(2877, 235, 3617.4, 243.40002, 3472.4, 260.40002, 2971.4, 269.40002)
+
+[node name="Polygon2D5" type="Polygon2D" parent="layer A/Ground" unique_id=1607098979]
+position = Vector2(5244, 298)
+color = Color(0.20392157, 0.48235294, 0.8745098, 1)
+polygon = PackedVector2Array(2877, 235, 3617.4, 243.40002, 3472.4, 260.40002, 2971.4, 269.40002)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="layer A/Ground" unique_id=1671320727 groups=["Layer A collisions"]]
+position = Vector2(5917, 228)
+polygon = PackedVector2Array(3257, 211, 3826, 201, 3786, 248, 3148, 251)
+
+[node name="Polygon2D6" type="Polygon2D" parent="layer A/Ground" unique_id=1800677641]
+position = Vector2(5917, 228)
+color = Color(0.20392157, 0.48235294, 0.8745098, 1)
+polygon = PackedVector2Array(3257, 211, 3826, 201, 3786, 248, 3148, 251)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="layer A/Ground" unique_id=535343919 groups=["Layer A collisions"]]
+position = Vector2(7105, 239)
+polygon = PackedVector2Array(3063, 189, 3855, 187, 3734, 245, 3151, 277)
+
+[node name="Polygon2D7" type="Polygon2D" parent="layer A/Ground" unique_id=333821122]
+position = Vector2(7105, 239)
+color = Color(0.20392157, 0.48235294, 0.8745098, 1)
+polygon = PackedVector2Array(3063, 189, 3855, 187, 3734, 245, 3151, 277)
+
 [node name="Check Points" type="Node2D" parent="layer A" unique_id=251345041]
+
+[node name="Check Point" parent="layer A/Check Points" unique_id=174571432 instance=ExtResource("7_36kln")]
+position = Vector2(4657, 202)
+layer = "A"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer A/Check Points/Check Point" unique_id=547408020]
+polygon = PackedVector2Array(-904, -180, -920, 168, 317, 166, 314, -168)
 
 [node name="Jump Orbs" type="Node2D" parent="layer A" unique_id=127670989]
 
@@ -138,17 +192,128 @@ offset_bottom = 291.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
-text = "This world is undone, incomplete, abandoned"
+text = "This world is undone, incomplete, abandoned."
+
+[node name="Label4" type="Label" parent="layer A/Yapping" unique_id=496156616]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4889.0
+offset_top = 133.0
+offset_right = 5548.0
+offset_bottom = 265.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Hm. press K ,
+and i will transport you to 
+the layer that completes this one."
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="layer A/Yapping" unique_id=1741718669]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 6221.0
+offset_top = 591.0
+offset_right = 6359.0
+offset_bottom = 633.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Good job."
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="layer A/Yapping" unique_id=1450691307]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 7158.0
+offset_top = 589.0
+offset_right = 7413.0
+offset_bottom = 631.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Switch right here."
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="layer A/Yapping" unique_id=785055663]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 9159.0
+offset_top = -545.0
+offset_right = 9664.0
+offset_bottom = -458.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "I will try to guide you through this ,
+until you can get out."
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="layer A/Yapping" unique_id=615608681]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 10420.0
+offset_top = 259.0
+offset_right = 10527.0
+offset_bottom = 301.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Step in."
+horizontal_alignment = 1
 
 [node name="Obstacles" type="Node2D" parent="layer A" unique_id=46800712]
 
 [node name="cam triggers" type="Node2D" parent="layer A" unique_id=1880644376]
 
+[node name="Camera Trigger" parent="layer A/cam triggers" unique_id=390977385 instance=ExtResource("12_oo5dv")]
+position = Vector2(4636, 164)
+layer = "A"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer A/cam triggers/Camera Trigger" unique_id=996001173]
+polygon = PackedVector2Array(-377, -75, 485, -130, 491, 200, -417, 191)
+
+[node name="Camera Trigger2" parent="layer A/cam triggers" unique_id=969567542 instance=ExtResource("12_oo5dv")]
+position = Vector2(6878, 674)
+layer = "A"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer A/cam triggers/Camera Trigger2" unique_id=2001901744]
+polygon = PackedVector2Array(-693, -188, -6, -190, 3, 343, -690, 318)
+
+[node name="Camera Trigger3" parent="layer A/cam triggers" unique_id=1731647736 instance=ExtResource("12_oo5dv")]
+position = Vector2(9409, -508)
+display_time = 3.0
+layer = "A"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer A/cam triggers/Camera Trigger3" unique_id=1100805572]
+position = Vector2(-13, 359)
+polygon = PackedVector2Array(-228, 350, -235, 575, 322, 576, 328, 324)
+
 [node name="collectables" type="Node2D" parent="layer A" unique_id=1348946830]
 position = Vector2(-9813, -4392)
 
 [node name="Win" parent="layer A" unique_id=1796645974 node_paths=PackedStringArray("lyrA_music", "lyrB_music", "win_screen", "timer") groups=["Layer A collisions"] instance=ExtResource("10_cyxyh")]
-position = Vector2(8671, 380)
+position = Vector2(10673, 295)
 next_level = "level1"
 lyrA_music = NodePath("../../Audio/layer A track")
 lyrB_music = NodePath("../../Audio/layer B track")
@@ -161,15 +326,39 @@ layer = "A"
 [node name="Ground" type="StaticBody2D" parent="layer B" unique_id=400599583]
 
 [node name="Polygon2D" type="Polygon2D" parent="layer B/Ground" unique_id=57370924]
-position = Vector2(6959, 395)
+position = Vector2(3554.2998, 236.20001)
 color = Color(0.85490197, 0.16470589, 0.28235295, 1)
-polygon = PackedVector2Array(-543, 148, 1608, 130, 1201, 394)
+polygon = PackedVector2Array(638.7002, 145.79999, 1608, 130, 1201, 394)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer B/Ground" unique_id=1740157514]
-position = Vector2(6959, 395)
-polygon = PackedVector2Array(-543, 148, 1608, 130, 1201, 394)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer B/Ground" unique_id=1740157514 groups=["Layer B collisions"]]
+position = Vector2(3554.2998, 236.20001)
+polygon = PackedVector2Array(632.7002, 145.79999, 1608, 130, 1201, 394)
+
+[node name="Polygon2D2" type="Polygon2D" parent="layer B/Ground" unique_id=726639227]
+position = Vector2(6286, 595)
+color = Color(0.85490197, 0.16470589, 0.28235295, 1)
+polygon = PackedVector2Array(834, 190, 1610, 187, 1019, 308)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="layer B/Ground" unique_id=446411929 groups=["Layer B collisions"]]
+position = Vector2(6286, 595)
+polygon = PackedVector2Array(834, 190, 1610, 187, 1019, 308)
+
+[node name="Polygon2D3" type="Polygon2D" parent="layer B/Ground" unique_id=1180060572]
+position = Vector2(7279, 497)
+color = Color(0.85490197, 0.16470589, 0.28235295, 1)
+polygon = PackedVector2Array(829, 222, 1614, 230, 1275, 296)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="layer B/Ground" unique_id=2035979652 groups=["Layer B collisions"]]
+position = Vector2(7279, 497)
+polygon = PackedVector2Array(829, 222, 1614, 230, 1275, 296)
 
 [node name="Check Points" type="Node2D" parent="layer B" unique_id=732243268]
+
+[node name="Check Point" parent="layer B/Check Points" unique_id=587385288 instance=ExtResource("7_36kln")]
+position = Vector2(7437, 664)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer B/Check Points/Check Point" unique_id=258059237]
+polygon = PackedVector2Array(364, -91, 21, -89, 23, 106, 391, 111)
 
 [node name="Jump Orbs" type="Node2D" parent="layer B" unique_id=339678904]
 
@@ -181,21 +370,53 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="layer B/Yapping" unique_id=212258187]
+[node name="Label" type="Label" parent="layer B/Yapping" unique_id=1633763367]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 7172.0
-offset_top = 298.0
-offset_right = 7502.0
-offset_bottom = 340.0
+offset_left = 5521.0
+offset_top = 203.0
+offset_right = 6099.0
+offset_bottom = 245.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
-text = "MWAHAHAHAHAHAHA"
+text = "Jump to me and switch again right here."
+
+[node name="Label2" type="Label" parent="layer B/Yapping" unique_id=212258187]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4315.0
+offset_top = 231.0
+offset_right = 4893.0
+offset_bottom = 273.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "That action is called a switch."
+
+[node name="Label3" type="Label" parent="layer B/Yapping" unique_id=401986654]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 8213.0
+offset_top = 340.0
+offset_right = 8791.0
+offset_bottom = 382.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Jump to me and switch again."
 
 [node name="cam triggers" type="Node2D" parent="layer B" unique_id=1576521386]
 

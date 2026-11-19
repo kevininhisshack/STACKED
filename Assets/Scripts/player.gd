@@ -13,6 +13,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var jumps : int = 1
 var was_on_floor : bool = true
+var jump_orb_touched : bool
+var coyote_time := 0.1
+var coyote_timer := 0.0
 var check_pointPOS: Vector2 = Vector2.ZERO
 var deaths : int = 0
 
@@ -24,6 +27,13 @@ func _ready():
 	GameData.in_layerA = starting_layer
 
 func _physics_process(delta):
+	
+	if is_on_floor():
+		coyote_timer = coyote_time
+		jump_orb_touched = false
+	else:
+		coyote_timer -= delta
+	
 	# Gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -37,9 +47,8 @@ func _physics_process(delta):
 
 	# Jump
 	if Input.is_action_just_pressed("jump") and jumps > 0:
-		$sfx/jump.play(0.25)
-		velocity.y = jump_velocity
-		jumps -= 1
+		jump()
+
 	# this makes you cut your jump if you let go of the button early
 	# the jump cut var is currently 0.2 and it is an export so you can edit it
 	if Input.is_action_just_released("jump") and velocity.y < 0:
@@ -86,3 +95,16 @@ func death_func():
 	$sfx/Death.play()
 	global_position = check_pointPOS
 	
+
+func jump():
+	if coyote_timer > 0.0 and jumps == 1:
+		coyote_timer = 0.0
+		$sfx/jump.play(0.25)
+		velocity.y = jump_velocity
+		jumps -= 1
+	
+	elif not is_on_floor() and jump_orb_touched == true and jumps > 0:
+		$sfx/jump.play(0.25)
+		velocity.y = jump_velocity
+		jumps -= 1
+		jump_orb_touched = false
