@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	
 	$Control/Label.text = "fulfilments : " + str(player.point_counter) + " / 3"
 	$Control/Label2.text = "deaths : " + str(player.deaths)
-	$Control/Label3.text = "time : " + str(timer.elapsed)
+	$Control/Label3.text = "time : " + str(timer.time_formating(timer.elapsed))
 
 func _on_next_pressed() -> void:
 	get_tree().change_scene_to_file("res://Assets/Scenes/Mains/%s.tscn" % win.next_level)

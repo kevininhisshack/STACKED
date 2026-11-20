@@ -163,7 +163,7 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_top = -145.0
-offset_right = 418.0
+offset_right = 255.0
 grow_vertical = 0
 size_flags_horizontal = 0
 size_flags_vertical = 8
@@ -196,7 +196,7 @@ offset_bottom = 160.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 30
-text = "time : 00:00"
+text = "time : 00 : 00 . 00"
 
 [connection signal="pressed" from="Panel/options/Button" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Panel/options/Button2" to="." method="_on_settings_pressed"]

@@ -13,7 +13,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	$progress/Label.text = "fulfilment : " + str(player.point_counter)
 	$progress/Label2.text = "deaths : " + str(player.deaths)
-	$progress/Label3.text = "time : " + str(timer.elapsed)
+	$progress/Label3.text = "time : " + str(timer.time_formating(timer.elapsed))
 
 
 func _input(event: InputEvent) -> void:

@@ -12,7 +12,7 @@ func _ready():
 	$CollisionShape2D.set_deferred("disabled" , (layer == "A") != GameData.in_layerA)
 
 func win():
-	timer.stop()
+	timer.set_process(false)
 	$BigWin.play()
 	lyrA_music.stop()
 	lyrB_music.stop()
