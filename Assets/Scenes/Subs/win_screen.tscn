@@ -199,7 +199,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0, 1, 2, 3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(2200, 700), Vector2(2200, 700), Vector2(2200, 700), Vector2(1800, 700)]
+"values": [Vector2(2200, 700), Vector2(2200, 700), Vector2(2200, 700), Vector2(1700, 700)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -211,7 +211,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0, 1, 2, 3, 4),
 "transitions": PackedFloat32Array(1, 1, 1.0000124, 1, 1),
 "update": 0,
-"values": [Vector2(2200, 825), Vector2(2200, 825), Vector2(2200, 825), Vector2(2200, 825), Vector2(1800, 825)]
+"values": [Vector2(2200, 825), Vector2(2200, 825), Vector2(2200, 825), Vector2(2200, 825), Vector2(1700, 825)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -223,7 +223,7 @@ tracks/8/keys = {
 "times": PackedFloat32Array(0, 2, 3, 4, 5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(2200, 950), Vector2(2200, 950), Vector2(2200, 950), Vector2(2200, 950), Vector2(1800, 950)]
+"values": [Vector2(2200, 950), Vector2(2200, 950), Vector2(2200, 950), Vector2(2200, 950), Vector2(1700, 950)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ytvtv"]

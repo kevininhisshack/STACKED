@@ -122,11 +122,11 @@ anchors_preset = 0
 [node name="Polygon2D" type="Polygon2D" parent="layer B/Ground" unique_id=1296752637]
 position = Vector2(-399.69995, 192.20001)
 color = Color(0.85490197, 0.16470589, 0.28235295, 1)
-polygon = PackedVector2Array(-543, 148, 1608, 130, 1201, 394)
+polygon = PackedVector2Array(301.69995, 155.79999, 1608, 130, 1201, 394)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer B/Ground" unique_id=2100152919 groups=["Layer B collisions"]]
 position = Vector2(-399.69995, 192.20001)
-polygon = PackedVector2Array(-543, 148, 1608, 130, 1201, 394)
+polygon = PackedVector2Array(294.69995, 154.79999, 1608, 130, 1201, 394)
 
 [node name="Jump Orbs" type="Node2D" parent="layer B" unique_id=1672882658]
 

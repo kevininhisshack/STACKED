@@ -159,6 +159,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "left/right = A/D
 jump = space
+pause = Q
 "
 horizontal_alignment = 1
 
