@@ -258,12 +258,12 @@ layer = "A"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer A/cam triggers/Camera Trigger2" unique_id=876251757]
 position = Vector2(-596, -163)
-polygon = PackedVector2Array(-324, 97, -354, -248, 636, -209, 579, 155)
+polygon = PackedVector2Array(-334, 272, -354, -248, 636, -209, 558, 302)
 
 [node name="collectables" type="Node2D" parent="layer A" unique_id=2032077407]
 
 [node name="collectable" parent="layer A/collectables" unique_id=988664260 instance=ExtResource("10_npcf2")]
-position = Vector2(4705, 118)
+position = Vector2(4581, 161)
 layer = "A"
 
 [node name="collectable2" parent="layer A/collectables" unique_id=1538579886 instance=ExtResource("10_npcf2")]
