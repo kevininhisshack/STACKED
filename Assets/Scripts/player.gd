@@ -93,9 +93,10 @@ func death_func():
 	deaths += 1
 	velocity = Vector2.ZERO
 	$sfx/Death.play()
+	$AnimationPlayer.play("death")
 	set_physics_process(false)
 	$AnimatedSprite2D.hide()
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(2).timeout
 	global_position = check_pointPOS
 	$AnimatedSprite2D.show()
 	set_physics_process(true)

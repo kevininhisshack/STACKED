@@ -34,12 +34,12 @@ process_callback = 0
 limit_left = 64
 limit_top = -10000004
 limit_right = 9600
-limit_bottom = 996
+limit_bottom = 1000
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
 [node name="Death Border" parent="." unique_id=1881485949 instance=ExtResource("3_017k5")]
-position = Vector2(3745, 1385)
+position = Vector2(3745, 1070)
 
 [node name="Audio" type="Node" parent="." unique_id=21965379]
 

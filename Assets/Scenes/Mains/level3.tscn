@@ -34,12 +34,12 @@ process_callback = 0
 limit_left = 64
 limit_top = -10000004
 limit_right = 9600
-limit_bottom = 996
+limit_bottom = 1000
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
 [node name="Death Border" parent="." unique_id=1881485949 instance=ExtResource("3_bnp7e")]
-position = Vector2(3711, 1385)
+position = Vector2(3711, 1075)
 
 [node name="Audio" type="Node" parent="." unique_id=639217552]
 
@@ -60,6 +60,25 @@ parameters/looping = true
 [node name="Yapping" type="Control" parent="layer A" unique_id=1414259740]
 layout_mode = 3
 anchors_preset = 0
+
+[node name="Label" type="Label" parent="layer A/Yapping" unique_id=65124984]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 142.0
+offset_top = -17.0
+offset_right = 1609.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "reminder for kev : PLAYER STARTS IN LAYER B , ALSO INTRUDUCE THE JUMP ORB
+
+reminder for nate : DO NOT MESS WITH THE FILES AGAIN YOU WASTED HALF AN HOUR OF LVL DESIGN"
+horizontal_alignment = 1
 
 [node name="Ground" type="StaticBody2D" parent="layer A" unique_id=1019077756]
 
@@ -83,7 +102,7 @@ polygon = PackedVector2Array(376, 379, 955, 385, 838, 513, 537, 629, 310, 547)
 [node name="cam triggers" type="Node2D" parent="layer A" unique_id=806879089]
 
 [node name="Win" parent="layer A" unique_id=1796645974 node_paths=PackedStringArray("lyrA_music", "lyrB_music", "win_screen", "timer") instance=ExtResource("6_8o3kn")]
-position = Vector2(951, 141)
+position = Vector2(1079, 171)
 next_level = "level4"
 lyrA_music = NodePath("../../Audio/layer A track")
 lyrB_music = NodePath("../../Audio/layer B track")

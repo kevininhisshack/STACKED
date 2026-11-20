@@ -20,10 +20,10 @@
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -8444.0
-offset_top = -3322.0
-offset_right = 23412.0
-offset_bottom = 9725.0
+offset_left = -8571.0
+offset_top = -3310.0
+offset_right = 23285.0
+offset_bottom = 9737.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.16078432, 0.16078432, 0.23529412, 1)
@@ -37,12 +37,12 @@ process_callback = 0
 limit_left = 64
 limit_top = -10000004
 limit_right = 9600
-limit_bottom = 996
+limit_bottom = 1000
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
 [node name="Death Border" parent="." unique_id=1881485949 instance=ExtResource("3_lvaoa")]
-position = Vector2(3745, 1098)
+position = Vector2(3745, 1075)
 
 [node name="Audio" type="Node" parent="." unique_id=1352769328]
 
