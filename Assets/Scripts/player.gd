@@ -93,8 +93,12 @@ func death_func():
 	deaths += 1
 	velocity = Vector2.ZERO
 	$sfx/Death.play()
+	set_physics_process(false)
+	$AnimatedSprite2D.hide()
+	await get_tree().create_timer(1).timeout
 	global_position = check_pointPOS
-	
+	$AnimatedSprite2D.show()
+	set_physics_process(true)
 
 func jump():
 	if coyote_timer > 0.0 and jumps == 1:

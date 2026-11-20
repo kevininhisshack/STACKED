@@ -5,10 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://deups0we4l3nm" path="res://Assets/Scenes/Subs/death_border.tscn" id="3_liqcu"]
 [ext_resource type="AudioStream" uid="uid://buk5okvsxslaa" path="res://Assets/Audio/Music/layer A.mp3" id="4_j54bf"]
 [ext_resource type="AudioStream" uid="uid://dryh82uocnxmy" path="res://Assets/Audio/Music/layer B.mp3" id="5_4pc0u"]
+[ext_resource type="PackedScene" uid="uid://cil0c2532hd11" path="res://Assets/Scenes/Subs/gate_component.tscn" id="6_4pc0u"]
 [ext_resource type="PackedScene" uid="uid://cjo6h4crmg6vq" path="res://Assets/Scenes/Subs/win.tscn" id="6_plcgp"]
 [ext_resource type="Script" uid="uid://cbs1jhkgnx2gp" path="res://Assets/Scripts/layer_manager.gd" id="7_028c5"]
+[ext_resource type="PackedScene" uid="uid://chyphwvpndabr" path="res://Assets/Scenes/Subs/jump_orb.tscn" id="7_plcgp"]
+[ext_resource type="PackedScene" uid="uid://coj876gx51t68" path="res://Assets/Scenes/Subs/key.tscn" id="8_028c5"]
 [ext_resource type="PackedScene" uid="uid://d22jhp113ud1n" path="res://Assets/Scenes/Subs/pause_screen.tscn" id="8_npcf2"]
 [ext_resource type="PackedScene" uid="uid://brpqfpvxddoqh" path="res://Assets/Scenes/Subs/win_screen.tscn" id="9_mqpfo"]
+[ext_resource type="PackedScene" uid="uid://61symr6hyjmv" path="res://Assets/Scenes/Subs/collectable.tscn" id="10_npcf2"]
 [ext_resource type="Script" uid="uid://ohn0yjxt7fde" path="res://Assets/Scripts/timer.gd" id="10_rvp1p"]
 
 [node name="level2" type="Node" unique_id=565365070]
@@ -39,7 +43,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
 [node name="Death Border" parent="." unique_id=1881485949 instance=ExtResource("3_liqcu")]
-position = Vector2(3745, 2413)
+position = Vector2(3872, 1385)
 
 [node name="Audio" type="Node" parent="." unique_id=1864646762]
 
@@ -66,24 +70,37 @@ anchors_preset = 0
 [node name="Polygon2D" type="Polygon2D" parent="layer A/Ground" unique_id=1338757028]
 position = Vector2(-81, -61)
 color = Color(0.20392157, 0.48235294, 0.8745098, 1)
-polygon = PackedVector2Array(376, 379, 955, 385, 838, 513, 537, 629, 310, 547)
+polygon = PackedVector2Array(376, 379, 955, 385, 838, 513, 431, 473)
+
+[node name="Gate Component" parent="layer A/Ground/Polygon2D" unique_id=640938381 node_paths=PackedStringArray("gate_collider") instance=ExtResource("6_4pc0u")]
+num_of_keys = 2
+gate_collider = NodePath("../../CollisionPolygon2D")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer A/Ground" unique_id=1296840373 groups=["Layer A collisions"]]
 position = Vector2(-81, -61)
-polygon = PackedVector2Array(376, 379, 955, 385, 838, 513, 537, 629, 310, 547)
+polygon = PackedVector2Array(376, 379, 955, 385, 838, 513, 432, 474)
 
 [node name="Check Points" type="Node2D" parent="layer A" unique_id=1601244384]
 
 [node name="Jump Orbs" type="Node2D" parent="layer A" unique_id=21962481]
 
+[node name="Jump Orb" parent="layer A/Jump Orbs" unique_id=404922491 instance=ExtResource("7_plcgp")]
+position = Vector2(806, 94)
+layer = "A"
+
 [node name="Keys" type="Node2D" parent="layer A" unique_id=413012492]
+
+[node name="Key" parent="layer A/Keys" unique_id=723861586 node_paths=PackedStringArray("gate") instance=ExtResource("8_028c5")]
+position = Vector2(528, 25)
+gate = NodePath("../../Ground/Polygon2D/Gate Component")
+layer = "A"
 
 [node name="Obstacles" type="Node2D" parent="layer A" unique_id=61071185]
 
 [node name="cam triggers" type="Node2D" parent="layer A" unique_id=2020462086]
 
 [node name="Win" parent="layer A" unique_id=1796645974 node_paths=PackedStringArray("lyrA_music", "lyrB_music", "win_screen", "timer") instance=ExtResource("6_plcgp")]
-position = Vector2(951, 141)
+position = Vector2(1707, 28)
 next_level = "level3"
 lyrA_music = NodePath("../../Audio/layer A track")
 lyrB_music = NodePath("../../Audio/layer B track")
@@ -92,6 +109,10 @@ timer = NodePath("../../Timer")
 layer = "A"
 
 [node name="collectables" type="Node2D" parent="layer A" unique_id=2032077407]
+
+[node name="collectable" parent="layer A/collectables" unique_id=988664260 instance=ExtResource("10_npcf2")]
+position = Vector2(358, 54)
+layer = "A"
 
 [node name="layer B" type="Node2D" parent="." unique_id=365491819]
 

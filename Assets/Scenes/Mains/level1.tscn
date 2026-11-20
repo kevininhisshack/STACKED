@@ -42,7 +42,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
 [node name="Death Border" parent="." unique_id=1881485949 instance=ExtResource("3_lvaoa")]
-position = Vector2(3745, 2413)
+position = Vector2(3745, 1098)
 
 [node name="Audio" type="Node" parent="." unique_id=1352769328]
 
@@ -234,21 +234,11 @@ polygon = PackedVector2Array(-603, -606, -587, -342, 20, -351, 32, -615)
 [node name="cam triggers" type="Node2D" parent="layer A" unique_id=1254414997]
 position = Vector2(9, -111)
 
-<<<<<<< HEAD
-[node name="Win" parent="layer A" unique_id=1796645974 node_paths=PackedStringArray("lyrA_music", "lyrB_music", "win_screen", "timer") instance=ExtResource("6_wk37u")]
-position = Vector2(931, 153)
-next_level = "level2"
-lyrA_music = NodePath("../../Audio/layer A track")
-lyrB_music = NodePath("../../Audio/layer B track")
-win_screen = NodePath("../../Win Screen")
-timer = NodePath("../../Timer")
-=======
 [node name="Camera Trigger" parent="layer A/cam triggers" unique_id=390977385 instance=ExtResource("6_jobxg")]
 position = Vector2(539.5, -276)
 camZOOM = Vector2(1.5, 1.5)
 transition_time = 1.0
 display_time = 3.0
->>>>>>> f3693c7ec31c62ecbaa2586501ef4a554302317e
 layer = "A"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer A/cam triggers/Camera Trigger" unique_id=227724663]

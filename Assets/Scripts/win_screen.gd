@@ -6,7 +6,7 @@ extends CanvasLayer
 @export var first_lvl : bool
 @export var final_lvl : bool
 
-var win_quote := ["poop urself." , "I knew you could do it." , "you are doing great , do not stop."]
+var win_quote := ["Good job , keep going." , "I knew you could do it." , "You are doing great , do not stop."]
 
 func _ready() -> void:
 	var choose_quote := randi_range(0 , 2)

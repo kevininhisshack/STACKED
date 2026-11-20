@@ -39,7 +39,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
 [node name="Death Border" parent="." unique_id=1881485949 instance=ExtResource("3_xghpy")]
-position = Vector2(3745, 2413)
+position = Vector2(3745, 1385)
 
 [node name="Audio" type="Node" parent="." unique_id=1646849235]
 

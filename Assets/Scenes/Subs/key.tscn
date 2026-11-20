@@ -220,6 +220,7 @@ autoplay = "idle"
 [node name="KeyCatch" type="AudioStreamPlayer" parent="." unique_id=2099976075]
 stream = ExtResource("4_24qhr")
 volume_db = 10.0
+pitch_scale = 1.2
 bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

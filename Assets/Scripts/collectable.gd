@@ -15,6 +15,7 @@ func collected(body):
 	$Collectable.play()
 	body.point_counter += 1
 	$AnimatedSprite2D.hide()
+	body.get_node("AnimationPlayer").play("fulfilment")
 	$CollisionShape2D.set_deferred("disabled" , true)
 	await $Collectable.finished
 	queue_free()

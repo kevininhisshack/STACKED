@@ -9,10 +9,17 @@ func _ready():
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		$KeyCatch.play()
-		$AnimatedSprite2D.play("collected")
-		$CollisionShape2D.set_deferred("disable" , true)
-		gate.num_of_keys -= 1
-		gate.check_keys()
-		await $KeyCatch.finished
-		queue_free()
+		collected(body)
+
+func collected(body):
+	var pitch = randf_range(0.9 , 1.2)
+	$KeyCatch.pitch_scale = pitch
+	$KeyCatch.play()
+	body.get_node("AnimationPlayer").play("key")
+	$KeyCatch.play()
+	$AnimatedSprite2D.play("collected")
+	$CollisionShape2D.set_deferred("disable" , true)
+	gate.num_of_keys -= 1
+	gate.check_keys()
+	await $KeyCatch.finished
+	queue_free()
