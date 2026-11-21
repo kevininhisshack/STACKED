@@ -133,7 +133,7 @@ position = Vector2(3835, 274)
 layer = "A"
 
 [node name="Jump Orb5" parent="layer A/Jump Orbs" unique_id=143776428 instance=ExtResource("7_bnp7e")]
-position = Vector2(5284, 244)
+position = Vector2(5168, 240)
 layer = "A"
 
 [node name="Jump Orb6" parent="layer A/Jump Orbs" unique_id=1858292843 instance=ExtResource("7_bnp7e")]
