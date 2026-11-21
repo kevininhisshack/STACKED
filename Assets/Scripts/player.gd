@@ -13,7 +13,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var jumps : int = 1
 var was_on_floor : bool = true
-var jump_orb_touched : bool
+var jump_orb_touched : bool = false
 var coyote_time := 0.1
 var coyote_timer := 0.0
 var check_pointPOS: Vector2 = Vector2.ZERO
@@ -89,7 +89,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	if is_on_floor() and not was_on_floor:
-		jumps = max(jumps , 0)
+		jumps = max(jumps , 1)
 		was_on_floor = is_on_floor()
 	# was on floor is a bool variable , just made to fix a bug 
 

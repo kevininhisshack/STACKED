@@ -4,20 +4,24 @@ extends CanvasLayer
 @export var timer : Timer
 @export var win : Area2D
 @export var first_lvl : bool
+@export var second_to_last : bool
 @export var final_lvl : bool
 
-var win_quote := ["Good job , keep going." , "I knew you could do it." , "You are doing great , do not stop."]
+var win_quotes := ["Good job , keep going." , "I knew you could do it." , "You are doing great , do not stop."]
 
 func _ready() -> void:
 	var choose_quote := randi_range(0 , 2)
 	
-	$"Control/win quote".text = win_quote[choose_quote]
+	$"Control/win quote".text = win_quotes[choose_quote]
 	
 	if first_lvl:
 		$Control/Label.hide()
 	
 	if final_lvl:
 		$Control/Button.hide()
+	
+	if second_to_last:
+		$"Control/win quote".text = "..."
 
 func _process(delta: float) -> void:
 	if visible == true:
