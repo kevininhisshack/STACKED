@@ -12,6 +12,7 @@ func _on_body_entered(body: Node2D) -> void:
 		collected(body)
 
 func collected(body):
+	$CollisionShape2D.set_deferred("disabled" , true)
 	var pitch = randf_range(0.9 , 1.2)
 	$KeyCatch.pitch_scale = pitch
 	$KeyCatch.play()

@@ -24,6 +24,7 @@ var switchCD := 0.0
 # if we get enough time we can make a ranking system
 
 func _ready():
+	switchCD = 2.00
 	check_pointPOS = position
 	GameData.in_layerA = starting_layer
 

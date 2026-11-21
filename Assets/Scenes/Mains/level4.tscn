@@ -5,10 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://deups0we4l3nm" path="res://Assets/Scenes/Subs/death_border.tscn" id="3_017k5"]
 [ext_resource type="AudioStream" uid="uid://buk5okvsxslaa" path="res://Assets/Audio/Music/layer A.mp3" id="4_6ruiw"]
 [ext_resource type="AudioStream" uid="uid://dryh82uocnxmy" path="res://Assets/Audio/Music/layer B.mp3" id="5_4243u"]
+[ext_resource type="PackedScene" uid="uid://61symr6hyjmv" path="res://Assets/Scenes/Subs/collectable.tscn" id="6_3tmnx"]
 [ext_resource type="PackedScene" uid="uid://cil0c2532hd11" path="res://Assets/Scenes/Subs/gate_component.tscn" id="6_017k5"]
 [ext_resource type="PackedScene" uid="uid://cjo6h4crmg6vq" path="res://Assets/Scenes/Subs/win.tscn" id="6_usb41"]
 [ext_resource type="Script" uid="uid://cbs1jhkgnx2gp" path="res://Assets/Scripts/layer_manager.gd" id="7_3tmnx"]
 [ext_resource type="PackedScene" uid="uid://coj876gx51t68" path="res://Assets/Scenes/Subs/key.tscn" id="7_6ruiw"]
+[ext_resource type="PackedScene" uid="uid://chyphwvpndabr" path="res://Assets/Scenes/Subs/jump_orb.tscn" id="7_4243u"]
 [ext_resource type="PackedScene" uid="uid://b6actsfncl1nc" path="res://Assets/Scenes/Subs/camera_trigger.tscn" id="8_6ruiw"]
 [ext_resource type="PackedScene" uid="uid://d22jhp113ud1n" path="res://Assets/Scenes/Subs/pause_screen.tscn" id="8_tya6y"]
 [ext_resource type="PackedScene" uid="uid://brpqfpvxddoqh" path="res://Assets/Scenes/Subs/win_screen.tscn" id="9_mtfx6"]
@@ -29,7 +31,7 @@ grow_vertical = 2
 color = Color(0.16078432, 0.16078432, 0.23529412, 1)
 
 [node name="Player" parent="." unique_id=1072838877 instance=ExtResource("1_k5ypm")]
-position = Vector2(434, -1000)
+position = Vector2(434, -800)
 starting_layer = true
 
 [node name="Player Cam" parent="Player" unique_id=311087094 groups=["camera"] instance=ExtResource("2_7webb")]
@@ -82,20 +84,26 @@ text = "This is a gate ,
  collect all its keys to proceed."
 horizontal_alignment = 1
 
+[node name="collectables" type="Node2D" parent="layer A" unique_id=1948103699]
+
+[node name="collectable" parent="layer A/collectables" unique_id=988664260 instance=ExtResource("6_3tmnx")]
+position = Vector2(1040, -152)
+layer = "A"
+
 [node name="Ground" type="StaticBody2D" parent="layer A" unique_id=648018819]
 
 [node name="Polygon2D" type="Polygon2D" parent="layer A/Ground" unique_id=1419994505]
 position = Vector2(-81, -61)
 color = Color(0.20392157, 0.48235294, 0.8745098, 1)
-polygon = PackedVector2Array(366, -186, 438, -179, 434, 146, 596, 163, 432, 267, 436, 382, 2248, 389, 1915, 457, 683, 521, 310, 547)
+polygon = PackedVector2Array(366, -186, 438, -179, 434, 242, 578, 247, 433, 297, 436, 382, 2779, 391, 2736, 458, 683, 521, 310, 547)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer A/Ground" unique_id=641013688 groups=["Layer A collisions"]]
 position = Vector2(-81, -61)
-polygon = PackedVector2Array(366, -186, 438, -179, 434, 146, 596, 163, 432, 267, 436, 382, 2233, 391, 1907, 463, 751, 521, 310, 547)
+polygon = PackedVector2Array(366, -186, 438, -179, 432, 240, 584, 244, 431, 298, 436, 382, 2778, 393, 2735, 457, 751, 521, 310, 547)
 
 [node name="Polygon2D2" type="Polygon2D" parent="layer A/Ground" unique_id=1257617108]
 position = Vector2(470, -70)
-color = Color(0.16303384, 0.39917216, 0.86642766, 1)
+color = Color(0, 0.60784316, 0.24705882, 1)
 polygon = PackedVector2Array(651, -232, 486, -224, 500, 49, 334, 59, 496, 164, 492, 379, 634, 381)
 
 [node name="Gate Component" parent="layer A/Ground/Polygon2D2" unique_id=640938381 node_paths=PackedStringArray("gate_collider") instance=ExtResource("6_017k5")]
@@ -106,19 +114,36 @@ gate_collider = NodePath("../../CollisionPolygon2D2")
 position = Vector2(470, -70)
 polygon = PackedVector2Array(651, -232, 486, -224, 500, 49, 334, 59, 496, 164, 492, 379, 634, 381)
 
+[node name="Polygon2D3" type="Polygon2D" parent="layer A/Ground" unique_id=363477298]
+position = Vector2(2024, -70)
+color = Color(0, 0.60784316, 0.24705882, 1)
+polygon = PackedVector2Array(651, -232, 486, -224, 492, 379, 634, 381)
+
+[node name="Gate Component" parent="layer A/Ground/Polygon2D3" unique_id=1908136840 node_paths=PackedStringArray("gate_collider") instance=ExtResource("6_017k5")]
+num_of_keys = 3
+gate_collider = NodePath("../../CollisionPolygon2D3")
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="layer A/Ground" unique_id=1078033339 groups=["Layer A collisions"]]
+position = Vector2(2024, -70)
+polygon = PackedVector2Array(651, -232, 486, -224, 492, 379, 634, 381)
+
 [node name="Check Points" type="Node2D" parent="layer A" unique_id=1793501445]
 
 [node name="Jump Orbs" type="Node2D" parent="layer A" unique_id=338842819]
 
+[node name="Jump Orb" parent="layer A/Jump Orbs" unique_id=404922491 instance=ExtResource("7_4243u")]
+position = Vector2(639, 1)
+layer = "A"
+
 [node name="Keys" type="Node2D" parent="layer A" unique_id=1292416806]
 
 [node name="Key" parent="layer A/Keys" unique_id=723861586 node_paths=PackedStringArray("gate") instance=ExtResource("7_6ruiw")]
-position = Vector2(440, -49)
+position = Vector2(880, 220)
 gate = NodePath("../../Ground/Polygon2D2/Gate Component")
 layer = "A"
 
 [node name="Key2" parent="layer A/Keys" unique_id=1314002953 node_paths=PackedStringArray("gate") instance=ExtResource("7_6ruiw")]
-position = Vector2(858, 232)
+position = Vector2(450, -500)
 gate = NodePath("../../Ground/Polygon2D2/Gate Component")
 layer = "A"
 
@@ -137,18 +162,16 @@ transition_time = 0.1
 layer = "A"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer A/cam triggers/Camera Trigger" unique_id=82588802]
-polygon = PackedVector2Array(-559, -1154, -588, 493, 1698, 478, 1687, -1125)
+polygon = PackedVector2Array(-559, -1154, -588, 493, 290, 481, 207, -1114)
 
 [node name="Win" parent="layer A" unique_id=1796645974 node_paths=PackedStringArray("lyrA_music", "lyrB_music", "win_screen", "timer") instance=ExtResource("6_usb41")]
-position = Vector2(2422, 156)
+position = Vector2(2846, 136)
 next_level = "level5"
 lyrA_music = NodePath("../../Audio/layer A track")
 lyrB_music = NodePath("../../Audio/layer B track")
 win_screen = NodePath("../../Win Screen")
 timer = NodePath("../../Timer")
 layer = "A"
-
-[node name="collectables" type="Node2D" parent="layer A" unique_id=1948103699]
 
 [node name="layer B" type="Node2D" parent="." unique_id=1707557189]
 
@@ -159,12 +182,12 @@ anchors_preset = 0
 [node name="Ground" type="StaticBody2D" parent="layer B" unique_id=1710574227]
 
 [node name="Polygon2D" type="Polygon2D" parent="layer B/Ground" unique_id=899253686]
-position = Vector2(6959, 395)
+position = Vector2(1278.3, 208.20001)
 color = Color(0.85490197, 0.16470589, 0.28235295, 1)
 polygon = PackedVector2Array(-543, 148, 1608, 130, 1201, 394)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer B/Ground" unique_id=1846784592]
-position = Vector2(6959, 395)
+position = Vector2(1278.3, 208.20001)
 polygon = PackedVector2Array(-543, 148, 1608, 130, 1201, 394)
 
 [node name="Jump Orbs" type="Node2D" parent="layer B" unique_id=1512252897]
