@@ -18,6 +18,7 @@ var coyote_time := 0.1
 var coyote_timer := 0.0
 var check_pointPOS: Vector2 = Vector2.ZERO
 var deaths : int = 0
+var switchCD := 0.0
 
 # the level displays the number of deathes
 # if we get enough time we can make a ranking system
@@ -25,6 +26,10 @@ var deaths : int = 0
 func _ready():
 	check_pointPOS = position
 	GameData.in_layerA = starting_layer
+
+func _process(delta: float) -> void:
+	if switchCD > 0.0:
+		switchCD -= delta
 
 func _physics_process(delta):
 	
@@ -41,7 +46,8 @@ func _physics_process(delta):
 		jumps = max(jumps , 1)
 		
 	# the switch
-	if Input.is_action_just_pressed("switch"):
+	if Input.is_action_just_pressed("switch") and switchCD <= 0.0:
+		switchCD += 0.5
 		$sfx/switch.play(0.25)
 		GameData.in_layerA = not GameData.in_layerA
 
