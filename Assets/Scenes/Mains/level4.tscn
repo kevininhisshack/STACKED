@@ -12,9 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://coj876gx51t68" path="res://Assets/Scenes/Subs/key.tscn" id="7_6ruiw"]
 [ext_resource type="PackedScene" uid="uid://chyphwvpndabr" path="res://Assets/Scenes/Subs/jump_orb.tscn" id="7_4243u"]
 [ext_resource type="PackedScene" uid="uid://b6actsfncl1nc" path="res://Assets/Scenes/Subs/camera_trigger.tscn" id="8_6ruiw"]
+[ext_resource type="PackedScene" uid="uid://cmqwek43kjay0" path="res://Assets/Scenes/Subs/check_point.tscn" id="8_mtfx6"]
 [ext_resource type="PackedScene" uid="uid://d22jhp113ud1n" path="res://Assets/Scenes/Subs/pause_screen.tscn" id="8_tya6y"]
 [ext_resource type="PackedScene" uid="uid://brpqfpvxddoqh" path="res://Assets/Scenes/Subs/win_screen.tscn" id="9_mtfx6"]
 [ext_resource type="Script" uid="uid://ohn0yjxt7fde" path="res://Assets/Scripts/timer.gd" id="10_y6p3s"]
+[ext_resource type="PackedScene" uid="uid://xv644ngmk1fa" path="res://Assets/Scenes/Subs/obstacle.tscn" id="12_3tmnx"]
 
 [node name="level4" type="Node" unique_id=1700016125]
 
@@ -22,10 +24,10 @@
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -10617.0
-offset_top = -5067.0
-offset_right = 21239.0
-offset_bottom = 7980.0
+offset_left = -10640.0
+offset_top = -4972.0
+offset_right = 21216.0
+offset_bottom = 8075.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.16078432, 0.16078432, 0.23529412, 1)
@@ -84,10 +86,27 @@ text = "This is a gate ,
  collect all its keys to proceed."
 horizontal_alignment = 1
 
+[node name="Label2" type="Label" parent="layer A/Yapping" unique_id=753898972]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1056.0
+offset_top = -56.0
+offset_right = 2523.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "The key is on the other layer."
+horizontal_alignment = 1
+
 [node name="collectables" type="Node2D" parent="layer A" unique_id=1948103699]
 
 [node name="collectable" parent="layer A/collectables" unique_id=988664260 instance=ExtResource("6_3tmnx")]
-position = Vector2(1040, -152)
+position = Vector2(327, -763)
 layer = "A"
 
 [node name="Ground" type="StaticBody2D" parent="layer A" unique_id=648018819]
@@ -120,7 +139,7 @@ color = Color(0, 0.60784316, 0.24705882, 1)
 polygon = PackedVector2Array(651, -232, 486, -224, 492, 379, 634, 381)
 
 [node name="Gate Component" parent="layer A/Ground/Polygon2D3" unique_id=1908136840 node_paths=PackedStringArray("gate_collider") instance=ExtResource("6_017k5")]
-num_of_keys = 3
+num_of_keys = 1
 gate_collider = NodePath("../../CollisionPolygon2D3")
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="layer A/Ground" unique_id=1078033339 groups=["Layer A collisions"]]
@@ -128,6 +147,13 @@ position = Vector2(2024, -70)
 polygon = PackedVector2Array(651, -232, 486, -224, 492, 379, 634, 381)
 
 [node name="Check Points" type="Node2D" parent="layer A" unique_id=1793501445]
+
+[node name="Check Point" parent="layer A/Check Points" unique_id=174571432 instance=ExtResource("8_mtfx6")]
+position = Vector2(1939, 106)
+layer = "A"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer A/Check Points/Check Point" unique_id=637557694]
+polygon = PackedVector2Array(-256, -321, -251, 193, 439, 203, 464, -343)
 
 [node name="Jump Orbs" type="Node2D" parent="layer A" unique_id=338842819]
 
@@ -143,7 +169,7 @@ gate = NodePath("../../Ground/Polygon2D2/Gate Component")
 layer = "A"
 
 [node name="Key2" parent="layer A/Keys" unique_id=1314002953 node_paths=PackedStringArray("gate") instance=ExtResource("7_6ruiw")]
-position = Vector2(450, -500)
+position = Vector2(450, -300)
 gate = NodePath("../../Ground/Polygon2D2/Gate Component")
 layer = "A"
 
@@ -165,7 +191,7 @@ layer = "A"
 polygon = PackedVector2Array(-559, -1154, -588, 493, 290, 481, 207, -1114)
 
 [node name="Win" parent="layer A" unique_id=1796645974 node_paths=PackedStringArray("lyrA_music", "lyrB_music", "win_screen", "timer") instance=ExtResource("6_usb41")]
-position = Vector2(2846, 136)
+position = Vector2(3491, 118)
 next_level = "level5"
 lyrA_music = NodePath("../../Audio/layer A track")
 lyrB_music = NodePath("../../Audio/layer B track")
@@ -178,6 +204,24 @@ layer = "A"
 [node name="Yapping" type="Control" parent="layer B" unique_id=24234717]
 layout_mode = 3
 anchors_preset = 0
+
+[node name="Label" type="Label" parent="layer B/Yapping" unique_id=1024475181]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1255.0
+offset_top = -202.0
+offset_right = 2722.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "You...
+are doing great."
+horizontal_alignment = 1
 
 [node name="Ground" type="StaticBody2D" parent="layer B" unique_id=1710574227]
 
@@ -192,9 +236,42 @@ polygon = PackedVector2Array(-543, 148, 1608, 130, 1201, 394)
 
 [node name="Jump Orbs" type="Node2D" parent="layer B" unique_id=1512252897]
 
+[node name="Jump Orb" parent="layer B/Jump Orbs" unique_id=370097937 instance=ExtResource("7_4243u")]
+position = Vector2(2198, 72)
+layer = "B"
+
 [node name="Keys" type="Node2D" parent="layer B" unique_id=121494441]
 
+[node name="Key" parent="layer B/Keys" unique_id=456291933 node_paths=PackedStringArray("gate") instance=ExtResource("7_6ruiw")]
+position = Vector2(2198, -132)
+gate = NodePath("../../../layer A/Ground/Polygon2D3/Gate Component")
+layer = "B"
+
 [node name="Obstacles" type="Node2D" parent="layer B" unique_id=1591827115]
+
+[node name="Obstacle" parent="layer B/Obstacles" unique_id=1931312273 instance=ExtResource("12_3tmnx")]
+position = Vector2(2497, 340.99994)
+rotation = 1.0471976
+layer = "B"
+
+[node name="Obstacle2" parent="layer B/Obstacles" unique_id=501000404 instance=ExtResource("12_3tmnx")]
+position = Vector2(2653, 384)
+layer = "B"
+
+[node name="Obstacle3" parent="layer B/Obstacles" unique_id=333108641 instance=ExtResource("12_3tmnx")]
+position = Vector2(2595, 217.99988)
+rotation = 1.8325958
+layer = "B"
+
+[node name="Obstacle4" parent="layer B/Obstacles" unique_id=923673657 instance=ExtResource("12_3tmnx")]
+position = Vector2(2553.0002, 90.00006)
+rotation = 0.3793671
+layer = "B"
+
+[node name="Obstacle5" parent="layer B/Obstacles" unique_id=1185103870 instance=ExtResource("12_3tmnx")]
+position = Vector2(2608, -41.000122)
+rotation = 2.6179938
+layer = "B"
 
 [node name="Check Points" type="Node2D" parent="layer B" unique_id=794981939]
 
