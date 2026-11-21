@@ -11,6 +11,7 @@ func _on_body_entered(body: Node2D) -> void:
 		collected(body)
 
 func collected(body):
+	$CollisionShape2D.set_deferred("disabled" , true)
 	body.jump_orb_touched = true
 	body.get_node("AnimationPlayer").play("jumporb")
 	var pitch = randf_range(0.8 , 1.5)
@@ -19,12 +20,11 @@ func collected(body):
 	$AnimatedSprite2D.play("disapear")
 	body.jumps += 1
 	
-	await get_tree().create_timer(0.3).timeout
+	await $AnimatedSprite2D.animation_finished
 	
 	hide()
-	$CollisionShape2D.set_deferred("disabled" , true)
 	
-	await get_tree().create_timer(6).timeout
+	await get_tree().create_timer(4).timeout
 	
 	show()
 	$AnimatedSprite2D.play("appear")
