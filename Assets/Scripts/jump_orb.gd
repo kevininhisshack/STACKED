@@ -24,7 +24,7 @@ func collected(body):
 	hide()
 	$CollisionShape2D.set_deferred("disabled" , true)
 	
-	await get_tree().create_timer(4).timeout
+	await get_tree().create_timer(6).timeout
 	
 	show()
 	$AnimatedSprite2D.play("appear")

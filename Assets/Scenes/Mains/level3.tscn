@@ -6,7 +6,9 @@
 [ext_resource type="AudioStream" uid="uid://buk5okvsxslaa" path="res://Assets/Audio/Music/layer A.mp3" id="4_87fnr"]
 [ext_resource type="AudioStream" uid="uid://dryh82uocnxmy" path="res://Assets/Audio/Music/layer B.mp3" id="5_nb3gc"]
 [ext_resource type="PackedScene" uid="uid://cjo6h4crmg6vq" path="res://Assets/Scenes/Subs/win.tscn" id="6_8o3kn"]
+[ext_resource type="PackedScene" uid="uid://chyphwvpndabr" path="res://Assets/Scenes/Subs/jump_orb.tscn" id="7_bnp7e"]
 [ext_resource type="Script" uid="uid://cbs1jhkgnx2gp" path="res://Assets/Scripts/layer_manager.gd" id="7_o8nr5"]
+[ext_resource type="PackedScene" uid="uid://b6actsfncl1nc" path="res://Assets/Scenes/Subs/camera_trigger.tscn" id="7_uo3hj"]
 [ext_resource type="PackedScene" uid="uid://d22jhp113ud1n" path="res://Assets/Scenes/Subs/pause_screen.tscn" id="8_2flct"]
 [ext_resource type="PackedScene" uid="uid://brpqfpvxddoqh" path="res://Assets/Scenes/Subs/win_screen.tscn" id="9_xmwdg"]
 [ext_resource type="Script" uid="uid://ohn0yjxt7fde" path="res://Assets/Scripts/timer.gd" id="10_h6ds5"]
@@ -101,7 +103,7 @@ polygon = PackedVector2Array(376, 379, 955, 385, 838, 513, 537, 629, 310, 547)
 [node name="cam triggers" type="Node2D" parent="layer A" unique_id=806879089]
 
 [node name="Win" parent="layer A" unique_id=1796645974 node_paths=PackedStringArray("lyrA_music", "lyrB_music", "win_screen", "timer") instance=ExtResource("6_8o3kn")]
-position = Vector2(1079, 171)
+position = Vector2(2494, 151)
 next_level = "level4"
 lyrA_music = NodePath("../../Audio/layer A track")
 lyrB_music = NodePath("../../Audio/layer B track")
@@ -128,7 +130,22 @@ polygon = PackedVector2Array(301.69995, 155.79999, 1608, 130, 1201, 394)
 position = Vector2(-399.69995, 192.20001)
 polygon = PackedVector2Array(294.69995, 154.79999, 1608, 130, 1201, 394)
 
+[node name="Polygon2D2" type="Polygon2D" parent="layer B/Ground" unique_id=772206478]
+position = Vector2(3836.99, 209.20001)
+scale = Vector2(-1, 1)
+color = Color(0.85490197, 0.16470589, 0.28235295, 1)
+polygon = PackedVector2Array(301.69995, 155.79999, 1608, 130, 1201, 394)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="layer B/Ground" unique_id=1016684103 groups=["Layer B collisions"]]
+position = Vector2(3836.99, 209.20001)
+scale = Vector2(-1, 1)
+polygon = PackedVector2Array(294.69995, 154.79999, 1608, 130, 1201, 394)
+
 [node name="Jump Orbs" type="Node2D" parent="layer B" unique_id=1672882658]
+
+[node name="Jump Orb" parent="layer B/Jump Orbs" unique_id=404922491 instance=ExtResource("7_bnp7e")]
+position = Vector2(1762, 93)
+layer = "B"
 
 [node name="Keys" type="Node2D" parent="layer B" unique_id=968763357]
 
@@ -137,6 +154,14 @@ polygon = PackedVector2Array(294.69995, 154.79999, 1608, 130, 1201, 394)
 [node name="Check Points" type="Node2D" parent="layer B" unique_id=2070308576]
 
 [node name="cam triggers" type="Node2D" parent="layer B" unique_id=1980556807]
+
+[node name="Camera Trigger" parent="layer B/cam triggers" unique_id=390977385 instance=ExtResource("7_uo3hj")]
+position = Vector2(1766, 184)
+layer = "B"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="layer B/cam triggers/Camera Trigger" unique_id=850104576]
+position = Vector2(-461, -200)
+polygon = PackedVector2Array(-863, -231, -915, 1526, 1810, 1627, 1847, -270)
 
 [node name="collectables" type="Node2D" parent="layer B" unique_id=1611203000]
 
