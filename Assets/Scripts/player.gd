@@ -27,11 +27,9 @@ func _ready():
 	check_pointPOS = position
 	GameData.in_layerA = starting_layer
 
-func _process(delta: float) -> void:
-	if switchCD > 0.0:
-		switchCD -= delta
-
 func _physics_process(delta):
+	
+	switchCD = max(switchCD - delta , 0)
 	
 	if is_on_floor():
 		coyote_timer = coyote_time
