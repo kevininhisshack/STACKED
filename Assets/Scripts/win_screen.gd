@@ -19,6 +19,7 @@ func _ready() -> void:
 	
 	if final_lvl:
 		$Control/Button.hide()
+		$"Control/win quote".text = "Good bye."
 	
 	if second_to_last:
 		$"Control/win quote".text = "..."

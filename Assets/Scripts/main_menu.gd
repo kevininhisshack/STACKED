@@ -23,6 +23,10 @@ var in_layerA := true :
 		trackB.volume_db = 0 if not value else -80
 
 func _ready() -> void:
+	
+	if GameData.level_stats["level6"] == true:
+		$"Layer B/Label".show()
+	
 	in_layerA = in_layerA
 	
 	

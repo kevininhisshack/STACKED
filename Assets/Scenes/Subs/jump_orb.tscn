@@ -227,7 +227,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j1w7u"]
-radius = 46.173584
+radius = 54.00926
 
 [node name="Jump Orb" type="Area2D" unique_id=404922491]
 script = ExtResource("1_8qebb")
@@ -240,7 +240,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=122120405]
-position = Vector2(6, -20)
+position = Vector2(6, -21)
 shape = SubResource("CircleShape2D_j1w7u")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=1829492808]
